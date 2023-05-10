@@ -30,7 +30,7 @@ export const GlobalSearchModal = (props: SearchBoxProps) => {
 
     return (
         <Dialog
-            className="relative z-50"
+            className="relative z-50 h-full w-full"
             as="div"
             onClose={() => global.globalSearchMachine.send("SWITCH")}
             open={searchIsOpen}
@@ -39,9 +39,9 @@ export const GlobalSearchModal = (props: SearchBoxProps) => {
             <div className="fixed inset-0 bg-primary/95" aria-hidden="true" />
 
             {/* Modal panel, animates in/out */}
-            <div className="fixed inset-0 overflow-y-auto">
-                <div className="flex min-h-full items-center justify-center p-4">
-                    <Dialog.Panel className="mx-20 w-[50%] h-96 rounded bg-white">
+            <div className="fixed inset-0 overflow-y-auto h-full w-full">
+                <div className="flex h-full items-center justify-center p-4 w-full">
+                    <Dialog.Panel className="mx-20 h-full rounded bg-white">
                         <InstantSearch
                             indexName="all"
                             searchClient={searchClient}
@@ -59,9 +59,12 @@ export const GlobalSearchModal = (props: SearchBoxProps) => {
                                     <GlobalSearchBar />
                                 </div>
                                 <div className="self-start mx-[5%]">
+                                    <p className="text-xs pb-0.5 pl-0.5 text-primary pt-2">
+                                        Filter by categories
+                                    </p>
                                     <GlobalSearchRefinements
                                         attribute="tags.name"
-                                        sortBy={["count:desc"]}
+                                        operator="and"
                                     />
                                 </div>
                             </div>

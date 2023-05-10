@@ -8,9 +8,10 @@ import { GlobalFacetBadge } from "@/components/server-components/Buttons/GlobalF
 export const GlobalSearchRefinements = (props: RefinementListProps) => {
     const { items, refine } = useRefinementList(props);
 
+    console.log(items);
     return (
         <div>
-            <div className="flex flex-wrap pt-2" id="global-facet-container">
+            <div className="flex flex-wrap" id="global-facet-container">
                 {items.map((item: any) =>
                     item.isRefined ? (
                         <div key={item.label}></div>
