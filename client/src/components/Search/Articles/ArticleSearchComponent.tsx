@@ -28,12 +28,9 @@ const ArticleHits = dynamic(
 // Search Component
 export const ArticleSearchComponent = (): JSX.Element => {
     return (
-        <InstantSearch searchClient={searchClient} indexName="all">
-            <Configure hitsPerPage={8} filters="content_type.name=article" />
-            <ArticleRefinementSelector
-                attribute="categories.name"
-                sortBy={["name:asc"]}
-            />
+        <InstantSearch searchClient={searchClient} indexName="articles">
+            <Configure hitsPerPage={8} />
+            <ArticleRefinementSelector attribute="categories" />
             <ArticleCurrentRefinements />
             <div className="divider" />
             <ArticleHits />
