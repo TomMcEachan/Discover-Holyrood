@@ -2,7 +2,7 @@ import React from "react";
 
 export const Logo = () => {
     return (
-        <div className="w-44 sm:w-52 md:w-64 h-24">
+        <div className="w-44 sm:w-52 md:w-64 h-24" id="discover-holyrood-logo">
             <svg
                 width="100%"
                 height="100%"

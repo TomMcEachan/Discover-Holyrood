@@ -27,11 +27,12 @@ export const Navbar = () => {
                 <div className="navbar-end">
                     <button
                         className="mr-5"
+                        id="search-bar-button"
                         onClick={() =>
                             global.globalSearchMachine.send("SWITCH")
                         }
                     >
-                        <MdOutlineSearch size={35} id="search-bar-icon" />
+                        <MdOutlineSearch size={35} />
                     </button>
                     <button
                         id="hamburger-button"
