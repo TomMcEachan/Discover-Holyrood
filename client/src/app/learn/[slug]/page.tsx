@@ -3,6 +3,7 @@ import { CategoryBadge } from "@/components/server-components/Buttons/CategoryBa
 import { PageTitle } from "@/components/client-components/PageTitle/PageTitle";
 import { Suspense } from "react";
 import { components } from "@/components/Markdown/ArticleMarkdown";
+import { ContentWrapper } from "@/components/server-components/ContentWrapper/ContentWrapper";
 
 interface Props {
     params: {
@@ -31,7 +32,7 @@ export default async function ArticlePage({ params }: Props) {
     const markdown = await pageData.attributes.content;
 
     return (
-        <main id="page-content" className="min-h-screen px-4 pb-40">
+        <ContentWrapper>
             <div id="top-section">
                 <PageTitle
                     title={pageData.attributes.title}
@@ -45,7 +46,7 @@ export default async function ArticlePage({ params }: Props) {
                 </div>
                 <div className="divider" />
             </div>
-            <article id="content">
+            <article id="content" className="">
                 <Suspense fallback={<div>Loading...</div>}>
                     {/* @ts-expect-error Async Server Component */}
                     <MDXRemote
@@ -56,6 +57,6 @@ export default async function ArticlePage({ params }: Props) {
                     />
                 </Suspense>
             </article>
-        </main>
+        </ContentWrapper>
     );
 }
