@@ -1,12 +1,62 @@
-"use client";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, compileMDX } from "next-mdx-remote/rsc";
+import { CategoryBadge } from "@/components/server-components/Buttons/CategoryBadge";
+import { PageTitle } from "@/components/client-components/PageTitle/PageTitle";
+import { Suspense } from "react";
+import { components } from "@/components/Markdown/ArticleMarkdown";
+import { ContentWrapper } from "@/components/server-components/ContentWrapper/ContentWrapper";
 
-type Props = {
-    slug: string;
-    markdown: MDXRemoteSerializeResult;
-};
+interface Props {
+    params: {
+        slug: string;
+        id: string;
+    };
+}
 
-export default function ArticlePage() {
-    return <div>{/* <MDXRemote {...markdown} /> */}</div>;
+export default async function ArticlePage({ params }: Props) {
+    const res = await fetch(
+        `https://discover-holyrood-cms.azurewebsites.net/api/articles?filters[link][$eq]=${params.slug}&populate=deep`,
+    );
+
+    const resData = await res.json();
+    const pageData = await resData.data[0];
+
+    //Get the article tags
+    const articleTags: any = pageData.attributes.tags.data.map((tag: any) => {
+        return tag.attributes.name;
+    });
+
+    //Get the article category
+    const articleCategory =
+        pageData.attributes.categories.data[0].attributes.name;
+
+    const markdown = await pageData.attributes.content;
+
+    return (
+        <ContentWrapper>
+            <div id="top-section">
+                <PageTitle
+                    title={pageData.attributes.title}
+                    subtitle={pageData.attributes.subtitle}
+                />
+                <div className="pt-2">
+                    <CategoryBadge name={articleCategory} />
+                    {articleTags.map((tag: any) => {
+                        return <CategoryBadge key={tag.id} name={tag} />;
+                    })}
+                </div>
+                <div className="divider" />
+            </div>
+            <article id="content" className="">
+                <Suspense fallback={<div>Loading...</div>}>
+                    {/* @ts-expect-error Async Server Component */}
+                    <MDXRemote
+                        source={markdown}
+                        components={{
+                            ...components,
+                        }}
+                    />
+                </Suspense>
+            </article>
+        </ContentWrapper>
+    );
 }

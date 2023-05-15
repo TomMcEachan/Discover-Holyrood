@@ -2,7 +2,7 @@ import { IoClose } from "react-icons/io5";
 
 type Props = {
     name: string;
-    onClick: () => void;
+    onClick?: () => void;
 };
 
 export const CategoryBadgeRefined = ({ name, onClick }: Props) => {

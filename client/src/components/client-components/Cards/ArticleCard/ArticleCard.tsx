@@ -1,5 +1,6 @@
 "use client";
 import { CldImage } from "next-cloudinary";
+import Link from "next/link";
 
 interface Props {
     title: string;
@@ -17,7 +18,7 @@ export const ArticleCard = ({
     switch (category) {
         case "MSPs":
             return (
-                <a
+                <Link
                     href={link}
                     className="col-span-2 h-fit rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
                     id="search-result"
@@ -49,11 +50,11 @@ export const ArticleCard = ({
                             {category}
                         </button>
                     </div>
-                </a>
+                </Link>
             );
         case "Chamber":
             return (
-                <a
+                <Link
                     href={link}
                     className="h-600 col-span-2 rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
                     id="search-result"
@@ -88,11 +89,11 @@ export const ArticleCard = ({
                             {category}
                         </button>
                     </div>
-                </a>
+                </Link>
             );
         case "Building":
             return (
-                <a
+                <Link
                     href={link}
                     className="h-600 col-span-2 rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
                     id="search-result"
@@ -127,7 +128,7 @@ export const ArticleCard = ({
                             {category}
                         </button>
                     </div>
-                </a>
+                </Link>
             );
         case "History":
             return (

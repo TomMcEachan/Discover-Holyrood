@@ -1,10 +1,11 @@
 // Components Import
 import { ArticleSearchComponent } from "@/components/Search/Articles/ArticleSearchComponent";
 import { PageTitle } from "@/components/client-components/PageTitle/PageTitle";
+import { ContentWrapper } from "@/components/server-components/ContentWrapper/ContentWrapper";
 
 export default function Learn(): JSX.Element {
     return (
-        <main id="page-content" className="min-h-screen px-4 pb-40">
+        <ContentWrapper>
             <PageTitle
                 title="Learn"
                 subtitle="Find out about the Scottish Parliament"
@@ -13,6 +14,6 @@ export default function Learn(): JSX.Element {
             <div>
                 <ArticleSearchComponent />
             </div>
-        </main>
+        </ContentWrapper>
     );
 }

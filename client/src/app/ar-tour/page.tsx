@@ -1,15 +1,16 @@
 import React, { useRef } from "react";
 import { PageTitle } from "@/components/client-components/PageTitle/PageTitle";
+import { ContentWrapper } from "@/components/server-components/ContentWrapper/ContentWrapper";
 
 export default function AR(): JSX.Element {
     return (
-        <main className="min-h-screen px-4 pb-40">
+        <ContentWrapper>
             <PageTitle
                 title="AR Tour"
                 subtitle="Take a tour of the Scottish Parliament"
             />
             <div className="divider" />
             <div></div>
-        </main>
+        </ContentWrapper>
     );
 }
