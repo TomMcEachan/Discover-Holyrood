@@ -2,7 +2,7 @@
 
 type Props = {
     name: string;
-    onClick: () => void;
+    onClick?: () => void;
 };
 
 export const CategoryBadge = ({ name, onClick }: Props) => {
