@@ -1,9 +1,10 @@
 import { MDXRemote, compileMDX } from "next-mdx-remote/rsc";
 import { CategoryBadge } from "@/components/server-components/Buttons/CategoryBadge";
-import { PageTitle } from "@/components/client-components/PageTitle/PageTitle";
+import { PageTitle } from "@/components/server-components/PageTitle/PageTitle";
 import { Suspense } from "react";
 import { components } from "@/components/Markdown/ArticleMarkdown";
 import { ContentWrapper } from "@/components/server-components/ContentWrapper/ContentWrapper";
+import { SuggestedArticle } from "@/components/client-components/Cards/SuggestedArticle/SuggestedArticle";
 
 interface Props {
     params: {
@@ -12,13 +13,28 @@ interface Props {
     };
 }
 
-export default async function ArticlePage({ params }: Props) {
+const getArticle = async (slug: string) => {
     const res = await fetch(
-        `https://discover-holyrood-cms.azurewebsites.net/api/articles?filters[link][$eq]=${params.slug}&populate=deep`,
+        `https://discover-holyrood-cms.azurewebsites.net/api/articles?filters[link][$eq]=${slug}&populate=deep`,
+    );
+    const resData = await res.json();
+    const pageData = await resData.data[0];
+
+    return pageData;
+};
+
+const getSuggestedArticles = async (slug: string, category: string) => {
+    const res = await fetch(
+        `https://discover-holyrood-cms.azurewebsites.net/api/articles?populate=deep&filters[link][$ne]=${slug}`,
     );
 
     const resData = await res.json();
-    const pageData = await resData.data[0];
+    const articles = await resData.data;
+    return articles;
+};
+
+export default async function ArticlePage({ params }: Props) {
+    const pageData = await getArticle(params.slug);
 
     //Get the article tags
     const articleTags: any = pageData.attributes.tags.data.map((tag: any) => {
@@ -26,10 +42,17 @@ export default async function ArticlePage({ params }: Props) {
     });
 
     //Get the article category
-    const articleCategory =
+    const articleCategory: any =
         pageData.attributes.categories.data[0].attributes.name;
 
+    //Get the article markdown
     const markdown = await pageData.attributes.content;
+
+    //Get the suggested articles
+    const suggestedArticles = await getSuggestedArticles(
+        params.slug,
+        articleCategory,
+    );
 
     return (
         <ContentWrapper>
@@ -57,6 +80,24 @@ export default async function ArticlePage({ params }: Props) {
                     />
                 </Suspense>
             </article>
+            <div className="divider" />
+            <div id="suggested-articles">
+                <h2 className="text-2xl font-bold text-base-content">
+                    Suggested Articles
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-4">
+                    {suggestedArticles.slice(0, 3).map((article: any) => {
+                        return (
+                            <SuggestedArticle
+                                key={article.id}
+                                title={article.attributes.title}
+                                subtitle={article.attributes.subtitle}
+                                slug={`learn/${article.attributes.link}`}
+                            />
+                        );
+                    })}
+                </div>
+            </div>
         </ContentWrapper>
     );
 }

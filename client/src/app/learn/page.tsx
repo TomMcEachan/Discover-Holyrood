@@ -1,6 +1,6 @@
 // Components Import
 import { ArticleSearchComponent } from "@/components/Search/Articles/ArticleSearchComponent";
-import { PageTitle } from "@/components/client-components/PageTitle/PageTitle";
+import { PageTitle } from "@/components/server-components/PageTitle/PageTitle";
 import { ContentWrapper } from "@/components/server-components/ContentWrapper/ContentWrapper";
 
 export default function Learn(): JSX.Element {

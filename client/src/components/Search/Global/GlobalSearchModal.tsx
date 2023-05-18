@@ -4,7 +4,7 @@ import { Dialog } from "@headlessui/react";
 import { GlobalStateContext } from "@/utils/providers/GlobalState";
 import { useContext } from "react";
 import { useSelector } from "@xstate/react";
-import { PageTitle } from "../../client-components/PageTitle/PageTitle";
+import { PageTitle } from "../../server-components/PageTitle/PageTitle";
 
 // Meilisearch Client
 import { searchClient } from "@/utils/search/Search";

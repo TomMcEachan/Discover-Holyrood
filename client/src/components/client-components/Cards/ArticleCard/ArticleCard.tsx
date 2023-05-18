@@ -21,7 +21,7 @@ export const ArticleCard = ({
                 <Link
                     href={link}
                     className="col-span-2 h-fit rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
-                    id="search-result"
+                    id={`${title} search-result`}
                 >
                     <div className="relative min-w-full rounded-lg">
                         <div className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spgreen opacity-90"></div>
