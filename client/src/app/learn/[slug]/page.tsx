@@ -5,6 +5,12 @@ import { Suspense } from "react";
 import { components } from "@/components/Markdown/ArticleMarkdown";
 import { ContentWrapper } from "@/components/server-components/ContentWrapper/ContentWrapper";
 import { SuggestedArticle } from "@/components/client-components/Cards/SuggestedArticle/SuggestedArticle";
+import { BackButton } from "@/components/server-components/Buttons/BackButton";
+import {
+    getSpecificArticle,
+    getSuggestedArticles,
+    getAllArticles,
+} from "@/utils/fetching/DataFetching";
 
 interface Props {
     params: {
@@ -13,28 +19,21 @@ interface Props {
     };
 }
 
-const getArticle = async (slug: string) => {
-    const res = await fetch(
-        `https://discover-holyrood-cms.azurewebsites.net/api/articles?filters[link][$eq]=${slug}&populate=deep`,
-    );
-    const resData = await res.json();
-    const pageData = await resData.data[0];
-
-    return pageData;
-};
-
-const getSuggestedArticles = async (slug: string, category: string) => {
-    const res = await fetch(
-        `https://discover-holyrood-cms.azurewebsites.net/api/articles?populate=deep&filters[link][$ne]=${slug}`,
-    );
-
-    const resData = await res.json();
-    const articles = await resData.data;
-    return articles;
-};
+export async function generateStaticParams() {
+    const articles = await getAllArticles();
+    const paths = articles.map((article: any) => {
+        return {
+            params: {
+                slug: article.attributes.link,
+                id: article.id,
+            },
+        };
+    });
+    return paths;
+}
 
 export default async function ArticlePage({ params }: Props) {
-    const pageData = await getArticle(params.slug);
+    const pageData = await getSpecificArticle(params.slug);
 
     //Get the article tags
     const articleTags: any = pageData.attributes.tags.data.map((tag: any) => {
@@ -49,13 +48,11 @@ export default async function ArticlePage({ params }: Props) {
     const markdown = await pageData.attributes.content;
 
     //Get the suggested articles
-    const suggestedArticles = await getSuggestedArticles(
-        params.slug,
-        articleCategory,
-    );
+    const suggestedArticles = await getSuggestedArticles(params.slug);
 
     return (
         <ContentWrapper>
+            <BackButton backLocation="Learn" />
             <div id="top-section">
                 <PageTitle
                     title={pageData.attributes.title}

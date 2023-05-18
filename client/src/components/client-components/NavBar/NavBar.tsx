@@ -5,16 +5,9 @@ import { GlobalStateContext } from "@/utils/providers/GlobalState";
 import { useContext } from "react";
 import { Logo } from "@/components/server-components/Logo";
 import { MdOutlineSearch } from "react-icons/md";
-import { useSelector } from "@xstate/react";
-import { useRef, useEffect } from "react";
-
-const searchOpen = (state: any) => {
-    return state.matches("Closed");
-};
 
 export const Navbar = () => {
     const global = useContext(GlobalStateContext);
-    const searchIsOpen = useSelector(global.globalSearchMachine, searchOpen);
 
     return (
         <>
