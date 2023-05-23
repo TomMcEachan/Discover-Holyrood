@@ -1,4 +1,4 @@
-import { MDXRemote, compileMDX } from "next-mdx-remote/rsc";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { CategoryBadge } from "@/components/server-components/Buttons/CategoryBadge";
 import { PageTitle } from "@/components/server-components/PageTitle/PageTitle";
 import { Suspense } from "react";
@@ -33,7 +33,12 @@ export async function generateStaticParams() {
 }
 
 export default async function ArticlePage({ params }: Props) {
-    const pageData = await getSpecificArticle(params.slug);
+    
+    const { slug } = params;
+    const [pageData, suggestedArticles] = await Promise.all([
+        getSpecificArticle(slug),
+        getSuggestedArticles(slug),
+      ]);
 
     //Get the article tags
     const articleTags: any = pageData.attributes.tags.data.map((tag: any) => {
@@ -46,9 +51,6 @@ export default async function ArticlePage({ params }: Props) {
 
     //Get the article markdown
     const markdown = await pageData.attributes.content;
-
-    //Get the suggested articles
-    const suggestedArticles = await getSuggestedArticles(params.slug);
 
     return (
         <ContentWrapper>

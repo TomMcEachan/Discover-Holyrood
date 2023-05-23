@@ -1,12 +1,9 @@
-import {
-    useInfiniteHits,
-    useInstantSearch,
-} from "react-instantsearch-hooks-web";
+import { useHits, useInstantSearch } from "react-instantsearch-hooks-web";
 import { Riple } from "react-loading-indicators";
 import { GlobalSearchCard } from "@/components/client-components/Cards/GlobalCard.tsx/GlobalSearchCard";
 
 export const GlobalSearchHits = () => {
-    const { hits, showMore, showPrevious, results } = useInfiniteHits();
+    const { hits, results } = useHits();
     const { status } = useInstantSearch();
 
     if (status === "loading" || status === "stalled") {
@@ -33,18 +30,6 @@ export const GlobalSearchHits = () => {
                         />
                     ))}
                 </div>
-                {results?.page != results?.nbPages! - 1 ? (
-                    <div className="flex py-4">
-                        <button
-                            onClick={showMore}
-                            className="btn bg-accent text-white px-4 py-2"
-                        >
-                            Show More
-                        </button>
-                    </div>
-                ) : (
-                    <></>
-                )}
             </>
         );
     }

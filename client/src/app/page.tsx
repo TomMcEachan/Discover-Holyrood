@@ -1,9 +1,12 @@
 //Importing Font
 import { Inter } from "next/font/google";
 
+// Import Dynamic
+import dynamic from "next/dynamic";
+
 // Components Import
-import { CategoryBadge } from "@/components/server-components/Buttons/CategoryBadge";
 import { ContentWrapper } from "@/components/server-components/ContentWrapper/ContentWrapper";
+import { VideoPlayer } from "@/components/client-components/VideoPlayer/VideoPlayer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +29,9 @@ export default function Home(): JSX.Element {
                     <h3 className="text-2xl font-bold">Visitor App</h3>
                 </div>
             </div>
-            <div className="grid grid-cols-1 grid-rows-1 place-items-center"></div>
+            <div>
+                <VideoPlayer />
+            </div>
         </ContentWrapper>
     );
 }

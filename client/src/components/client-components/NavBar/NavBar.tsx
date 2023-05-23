@@ -15,6 +15,9 @@ export const Navbar = () => {
                 <div className="navbar-start">
                     <Link href="/" className="mx-2 text-xl font-bold">
                         <Logo />
+                        <span className="text-primary sr-only">
+                            Discover Holyrood Logo
+                        </span>
                     </Link>
                 </div>
                 <div className="navbar-end">
@@ -34,7 +37,6 @@ export const Navbar = () => {
                         onClick={() => global.hamburgerMachine.send("SWITCH")}
                     >
                         <TbMenu2 size={40} className="self-center font-bold" />
-                        <span className="text-primary" />
                     </button>
                 </div>
             </nav>

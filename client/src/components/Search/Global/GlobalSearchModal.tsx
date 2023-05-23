@@ -20,7 +20,8 @@ import {
 // Custom Search Components
 import { GlobalSearchBar } from "@/components/Search/Global/GlobalSearchBar";
 import { GlobalSearchRefinements } from "@/components/Search/Global/GlobalSearchRefinements";
-import { GlobalSearchHits } from "./GlobalSearchHits";
+import { GlobalSearchHits } from "@/components/Search/Global/GlobalSearchHits";
+import { GlobalPagination } from "@/components/Search/Global/GlobalPagination";
 
 const searchOpen = (state: any) => {
     return state.matches("Open");
@@ -43,12 +44,12 @@ export const GlobalSearchModal = (props: SearchBoxProps) => {
             {/* Modal panel, animates in/out */}
             <div className="fixed inset-0 overflow-y-auto">
                 <div className="flex h-full items-center justify-center p-4 w-full">
-                    <Dialog.Panel className="mx-20 h-full rounded bg-white w-full">
+                    <Dialog.Panel className="mx-20 h-full rounded bg-white w-full overflow-y-auto">
                         <InstantSearch
                             indexName="all"
                             searchClient={searchClient}
                         >
-                            <Configure hitsPerPage={9} />
+                            <Configure hitsPerPage={3} />
                             <div className="flex flex-col items-center justify-center h-full w-full">
                                 <div className="self-start pb-4 mx-[5%]">
                                     <Dialog.Title>
@@ -80,11 +81,10 @@ export const GlobalSearchModal = (props: SearchBoxProps) => {
                                 </div>
                                 <div className="divider px-6" />
                                 <div className="self-start mx-[5%]">
-                                    <div></div>
                                     <GlobalSearchHits />
                                 </div>
+                                <GlobalPagination />
                             </div>
-                            <Pagination />
                         </InstantSearch>
                     </Dialog.Panel>
                 </div>
