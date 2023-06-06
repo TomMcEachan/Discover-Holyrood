@@ -14,6 +14,7 @@
         "lighthouse": ""
     },
     "dependencies": {
+        "@babel/core": "^7.0.0",
         "@headlessui/react": "^1.7.14",
         "@heroicons/react": "^2.0.17",
         "@meilisearch/instant-meilisearch": "^0.12.0",

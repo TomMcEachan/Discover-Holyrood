@@ -1,6 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 import { Riple } from "react-loading-indicators";
+import { Suspense } from "react";
 
 // Custom Search Components
 import { CustomSearchBar } from "@/components/Search/Articles/ArticleCustomSearchBar";

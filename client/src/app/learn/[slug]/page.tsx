@@ -33,12 +33,7 @@ export async function generateStaticParams() {
 }
 
 export default async function ArticlePage({ params }: Props) {
-    
-    const { slug } = params;
-    const [pageData, suggestedArticles] = await Promise.all([
-        getSpecificArticle(slug),
-        getSuggestedArticles(slug),
-      ]);
+    const pageData = await getSpecificArticle(params.slug);
 
     //Get the article tags
     const articleTags: any = pageData.attributes.tags.data.map((tag: any) => {
@@ -51,6 +46,9 @@ export default async function ArticlePage({ params }: Props) {
 
     //Get the article markdown
     const markdown = await pageData.attributes.content;
+
+    //Get the suggested articles
+    const suggestedArticles = await getSuggestedArticles(params.slug);
 
     return (
         <ContentWrapper>
