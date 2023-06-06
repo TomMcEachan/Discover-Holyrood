@@ -5,8 +5,8 @@ import { Inter } from "next/font/google";
 import dynamic from "next/dynamic";
 
 // Components Import
-import { ContentWrapper } from "@/components/server-components/ContentWrapper/ContentWrapper";
-import { VideoPlayer } from "@/components/client-components/VideoPlayer/VideoPlayer";
+import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
+import { VideoPlayer } from "@/components/ClientComponents/VideoPlayer/VideoPlayer";
 
 const inter = Inter({ subsets: ["latin"] });
 

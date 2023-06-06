@@ -3,7 +3,7 @@ import {
     useRefinementList,
     type RefinementListProps,
 } from "react-instantsearch-hooks-web";
-import { GlobalFacetBadge } from "@/components/server-components/Buttons/GlobalFacetBadge";
+import { GlobalFacetBadge } from "@/components/ServerComponents/Buttons/GlobalFacetBadge";
 
 export const GlobalSearchRefinements = (props: RefinementListProps) => {
     const { items, refine } = useRefinementList(props);

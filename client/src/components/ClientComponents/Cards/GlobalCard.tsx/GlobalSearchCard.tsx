@@ -1,5 +1,5 @@
-import { GlobalFacetBadge } from "@/components/server-components/Buttons/GlobalFacetBadge";
-import { CategoryBadge } from "@/components/server-components/Buttons/CategoryBadge";
+import { GlobalFacetBadge } from "@/components/ServerComponents/Buttons/GlobalFacetBadge";
+import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge";
 import Link from "next/link";
 
 type Props = {

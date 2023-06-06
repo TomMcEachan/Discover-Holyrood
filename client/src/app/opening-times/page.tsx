@@ -1,4 +1,4 @@
-import { ContentWrapper } from "@/components/server-components/ContentWrapper/ContentWrapper";
+import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
 
 export default function Opening(): JSX.Element {
     return (

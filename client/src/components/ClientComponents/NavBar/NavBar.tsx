@@ -3,7 +3,7 @@ import Link from "next/link";
 import { TbMenu2 } from "react-icons/tb";
 import { GlobalStateContext } from "@/utils/providers/GlobalState";
 import { useContext } from "react";
-import { Logo } from "@/components/server-components/Logo";
+import { Logo } from "@/components/ServerComponents/Logo";
 import { MdOutlineSearch } from "react-icons/md";
 
 export const Navbar = () => {

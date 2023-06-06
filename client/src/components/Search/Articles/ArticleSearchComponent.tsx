@@ -4,7 +4,6 @@ import { Riple } from "react-loading-indicators";
 import { Suspense } from "react";
 
 // Custom Search Components
-import { CustomSearchBar } from "@/components/Search/Articles/ArticleCustomSearchBar";
 import { ArticleRefinementSelector } from "@/components/Search/Articles/ArticleRefinementSelector";
 import { ArticleCurrentRefinements } from "@/components/Search/Articles/ArticleCurrentRefinements";
 

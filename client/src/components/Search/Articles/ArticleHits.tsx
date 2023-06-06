@@ -1,4 +1,4 @@
-import { ArticleCard } from "../../client-components/Cards/ArticleCard/ArticleCard";
+import { ArticleCard } from "../../ClientComponents/Cards/ArticleCard/ArticleCard";
 import { CgSmileNone } from "react-icons/cg";
 import {
     useInfiniteHits,

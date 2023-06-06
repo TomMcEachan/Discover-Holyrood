@@ -3,9 +3,9 @@ import "./globals.css";
 import { ThemeProvider } from "@/utils/providers/Theme";
 
 // Import Components
-import { AppBar } from "@/components/server-components/AppBar/AppBar";
-import { Sidebar } from "@/components/client-components/Sidebar/Sidebar";
-import { Navbar } from "@/components/client-components/NavBar/NavBar";
+import { AppBar } from "@/components/ServerComponents/AppBar/AppBar";
+import { Sidebar } from "@/components/ClientComponents/Sidebar/Sidebar";
+import { Navbar } from "@/components/ClientComponents/NavBar/NavBar";
 import { GlobalSearchModal } from "@/components/Search/Global/GlobalSearchModal";
 
 // Import Global State
