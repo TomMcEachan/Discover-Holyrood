@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import { PageTitle } from "@/components/server-components/PageTitle/PageTitle";
-import { ContentWrapper } from "@/components/server-components/ContentWrapper/ContentWrapper";
+import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
+import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
 
 export default function AR(): JSX.Element {
     return (
