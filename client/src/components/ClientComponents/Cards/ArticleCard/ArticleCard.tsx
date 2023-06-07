@@ -20,11 +20,14 @@ export const ArticleCard = ({
             return (
                 <Link
                     href={link}
-                    className="col-span-2 h-fit rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
-                    id={`${title} search-result`}
+                    className="h-600 col-span-2 rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
+                    id="search-result"
                 >
                     <div className="relative min-w-full rounded-lg">
-                        <div className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spgreen opacity-90"></div>
+                        <div
+                            className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spgreen opacity-100
+                        "
+                        ></div>
                         <CldImage
                             src={image}
                             alt={title}
@@ -35,11 +38,11 @@ export const ArticleCard = ({
                             gravity="auto"
                             className="brightness-25 h-fit w-full rounded-t-lg"
                             sizes="(min-width: 480px ) 50vw,
-                                    (min-width: 728px) 33vw,
-                                    (min-width: 976px) 25vw,
-                                    100vw"
+                                   (min-width: 728px) 33vw,
+                                   (min-width: 976px) 25vw,
+                                   100vw"
                         />
-                        <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spgreen rounded-md w-full h-40">
+                        <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spgreen  rounded-md w-full">
                             <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
                                 {title}
                             </h3>

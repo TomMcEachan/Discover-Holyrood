@@ -33,7 +33,7 @@ export const GlobalSearchModal = (props: SearchBoxProps) => {
 
     return (
         <Dialog
-            className="relative z-50 h-full w-screen"
+            className="relative z-50 h-screen w-screen"
             as="div"
             onClose={() => global.globalSearchMachine.send("SWITCH")}
             open={searchIsOpen}
@@ -43,13 +43,13 @@ export const GlobalSearchModal = (props: SearchBoxProps) => {
 
             {/* Modal panel, animates in/out */}
             <div className="fixed inset-0 overflow-y-auto">
-                <div className="flex h-full items-center justify-center p-4 w-full">
-                    <Dialog.Panel className="mx-20 h-full rounded bg-white w-full overflow-y-auto">
+                <div className="flex h-screen items-center justify-center p-4 w-full overflow-auto">
+                    <Dialog.Panel className="mx-8 md:mx-20 h-full rounded bg-white w-full overflow-auto pt-20 pb-20">
                         <InstantSearch
                             indexName="all"
                             searchClient={searchClient}
                         >
-                            <Configure hitsPerPage={3} />
+                            <Configure hitsPerPage={2} />
                             <div className="flex flex-col items-center justify-center h-full w-full">
                                 <div className="self-start pb-4 mx-[5%]">
                                     <Dialog.Title>
@@ -81,7 +81,9 @@ export const GlobalSearchModal = (props: SearchBoxProps) => {
                                 </div>
                                 <div className="divider px-6" />
                                 <div className="self-start mx-[5%]">
-                                    <GlobalSearchHits />
+                                    <div className="flex">
+                                        <GlobalSearchHits />
+                                    </div>
                                 </div>
                                 <GlobalPagination />
                             </div>

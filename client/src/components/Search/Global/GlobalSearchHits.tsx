@@ -17,9 +17,9 @@ export const GlobalSearchHits = () => {
     if (hits.length > 0) {
         console.log(hits);
         return (
-            <>
-                <div>
-                    {hits.map((hit: any) => (
+            <div>
+                {hits.map((hit: any) => (
+                    <div className="col-span-3">
                         <GlobalSearchCard
                             title={hit.title}
                             category={hit.categories[0]}
@@ -27,10 +27,11 @@ export const GlobalSearchHits = () => {
                             tags={hit.tags}
                             link={`learn/${hit.link}`}
                             key={hit.id}
+                            image={hit.image}
                         />
-                    ))}
-                </div>
-            </>
+                    </div>
+                ))}
+            </div>
         );
     }
 
