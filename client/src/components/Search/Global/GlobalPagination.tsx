@@ -1,4 +1,3 @@
-import { is } from "cypress/types/bluebird";
 import React from "react";
 import {
     UsePaginationProps,
@@ -7,7 +6,6 @@ import {
 
 export const GlobalPagination = (props: UsePaginationProps) => {
     const {
-        pages,
         currentRefinement,
         refine,
         nbHits,
@@ -23,7 +21,8 @@ export const GlobalPagination = (props: UsePaginationProps) => {
     }
 
     return (
-        <div className="justify-center btn-group mb-2">
+        <div className="justify-center btn-group mb-2 flex w-full box flex-col">
+            <p className="font-bold self-center pb-2">{nbHits} Results</p>
             <ul>
                 {!isFirstPage && (
                     <button
@@ -41,28 +40,22 @@ export const GlobalPagination = (props: UsePaginationProps) => {
                         «
                     </button>
                 )}
-                {pages.map((page) => (
-                    <button key={page} className="btn bg-primary text-base-100">
-                        <a
-                            href="#"
-                            onClick={(event) => {
-                                event.preventDefault();
-                                refine(page);
-                            }}
-                        >
-                            {page + 1}
-                        </a>
+                {!isLastPage && (
+                    <button
+                        className="btn bg-primary text-base-100"
+                        onClick={(event) => {
+                            event.preventDefault();
+                            refine(currentRefinement + 1);
+                        }}
+                    >
+                        »
                     </button>
-                ))}
-                <button
-                    className="btn bg-primary text-base-100"
-                    onClick={(event) => {
-                        event.preventDefault();
-                        refine(currentRefinement + 1);
-                    }}
-                >
-                    »
-                </button>
+                )}
+                {isLastPage && (
+                    <button className="btn bg-primary text-base-100" disabled>
+                        »
+                    </button>
+                )}
             </ul>
         </div>
     );
