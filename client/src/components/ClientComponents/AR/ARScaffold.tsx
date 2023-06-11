@@ -10,8 +10,14 @@ const NeedleEngine = dynamic<NeedleEngineProps>(
 
 export const ARScaffold = () => {
     return (
-        <>
-            <NeedleEngine loading-style="light" src="" keep-alive />
-        </>
+        <div>
+            <NeedleEngine
+                loading-style="light"
+                keep-alive
+                className=""
+                addEventListener={(event: any) => {}}
+                src={"/"}
+            ></NeedleEngine>
+        </div>
     );
 };

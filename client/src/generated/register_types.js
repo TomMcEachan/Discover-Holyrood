@@ -1,4 +1,4 @@
-﻿import { TypeStore } from "@needle-tools/engine";
+﻿import { TypeStore } from "@needle-tools/engine"
 
 // Import types
 import { Rotate } from "../scripts/Rotate";

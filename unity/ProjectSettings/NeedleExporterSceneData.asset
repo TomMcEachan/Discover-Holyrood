@@ -15,7 +15,7 @@ MonoBehaviour:
   Scenes:
   - Path: Assets/Scenes/ARScene.unity
     Projects:
-    - ProjectPath: ../../GitHub/DiscoverHolyroodFrontEnd/client
+    - ProjectPath: ../client
     BuilderScene: 
   Projects:
-  - ProjectPath: ../../GitHub/DiscoverHolyroodFrontEnd/client
+  - ProjectPath: ../client

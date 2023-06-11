@@ -1,9 +1,14 @@
 import { Behaviour, serializable } from "@needle-tools/engine";
 
-export class NewTypescript extends Behaviour {
-    // @ts-ignore
+export class Rotate extends Behaviour {
     @serializable()
-    myStringField: string = "Hello World";
+    speed: number = 1;
 
-    start() {}
+    start() {
+        console.log("Rotate start");
+    }
+
+    update() {
+        this.gameObject.rotateY(this.context.time.deltaTime * this.speed);
+    }
 }

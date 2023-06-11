@@ -1,14 +1,13 @@
 "use client";
 
-import "@needle-tools/engine";
+import { NeedleEngine } from "@needle-tools/engine";
 import { NeedleEngineAttributes } from "@needle-tools/engine";
 import { useEffect, useState } from "react";
 
 const isServer = () => typeof window === "undefined";
 
 export type NeedleEngineProps = NeedleEngineAttributes;
-
-export default function NeedleEngine({ ...props }): JSX.Element {
+export default function Needle({ ...props }): JSX.Element {
     const [src, setSrc] = useState(props?.src);
 
     useEffect(() => {

@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 438e3fec673b477cbc6d39ba011bf158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compilerDirectory: ../../GitHub/DiscoverHolyroodFrontEnd/client/node_modules/@needle-tools/needle-component-compiler/src
+  compilerDirectory: ../client/node_modules/@needle-tools/needle-component-compiler/src
   Debug: 0
 --- !u!114 &934540242
 MonoBehaviour:
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986a3a93ac16ec0428d8989979ec0966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DirectoryName: ../../GitHub/DiscoverHolyroodFrontEnd/client
+  DirectoryName: ../client
   AutoExport: 1
   Dependencies: []
 --- !u!4 &934540243
@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 1612932044}
   - component: {fileID: 1612932043}
   - component: {fileID: 1612932042}
+  - component: {fileID: 1612932045}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -501,6 +502,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612932040}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1612932045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612932040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efe4df7ff9062e436aca8131ab63be17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &1929484796
 GameObject:
   m_ObjectHideFlags: 0
