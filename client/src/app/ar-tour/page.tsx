@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
+import { ARScaffold } from "@/components/ClientComponents/AR/ARScaffold";
 
 export default function AR(): JSX.Element {
     return (
@@ -10,7 +11,9 @@ export default function AR(): JSX.Element {
                 subtitle="Take a tour of the Scottish Parliament"
             />
             <div className="divider" />
-            <div></div>
+            <div className="h-full">
+                <ARScaffold />
+            </div>
         </ContentWrapper>
     );
 }
