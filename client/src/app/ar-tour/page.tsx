@@ -11,9 +11,7 @@ export default function AR(): JSX.Element {
                 subtitle="Take a tour of the Scottish Parliament"
             />
             <div className="divider" />
-            <div className="h-full">
-                <ARCanvas src="/" />
-            </div>
+            <ARCanvas src="../../../public/ar/mainScene.glb" />
         </ContentWrapper>
     );
 }

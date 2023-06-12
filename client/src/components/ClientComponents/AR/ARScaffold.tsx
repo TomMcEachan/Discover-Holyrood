@@ -1,13 +1,12 @@
 "use client";
-
 import dynamic from "next/dynamic";
-import { type NeedleEngineProps } from "@/utils/providers/NeedleEngine";
 
-const NeedleEngine = dynamic<NeedleEngineProps>(
-    () => import("@/utils/providers/NeedleEngine"),
-    { ssr: false },
-);
+// Dynamic import of NeedleEngine
+const NeedleEngine = dynamic(() => import("@/utils/providers/NeedleEngine"), {
+    ssr: false,
+});
 
+//Component Props
 type Props = {
     src: string;
 };
@@ -17,10 +16,9 @@ export const ARCanvas = ({ src }: Props) => {
         <div>
             <NeedleEngine
                 loading-style="light"
-                keep-alive
                 addEventListener={(event: any) => {}}
-                src={"/"}
-            ></NeedleEngine>
+                src={src}
+            />
         </div>
     );
 };

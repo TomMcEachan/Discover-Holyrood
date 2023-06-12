@@ -17,5 +17,12 @@ MonoBehaviour:
     Projects:
     - ProjectPath: ../client
     BuilderScene: 
+  - Path: Assets/Scenes/Test.unity
+    Projects: []
+    BuilderScene: 
+  - Path: Assets/Scenes/MainScene.unity
+    Projects:
+    - ProjectPath: ../client
+    BuilderScene: 
   Projects:
   - ProjectPath: ../client

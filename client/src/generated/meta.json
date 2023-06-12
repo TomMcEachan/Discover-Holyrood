@@ -5,7 +5,7 @@
   "license": null,
   "useRapier": true,
   "needleEditor": null,
-  "sceneName": "AR Scene",
+  "sceneName": "Main Scene",
   "meta": null,
   "absolutePath": "https://localhost:3000",
   "deployOnly": false

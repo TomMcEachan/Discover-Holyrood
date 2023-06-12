@@ -17,5 +17,6 @@ MonoBehaviour:
   debugMode: 0
   generateReport: 0
   allowRunningProjectFixes: 1
-  npmSearchPathDirectories: []
+  npmSearchPathDirectories:
+  - /Users/tom/.nvm/versions/node/v18.13.0/bin
   useHotReload: 1

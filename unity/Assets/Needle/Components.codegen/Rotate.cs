@@ -7,7 +7,9 @@ namespace Needle.Typescript.GeneratedComponents
 {
 	public partial class Rotate : UnityEngine.MonoBehaviour
 	{
-		public Needle.Engine.Components.SceneSwitcher @Switcher = new Needle.Engine.Components.SceneSwitcher();
+		public float @speed = 1f;
+		public void start(){}
+		public void update(){}
 	}
 }
 
