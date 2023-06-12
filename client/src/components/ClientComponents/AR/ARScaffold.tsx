@@ -8,13 +8,16 @@ const NeedleEngine = dynamic<NeedleEngineProps>(
     { ssr: false },
 );
 
-export const ARScaffold = () => {
+type Props = {
+    src: string;
+};
+
+export const ARCanvas = ({ src }: Props) => {
     return (
         <div>
             <NeedleEngine
                 loading-style="light"
                 keep-alive
-                className=""
                 addEventListener={(event: any) => {}}
                 src={"/"}
             ></NeedleEngine>
