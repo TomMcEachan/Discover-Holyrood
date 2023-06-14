@@ -1,12 +1,12 @@
 {
-  "gzip": false,
+  "gzip": true,
   "allowHotReload": true,
   "generator": "Needle Engine for Unity 3.6.5",
   "license": null,
   "useRapier": true,
   "needleEditor": null,
-  "sceneName": "Main Scene",
+  "sceneName": "Test",
   "meta": null,
-  "absolutePath": "https://localhost:3000",
+  "absolutePath": null,
   "deployOnly": false
 }
