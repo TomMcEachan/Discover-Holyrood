@@ -13,11 +13,11 @@ type Props = {
 
 export const ARCanvas = ({ src }: Props) => {
     return (
-        <div>
+        <div className="w-full h-[48rem]">
             <NeedleEngine
-                loading-style="light"
-                addEventListener={(event: any) => {}}
+                loading-style="dark"
                 src={src}
+                style={{ width: "100%", height: "100%" }}
             />
         </div>
     );

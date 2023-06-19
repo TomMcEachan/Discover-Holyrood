@@ -25,5 +25,9 @@ MonoBehaviour:
     Projects:
     - ProjectPath: ../client
     BuilderScene: 
+  - Path: Assets/Scenes/Sandbox.unity
+    Projects:
+    - ProjectPath: ../client
+    BuilderScene: 
   Projects:
   - ProjectPath: ../client

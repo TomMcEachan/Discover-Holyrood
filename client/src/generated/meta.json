@@ -7,6 +7,6 @@
   "needleEditor": null,
   "sceneName": "Test",
   "meta": null,
-  "absolutePath": null,
+  "absolutePath": "https://localhost:3000",
   "deployOnly": false
 }
