@@ -11,6 +11,7 @@ import {
     getSuggestedArticles,
     getAllArticles,
 } from "@/utils/fetching/DataFetching";
+import { ARCanvas } from "@/components/ClientComponents/AR/ARCanvas";
 
 interface Props {
     params: {
@@ -75,6 +76,7 @@ export default async function ArticlePage({ params }: Props) {
                             ...components,
                         }}
                     />
+                    <ARCanvas src="/assets/sandbox.glb" />
                 </Suspense>
             </article>
             <div className="divider" />

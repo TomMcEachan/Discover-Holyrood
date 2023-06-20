@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   compilerDirectory: ../client/node_modules/@needle-tools/needle-component-compiler/src
-  Debug: 0
+  Debug: 1
 --- !u!114 &1403630620
 MonoBehaviour:
   m_ObjectHideFlags: 0

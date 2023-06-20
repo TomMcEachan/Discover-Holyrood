@@ -1,11 +1,11 @@
 {
-  "gzip": true,
+  "generator": "Needle Engine for Unity 3.6.11",
   "allowHotReload": true,
-  "generator": "Needle Engine for Unity 3.6.5",
   "license": null,
+  "gzip": true,
   "useRapier": true,
   "needleEditor": null,
-  "sceneName": "Test",
+  "sceneName": "Sandbox",
   "meta": null,
   "absolutePath": "https://localhost:3000",
   "deployOnly": false
