@@ -27,26 +27,28 @@
 
 Route (app)                                Size     First Load JS
 ┌ ○ /                                      1.62 kB        79.8 kB
-├ ○ /ar-tour                               1.49 kB        79.7 kB
+├ ○ /ar-tour                               1.52 kB        79.7 kB
+├ λ /ar-tour/[slug]                        1.52 kB        79.7 kB
 ├ ○ /learn                                 4.28 kB         139 kB
-├ ● /learn/[slug]                          1.78 kB        85.7 kB
-├ ○ /opening-times                         151 B          78.4 kB
+├ ● /learn/[slug]                          2.54 kB        86.4 kB
+├ ○ /opening-times                         150 B          78.4 kB
 ├ ○ /settings                              151 B          78.4 kB
-└ ○ /vr                                    150 B          78.4 kB
+└ ○ /vr                                    152 B          78.4 kB
 + First Load JS shared by all              78.2 kB
   ├ chunks/6488-c9e1d176f86d6a25.js        25 kB
   ├ chunks/bce60fc1-db641bc0fef268be.js    50.5 kB
   ├ chunks/main-app-49a7b0e04124e804.js    218 B
-  └ chunks/webpack-0da1ee15b855c5d9.js     2.48 kB
+  └ chunks/webpack-e630fd27c3081ac5.js     2.48 kB
 
 Route (pages)                              Size     First Load JS
 ─ ○ /404                                   184 B          77.9 kB
 + First Load JS shared by all              77.7 kB
   ├ chunks/framework-87af13b944489a01.js   45.1 kB
-  ├ chunks/main-0c03d701928eb1ac.js        30 kB
+  ├ chunks/main-42ec83763f09e573.js        30 kB
   ├ chunks/pages/_app-ed2c3d0606c6e9b2.js  200 B
-  └ chunks/webpack-0da1ee15b855c5d9.js     2.48 kB
+  └ chunks/webpack-e630fd27c3081ac5.js     2.48 kB
 
+λ  (Server)  server-side renders at runtime (uses getInitialProps or getServerSideProps)
 ○  (Static)  automatically rendered as static HTML (uses no initial props)
 ●  (SSG)     automatically generated as static HTML + JSON (uses getStaticProps)
 

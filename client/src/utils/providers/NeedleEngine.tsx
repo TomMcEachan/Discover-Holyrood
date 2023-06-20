@@ -35,7 +35,14 @@ export default function NeedleEngine({ ...props }): JSX.Element {
     return (
         <>
             {!isServer() && (
-                <needle-engine src={src} {...props}></needle-engine>
+                <needle-engine src={src} {...props}>
+                    <div
+                        className="desktop ar"
+                        style={{ pointerEvents: "none" }}
+                    >
+                        <h2>HELLO</h2>
+                    </div>
+                </needle-engine>
             )}
         </>
     );
