@@ -11,7 +11,7 @@ defaults:
       working-directory: ./apps/cms
 
 jobs:
-  build:
+  Build-Push:
     runs-on: ubuntu-latest
     environment: production
     defaults:
@@ -33,8 +33,10 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: discoverholyroodregistry.azurecr.io/discoverholyroodcms:${{ github.sha }} 
+        tags: discoverholyroodregistry.azurecr.io/discoverholyroodcms:${{ github.sha }}
         file: ./apps/cms/Dockerfile.prod
+        no-cache: true
+    
         
         
    
