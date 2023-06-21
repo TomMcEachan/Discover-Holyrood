@@ -1,0 +1,39 @@
+name: Build and Push CMS to Azure Registry
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+defaults:
+    run: 
+      working-directory: ./apps/cms
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        shell: bash
+    steps:
+    
+    - name: Checkout Repo
+      uses: actions/checkout@v2
+      
+    - name: Docker Login
+      uses: azure/docker-login@v1
+      with:
+          login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+    
+    - name: Build CMS Image and Push to ACR
+      uses: docker/build-push-action@v2
+      with:
+        push: true
+        file: ./apps/cms/Dockerfile.prod
+        
+        
+   
