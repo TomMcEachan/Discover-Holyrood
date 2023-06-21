@@ -100,3 +100,6 @@ Thumbs.db.meta
 
 # VS Code
 *.vscode
+
+.nx/installation
+.nx/cache

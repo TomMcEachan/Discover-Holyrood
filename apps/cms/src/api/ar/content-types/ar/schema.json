@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ars",
+  "info": {
+    "singularName": "ar",
+    "pluralName": "ars",
+    "displayName": "AR",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "ar"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::tag.tag"
+    },
+    "content_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::content-type.content-type"
+    }
+  }
+}

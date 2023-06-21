@@ -1,0 +1,12 @@
+{
+  "name": "@discoverholyrood/root",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+	  "lerna": "^7.0.2",
+	  "@needle-tools/helper": "^0.7.4"
+	}
+}
