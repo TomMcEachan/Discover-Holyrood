@@ -11,8 +11,7 @@ jobs:
         steps:
         # checkout the repo
         - name: 'Checkout GitHub Action'
-          working-directory: ./apps/cms
-        - uses: actions/checkout@v1
+          uses: actions/checkout@v1
         
         # login to Azure CLI 
         - name: 'Login via Azure CLI'
@@ -27,8 +26,8 @@ jobs:
             username: ${{ secrets.REGISTRY_USERNAME }}
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run: |
-            docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:${{ github.sha }}
-            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/sampleapp:${{ github.sha }}
+            docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/discoverholyroodcms:${{ github.sha }}
+            docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/discoverholyroodcms:${{ github.sha }}
 
         - name: 'Deploy to Azure Container Instances'
           uses: 'azure/aci-deploy@v1'
@@ -39,5 +38,5 @@ jobs:
             registry-login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
             registry-username: ${{ secrets.REGISTRY_USERNAME }}
             registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-            name: discoverHolyroodCMS
+            name: discoverholyroodcms
             location: 'uk west'
