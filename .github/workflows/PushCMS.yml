@@ -33,8 +33,9 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: discoverholyroodregistry.azurecr.io/discoverholyroodcms:${{ github.sha }} no-cache
+        tags: discoverholyroodregistry.azurecr.io/discoverholyroodcms:${{ github.sha }}
         file: ./apps/cms/Dockerfile.prod
+        no-cache: true
     
         
         
