@@ -23,11 +23,12 @@ MonoBehaviour:
     BuilderScene: 
   - Path: Assets/Scenes/MainScene.unity
     Projects:
-    - ProjectPath: ../client
+    - ProjectPath: ../../../DiscoverHolyroodFrontEnd
     BuilderScene: 
   - Path: Assets/Scenes/Sandbox.unity
     Projects:
-    - ProjectPath: ../client
+    - ProjectPath: ../../../DiscoverHolyroodFrontEnd
     BuilderScene: 
   Projects:
   - ProjectPath: ../client
+  - ProjectPath: ../../../DiscoverHolyroodFrontEnd

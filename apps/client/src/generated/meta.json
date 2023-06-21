@@ -5,8 +5,8 @@
   "gzip": true,
   "useRapier": true,
   "needleEditor": null,
-  "sceneName": "Main Scene",
+  "sceneName": "Sandbox",
   "meta": null,
-  "absolutePath": null,
+  "absolutePath": "https://localhost:3000",
   "deployOnly": false
 }
