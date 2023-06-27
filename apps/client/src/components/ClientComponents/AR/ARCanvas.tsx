@@ -17,7 +17,7 @@ type Props = {
 
 export const ARCanvas = ({ src }: Props) => {
     return (
-        <div className="w-full h-[48rem]">
+        <div className="md:w-[100%] w-[85%] h-[50vh] md:h-[60rem] border-primary border-8 flex items-center mx-auto">
             <NeedleEngine
                 loading-style="dark"
                 src={src}
