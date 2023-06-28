@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addTags = void 0;
-const FetchCategories_1 = require("../fetching/FetchCategories");
+const FetchTags_1 = require("../fetching/FetchTags");
 const addTags = async (client, indexName, dataTypeName) => {
     try {
         console.log(`Adding ${dataTypeName} to ${indexName} index...`);
         //Fetch all tags from CMS
-        const tags = await (0, FetchCategories_1.fetchAllCategories)(client);
+        const tags = await (0, FetchTags_1.fetchAllTags)(client);
         // Map tags to search index format
         console.log(`Mapping ${indexName} data to search index format...`);
-        const searchTag = await tags.map((tag) => {
+        const searchTags = await tags.map((tag) => {
             return {
                 id: tag.id,
                 name: tag.attributes.name,
@@ -17,7 +17,7 @@ const addTags = async (client, indexName, dataTypeName) => {
             };
         });
         // Add tags to search index
-        await client.index(`${indexName}`).addDocuments(searchTag);
+        await client.index(`${indexName}`).addDocuments(searchTags);
         console.log(`${dataTypeName} added to ${indexName} index!`);
     }
     catch (err) {

@@ -36,10 +36,6 @@ const main = async () => {
     await client
         .index("arscenes")
         .updateFilterableAttributes(["categories", "tags", "content-type"]);
-    // Add documents to indexes
-    await addDocuments(client);
-};
-const addDocuments = async (client) => {
     await (0, Article_1.addArticles)(client, "articles", "Articles");
     console.log("--------------------");
     await (0, Categories_1.addCategories)(client, "categories", "Categories");

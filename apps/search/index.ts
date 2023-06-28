@@ -40,18 +40,14 @@ const main = async () => {
     .index("arscenes")
     .updateFilterableAttributes(["categories", "tags", "content-type"]);
 
-  // Add documents to indexes
-  await addDocuments(client);
-};
-
-const addDocuments = async (client: any) => {
+  await addAll(client);
+  console.log("--------------------");
   await addArticles(client, "articles", "Articles");
   console.log("--------------------");
   await addCategories(client, "categories", "Categories");
   console.log("--------------------");
   await addTags(client, "tags", "Tags");
   console.log("--------------------");
-  await addAll(client);
 };
 
 // Run main function

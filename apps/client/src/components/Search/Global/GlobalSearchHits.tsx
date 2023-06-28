@@ -36,7 +36,7 @@ export const GlobalSearchHits = () => {
 
     if (hits.length === 0) {
         return (
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center mx-auto">
                 <CgSmileNone size={50} />
                 <h1 className="text-2xl text-sppurple-light font-bold">
                     No Results Found

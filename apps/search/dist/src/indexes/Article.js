@@ -23,6 +23,8 @@ const addArticles = async (client, indexName, dataTypeName) => {
                 title: article.attributes.title,
                 content: article.attributes.content,
                 categories: articleCategories,
+                content_type: article.attributes.content_type,
+                link: article.attributes.link,
                 tags: articleTags,
                 image: article.attributes.image.data.attributes.formats.large.url,
             };
