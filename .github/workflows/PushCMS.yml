@@ -38,9 +38,6 @@ jobs:
       - name: Deploy CMS to Azure Web App
         uses: azure/webapps-deploy@v2
         with:
-          resource-group: $${{ secrets.RESOURCE_GROUP }}
+          resource-group-name: $${{ secrets.RESOURCE_GROUP }}
           app-name: "discover-holyrood-cms"
           images: ${{ secrets.REGISTRY_LOGIN_SERVER }}/discoverholyroodcms:${{ github.sha }}
-          login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
