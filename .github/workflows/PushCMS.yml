@@ -10,16 +10,17 @@ defaults:
     working-directory: ./apps/cms
 
 jobs:
-  Build-Push-and-Deploy:
+  Build-and-Push-CMS-Container:
     runs-on: ubuntu-latest
     environment: production
     defaults:
       run:
         shell: bash
     steps:
+      # Checkout Repo
       - name: Checkout Repo
         uses: actions/checkout@v2
-
+      # Login
       - name: Docker Login
         uses: azure/docker-login@v1
         with:
@@ -34,6 +35,20 @@ jobs:
           tags: discoverholyroodregistry.azurecr.io/discoverholyroodcms:${{ github.sha }}
           file: ./apps/cms/Dockerfile.prod
           no-cache: true
+  Build-and-Deploy-CMS-Container:
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        shell: bash
+    steps:
+      # Login
+      - name: Docker Login
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
       # Deploy
       - name: Deploy CMS to Azure Web App
         uses: azure/webapps-deploy@v2
@@ -41,3 +56,7 @@ jobs:
           resource-group-name: $${{ secrets.RESOURCE_GROUP }}
           app-name: "discover-holyrood-cms"
           images: ${{ secrets.REGISTRY_LOGIN_SERVER }}/discoverholyroodcms:${{ github.sha }}
+      # Logout
+      - name: Azure logout
+        run: |
+          az logout
