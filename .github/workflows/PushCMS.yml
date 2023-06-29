@@ -1,5 +1,4 @@
-name: Build and Push CMS to Azure Registry
-
+name: Build, Push & Deploy CMS
 on:
   push:
     branches: ["main"]
@@ -11,7 +10,7 @@ defaults:
     working-directory: ./apps/cms
 
 jobs:
-  Build-Push:
+  Build-Push-and-Deploy:
     runs-on: ubuntu-latest
     environment: production
     defaults:
@@ -35,3 +34,13 @@ jobs:
           tags: discoverholyroodregistry.azurecr.io/discoverholyroodcms:${{ github.sha }}
           file: ./apps/cms/Dockerfile.prod
           no-cache: true
+      # Deploy
+      - name: Deploy CMS to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          resource-group: $${{ secrets.RESOURCE_GROUP }}
+          app-name: "discover-holyrood-cms"
+          images: ${{ secrets.REGISTRY_LOGIN_SERVER }}/discoverholyroodcms:${{ github.sha }}
+          login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
