@@ -1,6 +1,5 @@
-version: '3'
+version: "3"
 services:
-
   # Content Managament System
   discover_holyroodCMS:
     container_name: discover_holyrood_CMS
@@ -29,7 +28,7 @@ services:
       - ./.env:/opt/app/.env
       - ./public/uploads:/opt/app/public/uploads
     ports:
-      - '1337:1337'
+      - "1337:1337"
     networks:
       - discover_holyrood
 
@@ -39,5 +38,3 @@ networks:
   discover_holyrood:
     name: discover_holyrood
     driver: bridge
-
-
