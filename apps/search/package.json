@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "index": "ts-node --esm index.ts",
-    "typescript": "tsc"
+    "index:ts": "ts-node --esm index.ts",
+    "typescript": "tsc",
+    "index": "tsc && node dist/index.js"
   },
   "keywords": [],
   "author": "Tom McEachan",

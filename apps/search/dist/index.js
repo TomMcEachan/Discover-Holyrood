@@ -36,13 +36,14 @@ const main = async () => {
     await client
         .index("arscenes")
         .updateFilterableAttributes(["categories", "tags", "content-type"]);
+    await (0, All_1.addAll)(client);
+    console.log("--------------------");
     await (0, Article_1.addArticles)(client, "articles", "Articles");
     console.log("--------------------");
     await (0, Categories_1.addCategories)(client, "categories", "Categories");
     console.log("--------------------");
     await (0, Tags_1.addTags)(client, "tags", "Tags");
     console.log("--------------------");
-    await (0, All_1.addAll)(client);
 };
 // Run main function
 main();
