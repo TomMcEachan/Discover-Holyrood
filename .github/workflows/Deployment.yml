@@ -2,6 +2,17 @@ name: Build, Push & Deploy CMS & Search
 on:
   push:
     branches: ["deploy"]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
 defaults:
   run:
     working-directory: ./apps/cms
