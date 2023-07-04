@@ -1,5 +1,5 @@
-import axiosInstance from "../utils/axios";
-import { ICategory } from "../data/datatypes";
+import axiosInstance from "../utils/Axios";
+import { ICategory } from "../data/Datatypes";
 
 export const fetchAllCategories = async (client: any) => {
   let categories: ICategory[] = [];

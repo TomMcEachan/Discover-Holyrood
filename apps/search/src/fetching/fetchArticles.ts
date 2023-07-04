@@ -1,5 +1,5 @@
-import axiosInstance from "../utils/axios";
-import { IArticle } from "../data/datatypes";
+import axiosInstance from "../utils/Axios";
+import { IArticle } from "../data/Datatypes";
 
 export const fetchAllArticles = async (client: any) => {
   let articles: IArticle[] = [];

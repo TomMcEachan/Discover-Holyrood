@@ -1,5 +1,5 @@
-import axiosInstance from "../utils/axios";
-import { ITag } from "../data/datatypes";
+import axiosInstance from "../utils/Axios";
+import { ITag } from "../data/Datatypes";
 
 export const fetchAllTags = async (client: any) => {
   let tags: ITag[] = [];

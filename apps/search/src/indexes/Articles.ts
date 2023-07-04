@@ -1,5 +1,5 @@
 import { fetchAllArticles } from "../fetching/FetchArticles";
-import { IArticle, ICategory, ITag } from "../data/datatypes";
+import { IArticle, ICategory, ITag } from "../data/Datatypes";
 
 export const addArticles = async (
   client: any,

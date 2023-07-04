@@ -1,5 +1,5 @@
 import { fetchAllTags } from "../fetching/FetchTags";
-import { ITag } from "../data/datatypes";
+import { ITag } from "../data/Datatypes";
 
 export const addTags = async (
   client: any,
