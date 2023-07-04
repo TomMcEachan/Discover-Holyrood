@@ -1,0 +1,7 @@
+{
+  "baseUrl": "./apps/client/public/assets",
+  "buildDirectory": "./apps/client/dist",
+  "assetsDirectory": "./apps/client/public/assets",
+  "scriptsDirectory": "./apps/client/src/scripts",
+  "codegenDirectory": "./apps/client/src/generated"
+}

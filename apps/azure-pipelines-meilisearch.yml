@@ -1,0 +1,41 @@
+resources:
+  - repo: self
+
+trigger:
+  - deploy
+
+stages:
+  - stage: DeploySearchToAppContainer
+    displayName: Deploy Search Container to App Service
+    jobs:
+      - job: DeploySearch
+        displayName: Deploy Search to App Container
+        steps:
+          - task: AzureWebAppContainer@1
+            displayName: Deploy Meilisearch to App Container
+            inputs:
+              azureSubscription: "Discover Holyrood  - Service Connection"
+              appName: "discoverholyroodmeilisearch"
+              containers: "getmeili/meilisearch:latest"
+      - job: SearchData
+        dependsOn: DeploySearch
+        displayName: Add Data From CMS to Indexes
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSource: "spec"
+              versionSpec: "18.x"
+            displayName: "Install Node.js"
+          - script: |
+              cd search
+              npm install
+            displayName: "Install Dependencies"
+          - script: |
+              cd search
+              npm run index
+            env:
+              SEARCH_HOST: $(SEARCH_HOST)
+              SEARCH_KEY: $(SEARCH_KEY)
+            displayName: "Index Data"
