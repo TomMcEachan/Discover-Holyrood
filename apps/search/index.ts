@@ -1,10 +1,10 @@
 import { MeiliSearch } from "meilisearch";
 import dotenv from "dotenv";
 
-import { addArticles } from "./src/indexes/Article";
 import { addAll } from "./src/indexes/All";
 import { addCategories } from "./src/indexes/Categories";
 import { addTags } from "./src/indexes/Tags";
+import { addArticles } from "./src/indexes/Articles";
 
 // Load environment variables from .env file
 dotenv.config();
