@@ -5,10 +5,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const meilisearch_1 = require("meilisearch");
 const dotenv_1 = __importDefault(require("dotenv"));
-const Article_1 = require("./src/indexes/Article");
 const All_1 = require("./src/indexes/All");
 const Categories_1 = require("./src/indexes/Categories");
 const Tags_1 = require("./src/indexes/Tags");
+const Articles_1 = require("./src/indexes/Articles");
 // Load environment variables from .env file
 dotenv_1.default.config();
 // Environment variables
@@ -38,7 +38,7 @@ const main = async () => {
         .updateFilterableAttributes(["categories", "tags", "content-type"]);
     await (0, All_1.addAll)(client);
     console.log("--------------------");
-    await (0, Article_1.addArticles)(client, "articles", "Articles");
+    await (0, Articles_1.addArticles)(client, "articles", "Articles");
     console.log("--------------------");
     await (0, Categories_1.addCategories)(client, "categories", "Categories");
     console.log("--------------------");
