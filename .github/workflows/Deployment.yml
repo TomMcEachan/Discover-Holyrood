@@ -112,4 +112,4 @@ jobs:
         run: cd apps/search && npm install
       # Deploy Search Index
       - name: Deploy Search Index
-        run: cd apps/search && npm run index
+        run: cd apps/search && npm run index:ts
