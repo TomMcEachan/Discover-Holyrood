@@ -2,7 +2,9 @@
   "name": "@discoverholyrood/root",
   "private": true,
   "workspaces": [
-    "apps/*",
+    "apps/search",
+    "apps/storybook",
+    "apps/cms",
     "packages/*"
   ],
   "dependencies": {},

@@ -39,9 +39,7 @@ export default function NeedleEngine({ ...props }): JSX.Element {
                     <div
                         className="desktop ar"
                         style={{ pointerEvents: "none" }}
-                    >
-                        <h2>HELLO</h2>
-                    </div>
+                    ></div>
                 </needle-engine>
             )}
         </>
