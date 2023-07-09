@@ -91,7 +91,7 @@ export default async function ArticlePage({ params }: Props) {
                                 key={article.id}
                                 title={article.attributes.title}
                                 subtitle={article.attributes.subtitle}
-                                slug={`learn/${article.attributes.link}`}
+                                slug={`${article.attributes.link}`}
                             />
                         );
                     })}
