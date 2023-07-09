@@ -2,7 +2,7 @@
 import { IoClose } from "react-icons/io5";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
-import { ColorToggle } from "@/components/ClientComponents/Sidebar/Toggle/ColorToggle";
+import { ColorToggle } from "@/components/ClientComponents/Settings/ColorToggle/ColorToggle";
 import { useContext } from "react";
 import { GlobalStateContext } from "@/utils/providers/GlobalState";
 import { useSelector } from "@xstate/react";

@@ -1,25 +1,30 @@
+"use client";
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
+import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
+import { SettingsToggle } from "@/components/ClientComponents/Settings/SettingsToggles/SettingsToggles";
+import { GlobalStateContext, changeTheme } from "@/utils/providers/GlobalState";
+import { useContext } from "react";
+import { useSelector } from "@xstate/react";
 
 export default function Settings(): JSX.Element {
+    const global = useContext(GlobalStateContext);
+
     return (
         <ContentWrapper>
-            <div
-                id="contentContainer"
-                className="grid grid-cols-3 grid-rows-3 place-items-center gap-0"
-            >
-                <div className="col-span-3">
-                    <h1 className="text-4xl font-bold">Settings</h1>
-                </div>
-                <div className="col-span-3">
-                    <h2 className="text-lg font-bold">
-                        To the Scottish Parliament
-                    </h2>
-                </div>
-                <div className="col-span-3">
-                    <h3 className="text-2xl font-bold">Visitor App</h3>
-                </div>
-            </div>
-            <div className="grid grid-cols-1 grid-rows-1 place-items-center"></div>
+            <PageTitle
+                title="Settings"
+                subtitle="Change your application settings here"
+            />
+            <div className="divider" />
+            <h3 className="text-2xl font-bold pb-1">Theme</h3>
+            <SettingsToggle
+                label="Dark Mode"
+                checked={false}
+                onChange={() => {
+                    global.colourModeMachine.send("TOGGLE");
+                }}
+            />
+            <h3 className="text-2xl font-bold pb-1">Cookies</h3>
         </ContentWrapper>
     );
 }

@@ -13,7 +13,7 @@ export const PageTitle = ({ title, subtitle }: Props) => {
                 {title}
             </h1>
             <h2
-                className="mt-1 text-lg md:text-xl text-base-content"
+                className="mt-2 text-lg md:text-xl text-base-content"
                 id="page-subtitle"
             >
                 {subtitle}
