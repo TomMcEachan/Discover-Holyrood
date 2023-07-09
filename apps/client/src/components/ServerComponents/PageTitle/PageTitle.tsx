@@ -1,6 +1,6 @@
 type Props = {
     title: string;
-    subtitle: string;
+    subtitle?: string;
 };
 
 export const PageTitle = ({ title, subtitle }: Props) => {

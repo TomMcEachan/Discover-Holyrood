@@ -1,65 +1,145 @@
+import { IoClose } from "react-icons/io5";
+
 type Props = {
     name: string;
     onClick?: () => void;
+    refined?: boolean;
 };
 
-export const CategoryBadge = ({ name, onClick }: Props) => {
+export const CategoryBadge = ({ name, onClick, refined }: Props) => {
     switch (name) {
         case "MSPs":
-            return (
-                <button className="py-1 pr-1 mx-1" onClick={onClick}>
-                    <div className="rounded-md bg-spgreen p-1 px-3 font-bold text-white text-xs">
-                        {name}
-                    </div>
-                </button>
-            );
+            if (refined) {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-white text-spgreen p-1 px-3 font-bold text-xs border-spgreen border-2">
+                            {name}
+                            <IoClose className="inline ml-1" />
+                        </div>
+                    </button>
+                );
+            } else {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-spgreen p-1 px-3 font-bold text-white text-xs border-2 border-spgreen">
+                            {name}
+                        </div>
+                    </button>
+                );
+            }
         case "Building":
-            return (
-                <button className="py-1 pr-1 mx-1" onClick={onClick}>
-                    <div className="rounded-md bg-spred p-1 px-3 font-bold text-white text-xs">
-                        {name}
-                    </div>
-                </button>
-            );
+            if (refined) {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-white text-spred p-1 px-3 font-bold text-xs border-spred border-2">
+                            {name}
+                            <IoClose className="inline ml-1" />
+                        </div>
+                    </button>
+                );
+            } else {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-spred p-1 px-3 font-bold text-white text-xs border-2 border-spred">
+                            {name}
+                        </div>
+                    </button>
+                );
+            }
         case "Powers":
-            return (
-                <button className="py-1 pr-1 mx-1" onClick={onClick}>
-                    <div className="rounded-md bg-spblue-light p-1 px-3 font-bold text-white text-xs">
-                        {name}
-                    </div>
-                </button>
-            );
+            if (refined) {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-white text-spblue-light p-1 px-3 font-bold text-xs border-spblue-light border-2">
+                            {name}
+                            <IoClose className="inline ml-1" />
+                        </div>
+                    </button>
+                );
+            } else {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-spblue-light p-1 px-3 font-bold text-white text-xs border-2 border-spblue-light">
+                            {name}
+                        </div>
+                    </button>
+                );
+            }
         case "Laws":
-            return (
-                <button className="py-1 pr-1 mx-1" onClick={onClick}>
-                    <div className="rounded-md bg-sppurple-light p-1 px-3 font-bold text-white text-xs">
-                        {name}
-                    </div>
-                </button>
-            );
+            if (refined) {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-white text-sppurple-light p-1 px-3 font-bold text-xs border-sppurple-light border-2">
+                            {name}
+                            <IoClose className="inline ml-1" />
+                        </div>
+                    </button>
+                );
+            } else {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-sppurple-light p-1 px-3 font-bold text-white text-xs border-2 border-sppurple-light">
+                            {name}
+                        </div>
+                    </button>
+                );
+            }
         case "History":
-            return (
-                <button className="py-1 pr-1" onClick={onClick}>
-                    <div className="rounded-md bg-spmustard p-1 px-3 font-bold text-white text-xs">
-                        {name}
-                    </div>
-                </button>
-            );
+            if (refined) {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-white text-spmustard p-1 px-3 font-bold text-xs border-spmustard border-2">
+                            {name}
+                            <IoClose className="inline ml-1" />
+                        </div>
+                    </button>
+                );
+            } else {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-spmustard p-1 px-3 font-bold text-white text-xs border-2 border-spmustard">
+                            {name}
+                        </div>
+                    </button>
+                );
+            }
         case "Chamber":
-            return (
-                <button className="py-1 pr-1 mx-1" onClick={onClick}>
-                    <div className="rounded-md bg-spmagenta-light p-1 px-3 font-bold text-white text-xs">
-                        {name}
-                    </div>
-                </button>
-            );
+            if (refined) {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-white text-spmagenta-light p-1 px-3 font-bold text-xs border-spmagenta-light border-2">
+                            {name}
+                            <IoClose className="inline ml-1" />
+                        </div>
+                    </button>
+                );
+            } else {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-spmagenta-light p-1 px-3 font-bold text-white text-xs border-2 border-spmagenta-light">
+                            {name}
+                        </div>
+                    </button>
+                );
+            }
         default:
-            return (
-                <button className="py-1 pr-1 mx-1" onClick={onClick}>
-                    <div className="rounded-md bg-sppurple-light p-1 px-3 font-bold text-white text-xs">
-                        {name}
-                    </div>
-                </button>
-            );
+            if (refined) {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-white text-sppurple-light p-1 px-3 font-bold text-xs border-sppurple-light border-2">
+                            {name}
+                            <IoClose className="inline ml-1" />
+                        </div>
+                    </button>
+                );
+            } else {
+                return (
+                    <button className="py-1 pr-1 mx-1" onClick={onClick}>
+                        <div className="rounded-md bg-sppurple-light p-1 px-3 font-bold text-white text-xs border-2 border-sppurple-light">
+                            {name}
+                        </div>
+                    </button>
+                );
+            }
     }
 };

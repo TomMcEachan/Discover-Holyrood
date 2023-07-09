@@ -13,7 +13,7 @@ export default function Settings(): JSX.Element {
         <ContentWrapper>
             <PageTitle
                 title="Settings"
-                subtitle="Change your application settings here"
+                subtitle="Change the application settings"
             />
             <div className="divider" />
             <h3 className="text-2xl font-bold pb-1">Theme</h3>

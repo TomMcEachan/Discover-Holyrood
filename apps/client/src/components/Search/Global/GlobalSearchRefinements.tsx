@@ -3,7 +3,7 @@ import {
     useRefinementList,
     type RefinementListProps,
 } from "react-instantsearch-hooks-web";
-import { GlobalFacetBadge } from "@/components/ServerComponents/Buttons/GlobalFacetBadge";
+import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge";
 
 export const GlobalSearchRefinements = (props: RefinementListProps) => {
     const { items, refine } = useRefinementList(props);
@@ -14,7 +14,7 @@ export const GlobalSearchRefinements = (props: RefinementListProps) => {
                 {items.map((item: any) =>
                     item.isRefined ? (
                         <div key={item.label}>
-                            <GlobalFacetBadge
+                            <CategoryBadge
                                 name={item.label}
                                 key={item.label}
                                 onClick={() => refine(item.value)}
@@ -23,7 +23,7 @@ export const GlobalSearchRefinements = (props: RefinementListProps) => {
                         </div>
                     ) : (
                         <div key={item.label}>
-                            <GlobalFacetBadge
+                            <CategoryBadge
                                 name={item.label}
                                 key={item.label}
                                 onClick={() => refine(item.value)}

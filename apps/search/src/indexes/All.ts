@@ -29,7 +29,7 @@ export const addAll = async (client: any) => {
         categories: articleCategories,
         content_type: article.attributes.content_type,
         tags: articleTags,
-        image: article.attributes.image.data.attributes.formats.large.url,
+        image: article.attributes.image.data.attributes.formats.medium.url,
         link: article.attributes.link,
       };
     });
