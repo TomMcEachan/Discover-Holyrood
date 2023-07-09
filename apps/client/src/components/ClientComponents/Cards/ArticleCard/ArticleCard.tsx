@@ -1,6 +1,6 @@
 "use client";
-import { CldImage } from "next-cloudinary";
 import Link from "next/link";
+import Image from "next/image";
 
 interface Props {
     title: string;
@@ -23,24 +23,15 @@ export const ArticleCard = ({
                     className="h-600 col-span-2 rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
                     id="search-result"
                 >
-                    <div className="relative min-w-full rounded-lg">
-                        <div
-                            className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spgreen opacity-100
-                        "
-                        ></div>
-                        <CldImage
+                    <div className="relative min-w-full rounded-lg h-600">
+                        <div className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spgreen opacity-100"></div>
+                        <Image
                             src={image}
                             alt={title}
                             width={1200}
                             height={1200}
+                            className="brightness-25 h-[19rem] w-full rounded-t-lg"
                             loading="lazy"
-                            crop="thumb"
-                            gravity="auto"
-                            className="brightness-25 h-fit w-full rounded-t-lg"
-                            sizes="(min-width: 480px ) 50vw,
-                                   (min-width: 728px) 33vw,
-                                   (min-width: 976px) 25vw,
-                                   100vw"
                         />
                         <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spgreen  rounded-md w-full">
                             <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
@@ -63,23 +54,14 @@ export const ArticleCard = ({
                     id="search-result"
                 >
                     <div className="relative min-w-full rounded-lg">
-                        <div
-                            className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spmagenta-light opacity-100
-                        "
-                        ></div>
-                        <CldImage
+                        <div className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spmagenta-light opacity-100"></div>
+                        <Image
                             src={image}
                             alt={title}
                             width={1200}
                             height={1200}
-                            loading="lazy"
-                            crop="thumb"
-                            gravity="auto"
-                            className="brightness-25 h-fit w-full rounded-t-lg"
-                            sizes="(min-width: 480px ) 50vw,
-                                   (min-width: 728px) 33vw,
-                                   (min-width: 976px) 25vw,
-                                   100vw"
+                            className="brightness-25 h-[19rem] w-full rounded-t-lg"
+                            priority={true}
                         />
                         <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spmagenta-light rounded-md w-full">
                             <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
@@ -102,23 +84,14 @@ export const ArticleCard = ({
                     id="search-result"
                 >
                     <div className="relative min-w-full rounded-lg">
-                        <div
-                            className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spred opacity-100
-                    "
-                        ></div>
-                        <CldImage
+                        <div className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spred opacity-100"></div>
+                        <Image
                             src={image}
                             alt={title}
                             width={1200}
                             height={1200}
-                            loading="lazy"
-                            crop="thumb"
-                            gravity="auto"
-                            className="brightness-25 h-fit w-full rounded-t-lg"
-                            sizes="(min-width: 480px ) 50vw,
-                                   (min-width: 728px) 33vw,
-                                   (min-width: 976px) 25vw,
-                                   100vw"
+                            className="brightness-25 h-[19rem] w-full rounded-t-lg"
+                            priority={true}
                         />
                         <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spred rounded-md w-full">
                             <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
@@ -141,23 +114,14 @@ export const ArticleCard = ({
                     id="search-result"
                 >
                     <div className="relative min-w-full rounded-lg">
-                        <div
-                            className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spmustard opacity-100
-                    "
-                        ></div>
-                        <CldImage
+                        <div className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spmustard opacity-100"></div>
+                        <Image
                             src={image}
                             alt={title}
                             width={1200}
                             height={1200}
-                            loading="lazy"
-                            crop="thumb"
-                            gravity="auto"
-                            className="brightness-25 h-fit w-full rounded-t-lg"
-                            sizes="(min-width: 480px ) 50vw,
-                                    (min-width: 728px) 33vw,
-                                    (min-width: 976px) 25vw,
-                                    100vw"
+                            className="brightness-25 h-[19rem] w-full rounded-t-lg"
+                            priority={true}
                         />
                         <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spmustard rounded-md w-full">
                             <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
@@ -180,23 +144,14 @@ export const ArticleCard = ({
                     id="search-result"
                 >
                     <div className="relative min-w-full rounded-lg">
-                        <div
-                            className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-sppurple-light opacity-100
-                    "
-                        ></div>
-                        <CldImage
+                        <div className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-sppurple-light opacity-100"></div>
+                        <Image
                             src={image}
                             alt={title}
                             width={1200}
                             height={1200}
-                            loading="lazy"
-                            crop="thumb"
-                            gravity="auto"
-                            className="brightness-25 h-fit w-full rounded-t-lg"
-                            sizes="(min-width: 480px ) 50vw,
-                                    (min-width: 728px) 33vw,
-                                    (min-width: 976px) 25vw,
-                                    100vw"
+                            className="brightness-25 h-[19rem] w-full rounded-t-lg"
+                            priority={true}
                         />
                         <div className="absolute top-[35%] z-20 bg-gradient-to-r from-sppurple-light rounded-md w-full">
                             <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
@@ -219,23 +174,14 @@ export const ArticleCard = ({
                     id="search-result"
                 >
                     <div className="relative min-w-full rounded-lg">
-                        <div
-                            className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spblue-light opacity-100
-                    "
-                        ></div>
-                        <CldImage
+                        <div className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spblue-light opacity-100"></div>
+                        <Image
                             src={image}
                             alt={title}
                             width={1200}
                             height={1200}
-                            loading="lazy"
-                            crop="thumb"
-                            gravity="auto"
-                            className="brightness-5 h-fit w-full rounded-t-lg"
-                            sizes="(min-width: 480px ) 50vw,
-                                    (min-width: 728px) 33vw,
-                                    (min-width: 976px) 25vw,
-                                    100vw"
+                            className="brightness-25 h-[19rem] w-full rounded-t-lg"
+                            priority={true}
                         />
                         <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spblue-light rounded-md w-full">
                             <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">

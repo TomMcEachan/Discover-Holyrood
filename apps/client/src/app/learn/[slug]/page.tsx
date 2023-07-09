@@ -68,12 +68,15 @@ export default async function ArticlePage({ params }: Props) {
             </div>
             <article id="content" className="">
                 <Suspense fallback={<div>Loading...</div>}>
-                    <MDXRemote
-                        source={markdown}
-                        components={{
-                            ...components,
-                        }}
-                    />
+                    <>
+                        {/* @ts-expect-error Async Server Component */}
+                        <MDXRemote
+                            source={markdown}
+                            components={{
+                                ...components,
+                            }}
+                        />
+                    </>
                 </Suspense>
             </article>
             <div className="divider" />

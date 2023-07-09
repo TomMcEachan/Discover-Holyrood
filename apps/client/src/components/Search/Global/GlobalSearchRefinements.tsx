@@ -8,19 +8,27 @@ import { GlobalFacetBadge } from "@/components/ServerComponents/Buttons/GlobalFa
 export const GlobalSearchRefinements = (props: RefinementListProps) => {
     const { items, refine } = useRefinementList(props);
 
-    console.log(items);
     return (
         <div>
             <div className="flex flex-wrap" id="global-facet-container">
                 {items.map((item: any) =>
                     item.isRefined ? (
-                        <div key={item.label}></div>
+                        <div key={item.label}>
+                            <GlobalFacetBadge
+                                name={item.label}
+                                key={item.label}
+                                onClick={() => refine(item.value)}
+                                refined={true}
+                            />
+                        </div>
                     ) : (
-                        <GlobalFacetBadge
-                            name={item.label}
-                            key={item.label}
-                            onClick={() => refine(item.value)}
-                        />
+                        <div key={item.label}>
+                            <GlobalFacetBadge
+                                name={item.label}
+                                key={item.label}
+                                onClick={() => refine(item.value)}
+                            />
+                        </div>
                     ),
                 )}
             </div>

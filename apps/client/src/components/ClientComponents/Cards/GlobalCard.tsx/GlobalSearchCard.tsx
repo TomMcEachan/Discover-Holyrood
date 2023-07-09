@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CldImage } from "next-cloudinary";
+import Image from "next/image";
 
 type Props = {
     title: string;
@@ -25,16 +25,13 @@ export const GlobalSearchCard = ({
             <Link href={link} id="global-search-result">
                 <div className="relative w-full rounded-lg h-200 pb">
                     <div className="absolute inset-0 z-10 w-full rounded-t-lg bg-gradient-to-r from-spgreen opacity-100"></div>
-                    <CldImage
+                    <Image
                         src={image}
                         alt={title}
                         width={1200}
                         height={1200}
-                        loading="lazy"
-                        crop="thumb"
-                        gravity="auto"
-                        className="brightness-25 h-fit w-full rounded-t-lg"
-                        sizes="(min-width: 480px ) 50vw, (min-width: 728px) 33vw, (min-width: 976px) 25vw, 100vw"
+                        className="brightness-25 h-[19rem] w-full rounded-t-lg"
+                        priority={true}
                     />
                     <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spgreen  rounded-md w-full">
                         <h3 className="text-md md:text-lg lg:text-xl font-bold text-white px-6 py-2">
