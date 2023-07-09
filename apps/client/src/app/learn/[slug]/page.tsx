@@ -78,6 +78,7 @@ export default async function ArticlePage({ params }: Props) {
                         />
                     </>
                 </Suspense>
+                <h1>HELLO</h1>
             </article>
             <div className="divider" />
             <div id="suggested-articles">
