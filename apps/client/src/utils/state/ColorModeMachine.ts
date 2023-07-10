@@ -24,8 +24,6 @@ export const ColorModeMachine =
                         TOGGLE: {
                             target: "Dark",
                             actions: ["setDark"],
-                            cond: () =>
-                                localStorage.getItem("theme") === "Light",
                         },
                     },
                 },
@@ -34,8 +32,6 @@ export const ColorModeMachine =
                         TOGGLE: {
                             target: "Light",
                             actions: ["setLight"],
-                            cond: () =>
-                                localStorage.getItem("theme") === "Dark",
                         },
                     },
                 },
