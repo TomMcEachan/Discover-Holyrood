@@ -18,3 +18,12 @@ export interface ITag {
   name: string;
   description: string;
 }
+
+export interface IARScene {
+  id: string;
+  title: string;
+  categories: ICategory[];
+  link: string;
+  tags: ITag[];
+  image: string;
+}

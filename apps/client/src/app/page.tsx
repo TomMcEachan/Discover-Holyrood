@@ -1,34 +1,16 @@
-//Importing Font
-import { Inter } from "next/font/google";
-
-// Import Dynamic
-import dynamic from "next/dynamic";
-
 // Components Import
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
 import { VideoPlayer } from "@/components/ClientComponents/VideoPlayer/VideoPlayer";
-
-const inter = Inter({ subsets: ["latin"] });
+import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
 
 export default function Home(): JSX.Element {
     return (
         <ContentWrapper>
-            <div
-                id="contentContainer"
-                className="grid grid-cols-3 grid-rows-3 place-items-center gap-0"
-            >
-                <div className="col-span-3">
-                    <h1 className="text-4xl font-bold">Welcome</h1>
-                </div>
-                <div className="col-span-3">
-                    <h2 className="text-lg font-bold">
-                        To the Scottish Parliament
-                    </h2>
-                </div>
-                <div className="col-span-3">
-                    <h3 className="text-2xl font-bold">Visitor App</h3>
-                </div>
-            </div>
+            <PageTitle
+                title="Home"
+                subtitle="Discover your Scottish Parliament"
+            />
+            <div className="divider" />
             <div>
                 <VideoPlayer />
             </div>

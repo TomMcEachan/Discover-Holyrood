@@ -5,8 +5,9 @@ import {
     useInstantSearch,
 } from "react-instantsearch-hooks-web";
 import { Riple } from "react-loading-indicators";
+import React from "react";
 
-export const ArticleHits = () => {
+function ArticleHits() {
     const { hits, showMore, showPrevious, results } = useInfiniteHits();
     const { status } = useInstantSearch();
 
@@ -65,4 +66,6 @@ export const ArticleHits = () => {
             <h1 className="text-2xl font-bold">No Results Found</h1>
         </div>
     );
-};
+}
+
+export default ArticleHits;

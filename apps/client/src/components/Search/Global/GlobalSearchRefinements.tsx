@@ -3,24 +3,32 @@ import {
     useRefinementList,
     type RefinementListProps,
 } from "react-instantsearch-hooks-web";
-import { GlobalFacetBadge } from "@/components/ServerComponents/Buttons/GlobalFacetBadge";
+import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge";
 
 export const GlobalSearchRefinements = (props: RefinementListProps) => {
     const { items, refine } = useRefinementList(props);
 
-    console.log(items);
     return (
         <div>
             <div className="flex flex-wrap" id="global-facet-container">
                 {items.map((item: any) =>
                     item.isRefined ? (
-                        <div key={item.label}></div>
+                        <div key={item.label}>
+                            <CategoryBadge
+                                name={item.label}
+                                key={item.label}
+                                onClick={() => refine(item.value)}
+                                refined={true}
+                            />
+                        </div>
                     ) : (
-                        <GlobalFacetBadge
-                            name={item.label}
-                            key={item.label}
-                            onClick={() => refine(item.value)}
-                        />
+                        <div key={item.label}>
+                            <CategoryBadge
+                                name={item.label}
+                                key={item.label}
+                                onClick={() => refine(item.value)}
+                            />
+                        </div>
                     ),
                 )}
             </div>

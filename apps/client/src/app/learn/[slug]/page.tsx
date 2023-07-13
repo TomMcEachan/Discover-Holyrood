@@ -11,7 +11,6 @@ import {
     getSuggestedArticles,
     getAllArticles,
 } from "@/utils/fetching/DataFetching";
-import { ARCanvas } from "@/components/ClientComponents/AR/ARCanvas";
 
 interface Props {
     params: {
@@ -69,15 +68,16 @@ export default async function ArticlePage({ params }: Props) {
             </div>
             <article id="content" className="">
                 <Suspense fallback={<div>Loading...</div>}>
-                    {/* @ts-expect-error Async Server Component */}
-                    <MDXRemote
-                        source={markdown}
-                        components={{
-                            ...components,
-                        }}
-                    />
-                    <ARCanvas src="./assets/sandbox.glb" />
+                    <>
+                        <MDXRemote
+                            source={markdown}
+                            components={{
+                                ...components,
+                            }}
+                        />
+                    </>
                 </Suspense>
+                <h1>HELLO</h1>
             </article>
             <div className="divider" />
             <div id="suggested-articles">
@@ -91,7 +91,7 @@ export default async function ArticlePage({ params }: Props) {
                                 key={article.id}
                                 title={article.attributes.title}
                                 subtitle={article.attributes.subtitle}
-                                slug={`learn/${article.attributes.link}`}
+                                slug={`${article.attributes.link}`}
                             />
                         );
                     })}

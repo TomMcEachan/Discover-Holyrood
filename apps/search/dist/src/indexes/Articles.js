@@ -26,7 +26,7 @@ const addArticles = async (client, indexName, dataTypeName) => {
                 content_type: article.attributes.content_type,
                 link: article.attributes.link,
                 tags: articleTags,
-                image: article.attributes.image.data.attributes.formats.large.url,
+                image: article.attributes.image.data.attributes.formats.medium.url,
             };
         });
         // Add articles to search index

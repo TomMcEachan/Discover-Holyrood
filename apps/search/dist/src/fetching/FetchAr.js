@@ -3,23 +3,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchAllArticles = void 0;
+exports.fetchAllARScenes = void 0;
 const Axios_1 = __importDefault(require("../utils/Axios"));
-const fetchAllArticles = async (client) => {
-    let articles = [];
+const fetchAllARScenes = async (client) => {
+    let scenes = [];
     await Axios_1.default
-        .get("/articles?populate=deep")
+        .get("/ars?populate=deep")
         .then(async (res) => {
         console.log("Deleting previous records...");
-        await client.index("articles").deleteAllDocuments();
-        console.log("Fetching articles...");
+        await client.index("arscenes").deleteAllDocuments();
+        console.log("Fetching AR scenes...");
         const responseData = await res.data;
-        articles = await responseData.data;
-        return articles;
+        scenes = await responseData.data;
+        return scenes;
     })
         .catch((err) => {
         console.log(err);
     });
-    return articles;
+    return scenes;
 };
-exports.fetchAllArticles = fetchAllArticles;
+exports.fetchAllARScenes = fetchAllARScenes;

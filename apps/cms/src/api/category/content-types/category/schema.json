@@ -30,12 +30,6 @@
     },
     "description": {
       "type": "string"
-    },
-    "ar": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::ar.ar",
-      "inversedBy": "categories"
     }
   }
 }

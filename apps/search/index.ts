@@ -5,6 +5,7 @@ import { addAll } from "./src/indexes/All";
 import { addCategories } from "./src/indexes/Categories";
 import { addTags } from "./src/indexes/Tags";
 import { addArticles } from "./src/indexes/Articles";
+import { addARScenes } from "./src/indexes/ARScenes";
 
 // Load environment variables from .env file
 dotenv.config();
@@ -43,6 +44,8 @@ const main = async () => {
   await addAll(client);
   console.log("--------------------");
   await addArticles(client, "articles", "Articles");
+  console.log("--------------------");
+  await addARScenes(client, "arscenes", "ARScenes");
   console.log("--------------------");
   await addCategories(client, "categories", "Categories");
   console.log("--------------------");

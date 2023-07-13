@@ -33,3 +33,7 @@ export const GlobalStateProvider = ({
         </GlobalStateContext.Provider>
     );
 };
+
+export const changeTheme = (state: any) => {
+    return state.matches("Light");
+};

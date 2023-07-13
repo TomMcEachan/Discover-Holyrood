@@ -2,7 +2,7 @@ import {
     useCurrentRefinements,
     type CurrentRefinementsProps,
 } from "react-instantsearch-hooks-web";
-import { CategoryBadgeRefined } from "@/components/ServerComponents/Buttons/CategoryBadgeRefined";
+import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge";
 
 export const ArticleCurrentRefinements = (props: CurrentRefinementsProps) => {
     const { items, canRefine, refine } = useCurrentRefinements(props);
@@ -19,10 +19,11 @@ export const ArticleCurrentRefinements = (props: CurrentRefinementsProps) => {
                     </p>
                     <div className="flex flex-wrap" id="current-refinements">
                         {item.refinements.map((refinement: any) => (
-                            <CategoryBadgeRefined
+                            <CategoryBadge
                                 key={refinement.value}
                                 onClick={() => refine(refinement)}
                                 name={refinement.label}
+                                refined={true}
                             />
                         ))}
                     </div>

@@ -11,6 +11,9 @@ import { GlobalSearchModal } from "@/components/Search/Global/GlobalSearchModal"
 // Import Global State
 import { GlobalStateProvider } from "@/utils/providers/GlobalState";
 
+// Analytics
+import { Analytics } from "@vercel/analytics/react";
+
 // Metadata
 export const metadata = {
     title: {
@@ -50,6 +53,7 @@ export default function RootLayout({
                         <Sidebar />
                     </ThemeProvider>
                 </GlobalStateProvider>
+                <Analytics />
             </body>
         </html>
     );

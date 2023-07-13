@@ -18,7 +18,7 @@ export const BackButton = ({ backLocation }: Props) => {
                     className="inline-block mr-2"
                     size={25}
                 />
-                <span className="">Back to {backLocation}</span>
+                <span className="">Back</span>
             </button>
         </div>
     );

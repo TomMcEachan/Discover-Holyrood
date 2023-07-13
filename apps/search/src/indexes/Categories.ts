@@ -1,5 +1,5 @@
 import { fetchAllCategories } from "../fetching/FetchCategories";
-import { ICategory } from "../data/datatypes";
+import { ICategory } from "../data/Datatypes";
 
 export const addCategories = async (
   client: any,

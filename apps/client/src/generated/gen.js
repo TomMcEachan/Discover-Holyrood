@@ -2,14 +2,14 @@
 
 export const needle_exported_files = [];
 globalThis["needle:codegen_files"] = needle_exported_files;
-needle_exported_files.push("./apps/client/public/assets/sandbox.glb?v=1687357333770");
+needle_exported_files.push(".//sandbox.glb?v=1688723412761");
 
 document.addEventListener("DOMContentLoaded", () =>
 {
 	const needleEngine = document.querySelector("needle-engine");
 	if(needleEngine && needleEngine.getAttribute("src") === null)
 	{
-		needleEngine.setAttribute("hash", "1687357333770");
+		needleEngine.setAttribute("hash", "1688723412761");
 		needleEngine.setAttribute("src", JSON.stringify(needle_exported_files));
 	}
 });

@@ -18,8 +18,7 @@
     "categories": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "ar"
+      "target": "api::category.category"
     },
     "tags": {
       "type": "relation",
@@ -30,6 +29,22 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::content-type.content-type"
+    },
+    "LinkToARScene": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
