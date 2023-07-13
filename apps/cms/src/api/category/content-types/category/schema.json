@@ -17,24 +17,12 @@
     },
     "color": {
       "type": "enumeration",
-      "enum": [
-        "green",
-        "red",
-        "navy",
-        "purple",
-        "magenta",
-        "mustard"
-      ],
+      "enum": ["green", "red", "navy", "purple", "magenta", "mustard"],
       "required": true,
       "default": "purple"
     },
     "description": {
       "type": "string"
-    },
-    "uuid": {
-      "type": "customField",
-      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
-      "customField": "plugin::field-uuid.uuid"
     }
   }
 }

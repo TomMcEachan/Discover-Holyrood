@@ -56,9 +56,9 @@
       "target": "api::content-type.content-type"
     },
     "uuid": {
-      "type": "customField",
-      "regex": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
-      "customField": "plugin::field-uuid.uuid"
+      "type": "uid",
+      "required": true,
+      "targetField": "title"
     }
   }
 }
