@@ -1,7 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import { ARCanvas } from "@/components/ClientComponents/AR/ARCanvas";
 
 export default function AR(): JSX.Element {
     return (
@@ -11,7 +10,6 @@ export default function AR(): JSX.Element {
                 subtitle="Take a tour of the Scottish Parliament"
             />
             <div className="divider" />
-            <ARCanvas src="./assets/sandbox.glb" />
         </ContentWrapper>
     );
 }
