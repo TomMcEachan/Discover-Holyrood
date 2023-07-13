@@ -9,8 +9,8 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
+    "@bn-digital/strapi-plugin-field-uuid": "^1.2.12",
     "@strapi/plugin-documentation": "^4.11.5",
     "@strapi/plugin-i18n": "4.11.5",
     "@strapi/plugin-users-permissions": "4.11.5",
@@ -21,7 +21,7 @@
     "strapi-plugin-populate-deep": "^2.0.0"
   },
   "author": {
-    "name": "The Scottish Parliament"
+    "name": "Tom McEachan"
   },
   "strapi": {
     "uuid": "8688ede1-3118-4c6f-ba12-95cee419d9e6"

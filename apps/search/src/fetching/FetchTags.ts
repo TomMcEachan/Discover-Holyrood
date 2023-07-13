@@ -6,9 +6,6 @@ export const fetchAllTags = async (client: any) => {
   await axiosInstance
     .get("/tags?populate=deep")
     .then(async (res) => {
-      console.log("Deleting previous records...");
-      client.index("tags").deleteAllDocuments();
-
       console.log("Fetching tags...");
       const responseData = await res.data;
       tags = await responseData.data;

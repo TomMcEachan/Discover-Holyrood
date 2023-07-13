@@ -22,11 +22,20 @@ const main = async () => {
   });
 
   // Create indexes
-  await client.createIndex("all", { primaryKey: "id" });
+  await client.createIndex("all", { primaryKey: "title" });
   await client.createIndex("articles", { primaryKey: "id" });
   await client.createIndex("arscenes", { primaryKey: "id" });
   await client.createIndex("categories", { primaryKey: "id" });
   await client.createIndex("tags", { primaryKey: "id" });
+
+  // Delete all documents from indexes
+  console.log("Deleting previous records...");
+  client.index("categories").deleteAllDocuments();
+  client.index("tags").deleteAllDocuments();
+  client.index("articles").deleteAllDocuments();
+  client.index("arscenes").deleteAllDocuments();
+  client.index("all").deleteAllDocuments();
+  console.log("Previous records deleted! \n\n .................... \n\n");
 
   // Add Filters to Indexes
   await client
@@ -41,8 +50,6 @@ const main = async () => {
     .index("arscenes")
     .updateFilterableAttributes(["categories", "tags", "content-type"]);
 
-  await addAll(client);
-  console.log("--------------------");
   await addArticles(client, "articles", "Articles");
   console.log("--------------------");
   await addARScenes(client, "arscenes", "ARScenes");
@@ -50,6 +57,8 @@ const main = async () => {
   await addCategories(client, "categories", "Categories");
   console.log("--------------------");
   await addTags(client, "tags", "Tags");
+  console.log("--------------------");
+  await addAll(client);
   console.log("--------------------");
 };
 
