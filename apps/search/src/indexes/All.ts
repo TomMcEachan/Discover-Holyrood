@@ -1,6 +1,6 @@
 import { fetchAllArticles } from "../fetching/FetchArticles";
 import { fetchAllARScenes } from "../fetching/FetchAr";
-import { IArticle, ICategory, ITag, IARScene } from "../data/Datatypes";
+import { IArticle, IARScene } from "../data/Datatypes";
 import { mapArticles } from "../mapping/MapArticles";
 import { mapARScenes } from "../mapping/MapScene";
 
@@ -17,11 +17,11 @@ export const addAll = async (client: any) => {
     // Map scenes to search index format
     const searchARScenes: IARScene[] = await mapARScenes(scenes);
 
-    console.log("Adding articles to 'All' index...");
-    await client.index("all").addDocuments(searchArticles);
+    const newIndex = [...searchArticles, ...searchARScenes];
 
-    console.log("Adding AR scenes to 'All' index...");
-    await client.index("all").addDocuments(searchARScenes);
+    console.log(newIndex);
+
+    await client.index("all").addDocuments(newIndex);
   } catch (err) {
     console.log(err);
   }

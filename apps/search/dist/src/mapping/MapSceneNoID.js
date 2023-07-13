@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.mapARScenes = void 0;
-const mapARScenes = async (scenes) => {
+exports.mapARScenesAll = void 0;
+const mapARScenesAll = async (scenes) => {
     const searchARScenes = await scenes.map((scene) => {
         // Map categories
         const sceneCategories = scene.attributes.categories.data.map((category) => {
@@ -12,14 +12,14 @@ const mapARScenes = async (scenes) => {
             return tag.attributes.name;
         });
         return {
-            id: scene.attributes.uuid,
+            uniqueIdentifier: scene.attributes.uuid,
             title: scene.attributes.title,
             categories: sceneCategories,
-            link: scene.attributes.LinkToARScene,
+            link: scene.attributes.link,
             tags: sceneTags,
             image: scene.attributes.image.data.attributes.formats.medium.url,
         };
     });
     return searchARScenes;
 };
-exports.mapARScenes = mapARScenes;
+exports.mapARScenesAll = mapARScenesAll;

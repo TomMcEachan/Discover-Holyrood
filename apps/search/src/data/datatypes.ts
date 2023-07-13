@@ -1,29 +1,31 @@
-export interface IArticle {
+export type IArticle = {
   id: string;
   title: string;
   content: string;
   categories: ICategory[];
   tags: ITag[];
   image: string;
-}
+  uniqueIdentifier: string;
+};
 
-export interface ICategory {
-  id: string;
-  name: string;
-  description: string;
-}
-
-export interface ITag {
-  id: string;
-  name: string;
-  description: string;
-}
-
-export interface IARScene {
+export type IARScene = {
   id: string;
   title: string;
   categories: ICategory[];
-  link: string;
+  LinkToARScene: string;
   tags: ITag[];
   image: string;
-}
+  uniqueIdentifier: string;
+};
+
+export type ICategory = {
+  id: string;
+  name: string;
+  description: string;
+};
+
+export type ITag = {
+  id: string;
+  name: string;
+  description: string;
+};
