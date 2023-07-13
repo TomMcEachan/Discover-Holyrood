@@ -1,0 +1,40 @@
+version: "3"
+services:
+  # Content Managament System
+  discover_holyroodCMS:
+    container_name: discover_holyrood_CMS
+    build: .
+    image: discoverholyroodregistry.azurecr.io/discover_holyrood_cms
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PORT: ${DATABASE_PORT}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      NODE_ENV: ${NODE_ENV}
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}
+      MEILI_HOST: ${MEILISEARCH_HOST}
+    volumes:
+      - ./config:/opt/app/config
+      - ./src:/opt/app/src
+      - ./package.json:/opt/package.json
+      - ./yarn.lock:/opt/yarn.lock
+
+      - ./.env:/opt/app/.env
+      - ./public/uploads:/opt/app/public/uploads
+    ports:
+      - "1337:1337"
+    networks:
+      - discover_holyrood
+
+volumes:
+  discover_holyrood-data:
+networks:
+  discover_holyrood:
+    name: discover_holyrood
+    driver: bridge
