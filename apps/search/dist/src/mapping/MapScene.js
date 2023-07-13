@@ -18,6 +18,7 @@ const mapARScenes = async (scenes) => {
             link: scene.attributes.link,
             tags: sceneTags,
             image: scene.attributes.image.data.attributes.formats.medium.url,
+            uuid: scene.attributes.uuid,
         };
     });
     return searchARScenes;

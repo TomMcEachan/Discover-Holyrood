@@ -22,8 +22,8 @@ const main = async () => {
   });
 
   // Create indexes
-  await client.createIndex("all", { primaryKey: "title" });
-  await client.createIndex("articles", { primaryKey: "id" });
+  await client.createIndex("all", { primaryKey: "uuid" });
+  await client.createIndex("articles", { primaryKey: "uuid" });
   await client.createIndex("arscenes", { primaryKey: "id" });
   await client.createIndex("categories", { primaryKey: "id" });
   await client.createIndex("tags", { primaryKey: "id" });

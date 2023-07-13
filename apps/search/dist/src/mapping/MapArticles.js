@@ -20,6 +20,7 @@ const mapArticles = async (articles) => {
             link: article.attributes.link,
             tags: articleTags,
             image: article.attributes.image.data.attributes.formats.medium.url,
+            uuid: article.attributes.uuid,
         };
     });
     return searchArticles;
