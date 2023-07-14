@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.mapArticles = void 0;
-const mapArticles = async (articles) => {
+exports.mapArticlesAll = void 0;
+const mapArticlesAll = async (articles) => {
     const searchArticles = await articles.map((article) => {
         // Map categories
         const articleCategories = article.attributes.categories.data.map((category) => {
@@ -12,7 +12,6 @@ const mapArticles = async (articles) => {
             return tag.attributes.name;
         });
         return {
-            id: article.attributes.uuid,
             title: article.attributes.title,
             content: article.attributes.content,
             categories: articleCategories,
@@ -25,4 +24,4 @@ const mapArticles = async (articles) => {
     });
     return searchArticles;
 };
-exports.mapArticles = mapArticles;
+exports.mapArticlesAll = mapArticlesAll;

@@ -15,13 +15,13 @@ export const mapARScenes = async (scenes: any) => {
     });
 
     return {
-      id: scene.id,
+      id: scene.attributes.uuid,
       title: scene.attributes.title,
       categories: sceneCategories,
-      link: scene.attributes.link,
+      link: scene.attributes.LinkToARScene,
       tags: sceneTags,
       image: scene.attributes.image.data.attributes.formats.medium.url,
-      uuid: scene.attributes.uuid,
+      content_type: scene.attributes.content_type,
     };
   });
   return searchARScenes;

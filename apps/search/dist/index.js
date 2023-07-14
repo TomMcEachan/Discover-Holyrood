@@ -22,7 +22,7 @@ const main = async () => {
         apiKey: KEY,
     });
     // Create indexes
-    await client.createIndex("all", { primaryKey: "title" });
+    await client.createIndex("all", { primaryKey: "uniqueIdentifier" });
     await client.createIndex("articles", { primaryKey: "id" });
     await client.createIndex("arscenes", { primaryKey: "id" });
     await client.createIndex("categories", { primaryKey: "id" });
@@ -34,7 +34,7 @@ const main = async () => {
     client.index("articles").deleteAllDocuments();
     client.index("arscenes").deleteAllDocuments();
     client.index("all").deleteAllDocuments();
-    console.log("Previous records deleted! \n\n .................... \n\n");
+    console.log("Previous records deleted! \n--------------------");
     // Add Filters to Indexes
     await client
         .index("all")
