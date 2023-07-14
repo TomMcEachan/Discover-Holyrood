@@ -17,11 +17,11 @@ export const addAll = async (client: any) => {
     // Map scenes to search index format
     const searchARScenes: IARScene[] = await mapARScenes(scenes);
 
-    const newIndex = [...searchArticles, ...searchARScenes];
+    // Combine articles and sceenes into one array
+    const combinedArray = [...searchArticles, ...searchARScenes];
 
-    console.log(newIndex);
-
-    await client.index("all").addDocuments(newIndex);
+    // Add combined array to search index
+    await client.index("all").addDocuments(combinedArray);
   } catch (err) {
     console.log(err);
   }

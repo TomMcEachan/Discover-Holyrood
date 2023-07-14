@@ -21,6 +21,7 @@ export const mapARScenes = async (scenes: any) => {
       link: scene.attributes.LinkToARScene,
       tags: sceneTags,
       image: scene.attributes.image.data.attributes.formats.medium.url,
+      content_type: scene.attributes.content_type,
     };
   });
   return searchARScenes;

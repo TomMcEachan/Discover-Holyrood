@@ -14,9 +14,10 @@ const addAll = async (client) => {
         const searchArticles = await (0, MapArticles_1.mapArticles)(articles);
         // Map scenes to search index format
         const searchARScenes = await (0, MapScene_1.mapARScenes)(scenes);
-        const newIndex = [...searchArticles, ...searchARScenes];
-        console.log(newIndex);
-        await client.index("all").addDocuments(newIndex);
+        // Combine articles and sceenes into one array
+        const combinedArray = [...searchArticles, ...searchARScenes];
+        // Add combined array to search index
+        await client.index("all").addDocuments(combinedArray);
     }
     catch (err) {
         console.log(err);

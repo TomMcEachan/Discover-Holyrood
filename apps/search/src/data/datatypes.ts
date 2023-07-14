@@ -6,6 +6,7 @@ export type IArticle = {
   tags: ITag[];
   image: string;
   uniqueIdentifier: string;
+  content_type: string;
 };
 
 export type IARScene = {
@@ -16,6 +17,7 @@ export type IARScene = {
   tags: ITag[];
   image: string;
   uniqueIdentifier: string;
+  content_type: string;
 };
 
 export type ICategory = {
