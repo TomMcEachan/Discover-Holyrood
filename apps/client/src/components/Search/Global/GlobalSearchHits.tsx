@@ -9,28 +9,31 @@ export const GlobalSearchHits = () => {
 
     if (status === "loading" || status === "stalled") {
         return (
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center self-center">
                 <Riple color={"purple"} />
             </div>
         );
     }
 
     if (hits.length > 0) {
-        console.log(hits);
         return (
-            <div className="col-span-3 md:col-span-1 lg:col-span-1">
+            <>
                 {hits.map((hit: any) => (
-                    <GlobalSearchCard
-                        title={hit.title}
-                        category={hit.categories[0]}
-                        contentType={hit.content_type.data.attributes.name}
-                        tags={hit.tags}
-                        link={`learn/${hit.link}`}
+                    <div
+                        className="col-span-4 md:col-span-1 lg:col-span-1 px-2 py-2"
                         key={hit.id}
-                        image={hit.image}
-                    />
+                    >
+                        <GlobalSearchCard
+                            title={hit.title}
+                            category={hit.categories[0]}
+                            contentType={hit.content_type.data.attributes.name}
+                            tags={hit.tags}
+                            link={hit.link}
+                            image={hit.image}
+                        />
+                    </div>
                 ))}
-            </div>
+            </>
         );
     }
 

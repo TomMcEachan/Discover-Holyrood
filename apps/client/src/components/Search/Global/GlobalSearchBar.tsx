@@ -10,7 +10,7 @@ export const GlobalSearchBar = () => {
     return (
         <>
             <input
-                className="h-8 w-[95%] rounded-lg border-2 border-sppurple-light bg-white text-black py-4 pl-4 text-xs"
+                className="h-10 w-[100%] rounded-md border-2 border-sppurple-light bg-base-100 text-primary py-4 pl-4 text-xs"
                 type="search"
                 placeholder="e.g, 'What is an MSP?'"
                 id="global-search-bar"

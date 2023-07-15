@@ -8,7 +8,7 @@ export const AppBar = () => {
                 <Link href="/ar-tour">
                     <button className="flex flex-col font-bold text-primary">
                         <TbAugmentedReality size={25} className="self-center" />
-                        <span>AR Tour</span>
+                        <span>AR</span>
                     </button>
                 </Link>
                 <Link href="/">

@@ -15,7 +15,7 @@ import { InstantSearch, Configure } from "react-instantsearch-hooks-web";
 export const ArticleSearchComponent = (): JSX.Element => {
     return (
         <InstantSearch searchClient={searchClient} indexName="articles">
-            <Configure hitsPerPage={4} />
+            <Configure hitsPerPage={8} />
             <ArticleRefinementSelector attribute="categories" />
             <ArticleCurrentRefinements />
             <div className="divider" />
