@@ -5,6 +5,7 @@ import React from "react";
 
 // React InstantSearch Components
 import { InstantSearch, Configure } from "react-instantsearch-hooks-web";
+import InstantSearchProvider from "@/utils/providers/InstantSearch";
 
 // Meilisearch Client
 import { searchClient } from "@/utils/search/Search";
@@ -24,42 +25,44 @@ export default function AR(): JSX.Element {
             />
             <div className="divider" />
             <div className="">
-                <InstantSearch indexName="all" searchClient={searchClient}>
-                    <Configure hitsPerPage={8} />
-                    <div className="flex flex-col h-full w-full">
-                        <div className="lg:self-start pb-4"></div>
-                        <div className="flex flex-col w-full">
-                            <GlobalSearchBar />
-                        </div>
-                        <div className="">
-                            <p className="text-xs pb-0.5 text-primary pt-2">
-                                Filter by categories
-                            </p>
-                            <GlobalSearchRefinements
-                                attribute="categories"
-                                operator="and"
-                                sortBy={["name:asc"]}
-                            />
-                            <p className="text-xs pb-0.5 text-primary pt-2">
-                                Filter by tags
-                            </p>
-                            <GlobalSearchRefinements
-                                attribute="tags"
-                                operator="and"
-                                sortBy={["name:asc"]}
-                            />
-                        </div>
-                        <div className="divider px-6" />
-                        <div className="">
-                            <div className="grid grid-cols-4">
-                                <GlobalSearchHits />
+                <InstantSearchProvider>
+                    <InstantSearch indexName="all" searchClient={searchClient}>
+                        <Configure hitsPerPage={8} />
+                        <div className="flex flex-col h-full w-full">
+                            <div className="lg:self-start pb-4"></div>
+                            <div className="flex flex-col w-full">
+                                <GlobalSearchBar />
+                            </div>
+                            <div className="">
+                                <p className="text-xs pb-0.5 text-primary pt-2">
+                                    Filter by categories
+                                </p>
+                                <GlobalSearchRefinements
+                                    attribute="categories"
+                                    operator="and"
+                                    sortBy={["name:asc"]}
+                                />
+                                <p className="text-xs pb-0.5 text-primary pt-2">
+                                    Filter by tags
+                                </p>
+                                <GlobalSearchRefinements
+                                    attribute="tags"
+                                    operator="and"
+                                    sortBy={["name:asc"]}
+                                />
+                            </div>
+                            <div className="divider px-6" />
+                            <div className="">
+                                <div className="grid grid-cols-4">
+                                    <GlobalSearchHits />
+                                </div>
+                            </div>
+                            <div className="pt-5 self-center">
+                                <GlobalPagination />
                             </div>
                         </div>
-                        <div className="pt-5 self-center">
-                            <GlobalPagination />
-                        </div>
-                    </div>
-                </InstantSearch>
+                    </InstantSearch>
+                </InstantSearchProvider>
             </div>
         </ContentWrapper>
     );
