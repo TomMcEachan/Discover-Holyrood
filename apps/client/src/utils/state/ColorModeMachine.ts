@@ -6,18 +6,28 @@ export const ColorModeMachine =
         {
             predictableActionArguments: true,
             id: "ChangeTheme",
-            initial: "setLight",
+            initial: "Light",
             schema: {
                 events: {} as { type: "TOGGLE" },
             },
             states: {
-                setLight: {
-                    on: {
-                        TOGGLE: {
-                            target: "Light",
-                            actions: ["setInitial"],
+                checkTheme: {
+                    always: [
+                        {
+                            target: "Dark",
+                            cond: () =>
+                                localStorage.getItem("theme") === "Dark",
                         },
-                    },
+                        {
+                            target: "Light",
+                            cond: () =>
+                                localStorage.getItem("theme") === "Light",
+                        },
+                        {
+                            target: "Light",
+                            cond: () => localStorage.getItem("theme") === null,
+                        },
+                    ],
                 },
                 Light: {
                     on: {
@@ -40,15 +50,13 @@ export const ColorModeMachine =
         {
             actions: {
                 setDark: () => {
+                    if (localStorage.getItem("theme") === "Dark") return;
+
                     localStorage.setItem("theme", "Dark");
                 },
                 setLight: () => {
+                    if (localStorage.getItem("theme") === "Light") return;
                     localStorage.setItem("theme", "Light");
-                },
-                setInitial: () => {
-                    if (!localStorage.getItem("theme")) {
-                        localStorage.setItem("theme", "Light");
-                    }
                 },
             },
         },

@@ -5,10 +5,10 @@ export const AppBar = () => {
     return (
         <nav className="btm-nav btm-nav-md fixed bottom-0 z-40 border-t-2 border-primary bg-base-100 shadow-md text-md font-bold">
             <div className="flex flex-row justify-around">
-                <Link href="/ar-tour">
+                <Link href="/ar">
                     <button className="flex flex-col font-bold text-primary">
                         <TbAugmentedReality size={25} className="self-center" />
-                        <span>AR Tour</span>
+                        <span>AR</span>
                     </button>
                 </Link>
                 <Link href="/">

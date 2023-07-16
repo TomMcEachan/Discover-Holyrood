@@ -21,8 +21,8 @@ export const GlobalPagination = (props: UsePaginationProps) => {
     }
 
     return (
-        <div className="justify-center btn-group mb-2 flex w-full box flex-col">
-            <p className="font-bold self-center pb-2">{nbHits} Results</p>
+        <div className="btn-group mb-2 flex w-full box flex-col">
+            <p className="font-bold pb-2 self-center">{nbHits} Results</p>
             <ul>
                 {!isFirstPage && (
                     <button

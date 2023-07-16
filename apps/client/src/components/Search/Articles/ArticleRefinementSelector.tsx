@@ -12,7 +12,7 @@ export const ArticleRefinementSelector = (props: RefinementListProps) => {
     return (
         <div>
             <p className="text-primary font-bold" id="facet-instructions">
-                Tap a category to filter learning material:
+                Tap a category to filter:
             </p>
             <div className="flex flex-wrap pt-2" id="facet-container">
                 {items.map((item: any) =>
