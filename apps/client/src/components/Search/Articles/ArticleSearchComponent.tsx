@@ -11,15 +11,21 @@ import { searchClient } from "@/utils/search/Search";
 // React InstantSearch Components
 import { InstantSearch, Configure } from "react-instantsearch-hooks-web";
 
+type SearchComponentProps = {
+    indexName: string;
+};
+
 // Search Component
-export const ArticleSearchComponent = (): JSX.Element => {
+export const ArticleSearchComponent = ({
+    indexName,
+}: SearchComponentProps): JSX.Element => {
     return (
-        <InstantSearch searchClient={searchClient} indexName="articles">
+        <InstantSearch searchClient={searchClient} indexName={indexName}>
             <Configure hitsPerPage={8} />
             <ArticleRefinementSelector attribute="categories" />
             <ArticleCurrentRefinements />
             <div className="divider" />
-            <ArticleHits />
+            <ArticleHits indexType={indexName} />
         </InstantSearch>
     );
 };

@@ -12,7 +12,7 @@ export default function Learn(): JSX.Element {
             />
             <div className="divider" />
             <div>
-                <ArticleSearchComponent />
+                <ArticleSearchComponent indexName="articles" />
             </div>
         </ContentWrapper>
     );
