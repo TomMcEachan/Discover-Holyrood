@@ -1,5 +1,8 @@
 "use client";
 
+// Import Search SSR Provider
+import InstantSearchProvider from "@/utils/providers/InstantSearch";
+
 // Custom Search Components
 import { ArticleRefinementSelector } from "@/components/Search/Articles/ArticleRefinementSelector";
 import { ArticleCurrentRefinements } from "@/components/Search/Articles/ArticleCurrentRefinements";
@@ -20,12 +23,14 @@ export const ArticleSearchComponent = ({
     indexName,
 }: SearchComponentProps): JSX.Element => {
     return (
-        <InstantSearch searchClient={searchClient} indexName={indexName}>
-            <Configure hitsPerPage={8} />
-            <ArticleRefinementSelector attribute="categories" />
-            <ArticleCurrentRefinements />
-            <div className="divider" />
-            <ArticleHits indexType={indexName} />
-        </InstantSearch>
+        <InstantSearchProvider>
+            <InstantSearch searchClient={searchClient} indexName={indexName}>
+                <Configure hitsPerPage={8} />
+                <ArticleRefinementSelector attribute="categories" />
+                <ArticleCurrentRefinements />
+                <div className="divider" />
+                <ArticleHits indexType={indexName} />
+            </InstantSearch>
+        </InstantSearchProvider>
     );
 };
