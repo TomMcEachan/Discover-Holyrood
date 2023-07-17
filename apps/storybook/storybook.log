@@ -1,7 +1,0 @@
-yarn add v1.22.19
-[1/4] Resolving packages...
-[2/4] Fetching packages...
-warning Pattern ["three@npm:@needle-tools/three@^0.146.9"] is trying to unpack in the same destination "/Users/tom/Library/Caches/Yarn/v6/npm-three-0.146.10-99734cb369f457a0319cfb7021c4e808869f1985-integrity/node_modules/three" as pattern ["three@npm:@needle-tools/three@0.146.10"]. This could result in non-deterministic behavior, skipping.
-error @squoosh/lib@0.4.1: The engine "node" is incompatible with this module. Expected version " ^12.5.0 || ^14.0.0 || ^16.0.0 ". Got "18.13.0"
-error Found incompatible module.
-info Visit https://yarnpkg.com/en/docs/cli/add for documentation about this command.

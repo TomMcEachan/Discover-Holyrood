@@ -1,7 +1,7 @@
 import React from "react";
 import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import { ArticleSearchComponent } from "@/components/Search/Articles/ArticleSearchComponent";
+import { ArticleSearchComponent } from "@/components/Search/Content/ContentSearchComponent";
 import { Suspense } from "react";
 
 export default function AR(): JSX.Element {
