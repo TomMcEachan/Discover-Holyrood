@@ -1,11 +1,11 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge";
+import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge/CategoryBadge";
 import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
 import { Suspense } from "react";
 import { components } from "@/components/ServerComponents/Markdown/ArticleMarkdown";
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import { SuggestedArticle } from "@/components/ClientComponents/Cards/SuggestedArticle/SuggestedArticle";
-import { BackButton } from "@/components/ServerComponents/Buttons/BackButton";
+import { SuggestedArticle } from "@/components/ClientComponents/Cards/SuggestedArticle/SuggestedArticleCard";
+import { BackButton } from "@/components/ServerComponents/Buttons/BackButton/BackButton";
 import {
     getSpecificArticle,
     getSuggestedArticles,

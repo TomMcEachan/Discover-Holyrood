@@ -4,7 +4,7 @@ import {
     type RefinementListProps,
 } from "react-instantsearch-hooks-web";
 
-import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge";
+import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge/CategoryBadge";
 
 export const ContentRefinementSelector = (props: RefinementListProps) => {
     const { items, refine } = useRefinementList(props);

@@ -7,7 +7,7 @@ type Props = {
     title: string;
     category: string;
     contentType: string;
-    tags: string[];
+
     link: string;
     image: string;
 };
@@ -18,7 +18,6 @@ export const GlobalSearchCard = ({
     title,
     category,
     contentType,
-    tags,
     link,
     image,
 }: Props) => {

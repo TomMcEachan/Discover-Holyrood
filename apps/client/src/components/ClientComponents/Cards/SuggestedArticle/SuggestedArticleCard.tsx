@@ -6,7 +6,7 @@ type Props = {
     slug: string;
 };
 
-export const SuggestedArticle = ({ title, subtitle, slug }: Props) => {
+export const SuggestedArticleCard = ({ title, subtitle, slug }: Props) => {
     return (
         <Link href={slug}>
             <div className="bg-primary rounded-box p-4 min-h-full">
