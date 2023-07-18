@@ -13,7 +13,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           runTests: false
-          build: cd apps/client npm run build
+          build: cd apps/client && npm run build
 
       - name: Save Build Folder
         uses: actions/upload-artifact@v3
