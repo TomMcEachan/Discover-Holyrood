@@ -20,7 +20,7 @@ jobs:
         uses: cypress-io/github-action@v5
         with:
           working-directory: apps/client
-          build: npm cy:runCI
+          build: npm run cy:runCI
           record: true
           parallel: true
           start: npm run start
