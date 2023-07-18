@@ -5,9 +5,6 @@ on: [push]
 jobs:
   End-to-End:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/client
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -15,20 +12,14 @@ jobs:
       - name: Install dependencies
         uses: cypress-io/github-action@v5
         with:
+          working-directory: apps/client
           runTests: false
-          build: npm run build
-
-      - name: Save Build Folder
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          path: dist
-          if-no-files-found: error
+          build: npx cypress info
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          build: npm run build
+          working-directory: apps/client
+          build: npx cypress run --headless --browser chrome
           record: true
           parallel: true
-          start: npm start
