@@ -4,7 +4,7 @@ import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
 import { Suspense } from "react";
 import { components } from "@/components/ServerComponents/Markdown/ArticleMarkdown";
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import { SuggestedArticle } from "@/components/ClientComponents/Cards/SuggestedArticle/SuggestedArticleCard";
+import { SuggestedArticleCard } from "@/components/ClientComponents/Cards/SuggestedArticle/SuggestedArticleCard";
 import { BackButton } from "@/components/ServerComponents/Buttons/BackButton/BackButton";
 import {
     getSpecificArticle,
@@ -86,7 +86,7 @@ export default async function ArticlePage({ params }: Props) {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-4">
                     {suggestedArticles.slice(0, 3).map((article: any) => {
                         return (
-                            <SuggestedArticle
+                            <SuggestedArticleCard
                                 key={article.id}
                                 title={article.attributes.title}
                                 subtitle={article.attributes.subtitle}
