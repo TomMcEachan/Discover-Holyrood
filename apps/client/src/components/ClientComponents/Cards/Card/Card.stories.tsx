@@ -38,6 +38,7 @@ export const Content: Story = (args: any) => (
         <Card {...args} />{" "}
     </div>
 );
+
 Content.args = {
     category: "MSPs",
     title: "This is a title for this very interesting component",
