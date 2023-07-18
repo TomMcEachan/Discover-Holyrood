@@ -1,0 +1,17 @@
+name: Test Runner
+
+on: [push]
+
+jobs:
+  end-to-end-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: cd apps/client && npm install
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v5
+        with:
+          build: cd apps/client && npm run build
+          start: cd apps/client && npm run start
+          browser: chrome
