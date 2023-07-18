@@ -17,6 +17,12 @@ jobs:
           runTests: false
           build: npm run build
           start: npx cypress info
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEXT_PUBLIC_API_KEY: ${{ secrets.NEXT_PUBLIC_API_KEY }}
+          NEXT_PUBLIC_SEARCH_URL: ${{ secrets.NEXT_PUBLIC_SEARCH_URL }}
+          NEXT_PUBLIC_SEARCH_KEY: ${{ secrets.NEXT_PUBLIC_SEARCH_KEY }}
+          NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME: ${{ secrets.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME }}
 
       - name: Save Build
         uses: actions/upload-artifact@v2
