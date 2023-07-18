@@ -14,12 +14,13 @@ jobs:
         with:
           working-directory: apps/client
           runTests: false
-          build: npx cypress info
+          build: npx cypress info && npm run build
 
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
           working-directory: apps/client
-          build: npx cypress run --headless --browser chrome
+          build: npm cy:runCI
           record: true
           parallel: true
+          start: npm run start

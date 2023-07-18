@@ -10,6 +10,7 @@
         "lint": "next lint",
         "cy:open": "cypress open",
         "cy:run": "cypress run",
+        "cy:runCI": "npx cypress run --record --key 5325feac-3712-441d-b9f0-a4d8d6605217",
         "test": "jest --watchAll",
         "build-storybook": "storybook build",
         "storybook": "storybook dev -p 6006",
