@@ -2,8 +2,8 @@ name: Test Runner
 
 on: [push]
 
-# Run Jobs in Parallel
 jobs:
+  # Build Build Project to Enable End to End Tests to Run
   End-to-End-Build:
     runs-on: ubuntu-latest
     steps:
@@ -30,6 +30,8 @@ jobs:
           name: build
           path: apps/client/.next
           if-no-files-found: error
+
+  # Run End to End Tests and Record Results to Cloud
   End-to-End-Test:
     runs-on: ubuntu-latest
     needs: End-to-End-Build
