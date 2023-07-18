@@ -9,6 +9,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Install Project Dependencies
+        run: cd apps/client && npm install
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+          cache-dependency-path: apps/client/package-lock.json
+
       - name: Install dependencies
         uses: cypress-io/github-action@v5
         with:
