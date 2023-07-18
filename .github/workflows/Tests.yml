@@ -2,6 +2,7 @@ name: Test Runner
 
 on: [push]
 
+# Run Jobs in Parallel
 jobs:
   End-to-End-Build:
     runs-on: ubuntu-latest
