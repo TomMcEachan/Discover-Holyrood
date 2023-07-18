@@ -3,27 +3,20 @@ name: Test Runner
 on: [push]
 
 jobs:
-  end-to-end-tests:
+  End-to-End:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/client
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Install Project Dependencies
-        run: cd apps/client && npm install
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: "npm"
-          cache-dependency-path: apps/client/package-lock.json
 
       - name: Install dependencies
         uses: cypress-io/github-action@v5
         with:
           runTests: false
-          build: cd apps/client && npm run build
+          build: npm run build
 
       - name: Save Build Folder
         uses: actions/upload-artifact@v3
