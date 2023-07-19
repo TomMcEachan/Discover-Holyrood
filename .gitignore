@@ -11,7 +11,7 @@ coverage
 # next.js
 .next/
 out/
-build
+
 
 # misc
 .DS_Store
@@ -44,8 +44,6 @@ yarn-error.log*
 **/[Uu]serSettings/
 **/[Tt]emp/
 **[Oo]bj/
-**/[Bb]uild/
-**/[Bb]uilds/
 **/[Ll]ogs/
 **/[Mm]emoryCaptures/
 
