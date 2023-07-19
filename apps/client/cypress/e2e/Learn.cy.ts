@@ -4,6 +4,8 @@ import { url } from "./utils/test-utils";
 
 // Test Page Title
 describe("Test Page Title", () => {
+    cy.viewport("iphone-x");
+
     it("Page Title is correct", () => {
         cy.visit(`${url}/learn`);
         cy.get("#page-title").should("have.text", "Learn");
@@ -20,6 +22,7 @@ describe("Test Page Title", () => {
 
 // Test Search Functionality
 describe("Test Search Functionality", () => {
+    cy.viewport("iphone-x");
     // Faceting
     it("Faceting instructions are visible", () => {
         cy.visit(`${url}/learn`);
