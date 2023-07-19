@@ -103,3 +103,6 @@ Thumbs.db.meta
 
 .nx/installation
 .nx/cache
+
+./apps/client/cypress/screenshots/*
+./apps/client/cypress/videos/*

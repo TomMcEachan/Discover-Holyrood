@@ -6,4 +6,13 @@ export default defineConfig({
       // implement node event listeners here
     },
   },
+
+  projectId: "jsipqo",
+
+  component: {
+    devServer: {
+      framework: "next",
+      bundler: "webpack",
+    },
+  },
 });
