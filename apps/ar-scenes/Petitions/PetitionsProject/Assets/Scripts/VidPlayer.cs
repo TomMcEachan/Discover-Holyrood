@@ -2,55 +2,44 @@ using UnityEngine;
 using UnityEngine.Video;
 using Lean.Touch;
 
+
 public class VidPlayer : MonoBehaviour
 {
     [SerializeField] 
     string videoFileName;
 
+    [SerializeField]
     bool isPlaying = false;
 
-    void OnEnable()
-    {
-        LeanTouch.OnFingerTap += HandleFingerTap;
-    }
+    [SerializeField]
+    VideoPlayer player;
 
-    void OnDisable()
-    {
-        LeanTouch.OnFingerTap -= HandleFingerTap;
-    }
+    [SerializeField]
+    GameObject playButton;
 
-    void HandleFingerTap(LeanFinger finger)
-    {
-        if (!isPlaying) {
-            PlayVideo();
-        } else {
-            StopVideo();
-        }
-    }
+   
 
-    public void PlayVideo()
-    {
-        VideoPlayer videoPlayer = GetComponent<VideoPlayer>();
-
+    public void PlayVideo(VideoPlayer videoPlayer)
+    {   
         if (videoPlayer) {
             string videoPath = System.IO.Path.Combine(Application.streamingAssetsPath, videoFileName);
             Debug.Log(videoPath);
             videoPlayer.url = videoPath;
+            playButton.SetActive(false);
             videoPlayer.Play();
-            isPlaying = true;
         }
 
     }
 
-    public void StopVideo()
-    {
-        VideoPlayer videoPlayer = GetComponent<VideoPlayer>();
-
+    public void StopVideo(VideoPlayer videoPlayer)
+    {  
         if (videoPlayer) {
             videoPlayer.Stop();
-            isPlaying = false;
+            playButton.SetActive(true);
         }
     }
+
+  
 
 }
 
