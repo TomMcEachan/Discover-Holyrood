@@ -44,6 +44,7 @@ jobs:
           SEARCH_HOST: ${{ secrets.SEARCH_HOST }}
   Deploy-Search-Index:
     runs-on: ubuntu-latest
+    needs: Test-Index-Functions
     defaults:
       run:
         shell: bash
