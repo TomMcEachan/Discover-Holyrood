@@ -1,7 +1,5 @@
 name: Build, Push & Deploy CMS & Search
 on:
-  push:
-    branches: ["deploy"]
   workflow_dispatch:
     inputs:
       logLevel:

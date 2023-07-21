@@ -45,6 +45,15 @@
         "videos",
         "audios"
       ]
+    },
+    "uuid": {
+      "type": "uid",
+      "required": true,
+      "targetField": "title"
+    },
+    "instructions": {
+      "type": "richtext",
+      "required": true
     }
   }
 }

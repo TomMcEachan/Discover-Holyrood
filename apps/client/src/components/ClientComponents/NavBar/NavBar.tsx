@@ -21,15 +21,12 @@ export const Navbar = () => {
                     </Link>
                 </div>
                 <div className="navbar-end">
-                    <button
-                        className="mr-5"
-                        id="search-bar-button"
-                        onClick={() =>
-                            global.globalSearchMachine.send("SWITCH")
-                        }
-                    >
-                        <MdOutlineSearch size={35} />
-                    </button>
+                    <Link href="/search">
+                        <button className="mr-5" id="search-bar-button">
+                            <MdOutlineSearch size={35} />
+                        </button>
+                    </Link>
+
                     <button
                         id="hamburger-button"
                         className="mx-2 flex flex-col font-bold text-primary"

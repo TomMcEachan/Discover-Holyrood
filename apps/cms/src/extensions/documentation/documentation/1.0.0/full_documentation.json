@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-07-13T16:50:02.356Z"
+    "x-generation-date": "2023-07-21T09:39:00.321Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -95,7 +95,9 @@
           "data": {
             "required": [
               "LinkToARScene",
-              "image"
+              "image",
+              "uuid",
+              "instructions"
             ],
             "type": "object",
             "properties": {
@@ -154,6 +156,12 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "uuid": {
+                "type": "string"
+              },
+              "instructions": {
+                "type": "string"
               }
             }
           }
@@ -209,7 +217,9 @@
         "type": "object",
         "required": [
           "LinkToARScene",
-          "image"
+          "image",
+          "uuid",
+          "instructions"
         ],
         "properties": {
           "title": {
@@ -1063,6 +1073,12 @@
               }
             }
           },
+          "uuid": {
+            "type": "string"
+          },
+          "instructions": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -1144,7 +1160,8 @@
               "title",
               "subtitle",
               "content",
-              "image"
+              "image",
+              "uuid"
             ],
             "type": "object",
             "properties": {
@@ -1209,6 +1226,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "uuid": {
+                "type": "string"
               }
             }
           }
@@ -1266,7 +1286,8 @@
           "title",
           "subtitle",
           "content",
-          "image"
+          "image",
+          "uuid"
         ],
         "properties": {
           "title": {
@@ -2125,6 +2146,9 @@
                 }
               }
             }
+          },
+          "uuid": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",

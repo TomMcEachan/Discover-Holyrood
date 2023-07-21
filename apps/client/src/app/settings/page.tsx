@@ -5,7 +5,6 @@ import { SettingsToggle } from "@/components/ClientComponents/Settings/SettingsT
 import { GlobalStateContext, changeTheme } from "@/utils/providers/GlobalState";
 import { useContext } from "react";
 import { useSelector } from "@xstate/react";
-import { is } from "cypress/types/bluebird";
 
 export default function Settings(): JSX.Element {
     const global = useContext(GlobalStateContext);

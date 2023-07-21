@@ -1,5 +1,6 @@
 import { fetchAllARScenes } from "../fetching/FetchAr";
-import { IARScene, ICategory, ITag } from "../data/Datatypes";
+import { IARScene } from "../data/Datatypes";
+import { mapARScenes } from "../mapping/MapScene";
 
 export const addARScenes = async (
   client: any,
@@ -12,29 +13,7 @@ export const addARScenes = async (
     const scenes = await fetchAllARScenes(client);
 
     // Map articles to search index format
-    console.log(`Mapping ${indexName} data to search index format...`);
-    const searchARScenes: IARScene[] = await scenes.map((scene: any) => {
-      // Map categories
-      const sceneCategories: ICategory[] = scene.attributes.categories.data.map(
-        (category: any) => {
-          return category.attributes.name;
-        }
-      );
-
-      // Map tags
-      const sceneTags: ITag[] = scene.attributes.tags.data.map((tag: any) => {
-        return tag.attributes.name;
-      });
-
-      return {
-        id: scene.id,
-        title: scene.attributes.title,
-        categories: sceneCategories,
-        link: scene.attributes.link,
-        tags: sceneTags,
-        image: scene.attributes.image.data.attributes.formats.medium.url,
-      };
-    });
+    const searchARScenes: IARScene[] = await mapARScenes(scenes);
 
     // Add articles to search index
     await client.index(`${indexName}`).addDocuments(searchARScenes);

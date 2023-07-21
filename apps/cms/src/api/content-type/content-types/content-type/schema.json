@@ -4,7 +4,8 @@
   "info": {
     "singularName": "content-type",
     "pluralName": "content-types",
-    "displayName": "ContentType"
+    "displayName": "ContentType",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

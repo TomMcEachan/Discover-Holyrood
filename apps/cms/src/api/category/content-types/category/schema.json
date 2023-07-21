@@ -17,14 +17,7 @@
     },
     "color": {
       "type": "enumeration",
-      "enum": [
-        "green",
-        "red",
-        "navy",
-        "purple",
-        "magenta",
-        "mustard"
-      ],
+      "enum": ["green", "red", "navy", "purple", "magenta", "mustard"],
       "required": true,
       "default": "purple"
     },

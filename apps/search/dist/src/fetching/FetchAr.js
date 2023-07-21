@@ -10,8 +10,6 @@ const fetchAllARScenes = async (client) => {
     await Axios_1.default
         .get("/ars?populate=deep")
         .then(async (res) => {
-        console.log("Deleting previous records...");
-        await client.index("arscenes").deleteAllDocuments();
         console.log("Fetching AR scenes...");
         const responseData = await res.data;
         scenes = await responseData.data;
