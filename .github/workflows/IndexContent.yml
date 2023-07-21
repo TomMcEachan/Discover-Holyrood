@@ -39,3 +39,6 @@ jobs:
       # Deploy Search Index
       - name: Deploy Search Index
         run: npm run index:ts
+        env:
+          SEARCH_KEY: ${{ secrets.SEARCH_KEY }}
+          SEARCH_HOST: ${{ secrets.SEARCH_HOST }}
