@@ -15,6 +15,7 @@
         "experimentalDecorators": true,
         "jsx": "preserve",
         "incremental": true,
+
         "plugins": [
             {
                 "name": "next"
@@ -33,7 +34,11 @@
         "src/server.js",
         "src/__tests__/unit/Homepage.test.jsx",
         "src/__tests__/unit/Homepage.test.jsx",
-        "src/app/learn/[slug]/page.tsx"
+        "src/app/learn/[slug]/page.tsx",
+        "cypress/support/component.ts",
+        "cypress/support/commands.ts",
+        "cypress/support/e23.ts",
+        "src/components/ClientComponents/Cards/Card/Card.cy.jsx"
     ],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "**/*.spec.tsx"]
 }

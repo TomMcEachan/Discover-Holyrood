@@ -1,14 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
 
-interface Props {
+export type CardProps = {
     title: string;
     image: string;
     category: string;
     link: string;
-}
+};
 
-export const Card = ({ title, image, category, link }: Props): JSX.Element => {
+export const Card = ({
+    title,
+    image,
+    category,
+    link,
+}: CardProps): JSX.Element => {
     switch (category) {
         case "MSPs":
             return (

@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MdArticle } from "react-icons/md";
 import { TbAugmentedReality, TbSchool } from "react-icons/tb";
 
-type Props = {
+export type GlobalSearchCardProps = {
     title: string;
     category: string;
     contentType: string;
@@ -20,7 +19,7 @@ export const GlobalSearchCard = ({
     contentType,
     link,
     image,
-}: Props) => {
+}: GlobalSearchCardProps) => {
     // AR Scenes
     if (contentType === "AR") {
         switch (category) {
