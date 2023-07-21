@@ -1,0 +1,41 @@
+name: Index content to search
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Log level"
+        required: true
+        default: "warning"
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+defaults:
+  run:
+    working-directory: ./apps/search
+
+jobs:
+  Deploy-Search-Index:
+    runs-on: ubuntu-latest
+    environment: production
+    defaults:
+      run:
+        shell: bash
+    steps:
+      # Checkout Repo
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      # Setup Node
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16.x"
+      # Install Dependencies
+      - name: Install Dependencies
+        run: npm install
+      # Deploy Search Index
+      - name: Deploy Search Index
+        run: npm run index
