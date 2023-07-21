@@ -1,0 +1,22 @@
+name: Deploy Components to Storybook
+
+on: push
+defaults:
+  run:
+    working-directory: ./apps/client
+
+jobs:
+  # TODO: Add Cypress components tests here
+  chromatic-deployment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm run install
+      - name: Build
+        run: npm run build
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          exitZeroOnChanges: true
