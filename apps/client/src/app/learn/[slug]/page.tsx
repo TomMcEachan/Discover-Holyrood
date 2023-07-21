@@ -81,7 +81,7 @@ export default async function ArticlePage({ params }: Props) {
             <div className="divider" />
             <div id="suggested-articles">
                 <h2 className="text-2xl font-bold text-base-content">
-                    Suggested Articles
+                    Suggested Learning
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-4">
                     {suggestedArticles.slice(0, 3).map((article: any) => {
