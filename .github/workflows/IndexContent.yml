@@ -38,4 +38,4 @@ jobs:
         run: npm install
       # Deploy Search Index
       - name: Deploy Search Index
-        run: npm run index
+        run: npm run index:ts

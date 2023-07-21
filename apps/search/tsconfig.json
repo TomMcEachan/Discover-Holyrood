@@ -5,6 +5,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "lib": ["es2018", "dom"],
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false,
+    "noEmitOnError": false
   }
 }
