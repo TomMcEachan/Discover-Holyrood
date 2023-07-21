@@ -18,10 +18,10 @@ defaults:
 jobs:
   Deploy-Search-Index:
     runs-on: ubuntu-latest
-    environment: production
     defaults:
       run:
         shell: bash
+        working-directory: ./apps/search
     steps:
       # Checkout Repo
       - name: Checkout Repo
