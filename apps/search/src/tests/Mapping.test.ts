@@ -142,7 +142,7 @@ describe("mapARScenes", () => {
         id: "scene-1",
         title: "AR Scene 1",
         content_type: "AR Content",
-        appLink: "https://example.com/ar-scene1",
+        link: "https://example.com/ar-scene1",
         sceneLink: "https://example.com/ar-scene1",
         instructions: "Instructions for AR Scene 1",
         categories: ["Category 1", "Category 2"],

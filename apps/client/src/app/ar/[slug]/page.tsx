@@ -2,6 +2,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge/CategoryBadge";
 import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
 import { Suspense } from "react";
+import { LaunchARButton } from "@/components/ServerComponents/Buttons/LaunchARButton/LaunchARButton";
 import { components } from "@/components/ServerComponents/Markdown/ArticleMarkdown";
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
 import { SuggestedArticleCard } from "@/components/ClientComponents/Cards/SuggestedArticle/SuggestedArticleCard";
@@ -24,8 +25,8 @@ export async function generateStaticParams() {
     const paths = scenes.map((scenes: any) => {
         return {
             params: {
-                slug: scenes.attributes.LinkToARScene,
-                id: scenes.id,
+                slug: scenes.attributes.appLink,
+                id: scenes.uuid,
             },
         };
     });
@@ -64,6 +65,10 @@ export default async function ArticlePage({ params }: Props) {
                         return <CategoryBadge key={tag.id} name={tag} />;
                     })}
                 </div>
+                <div className="divider" />
+                <LaunchARButton
+                    sceneLocation={pageData.attributes.LinkToARScene}
+                />
                 <div className="divider" />
             </div>
             <article id="content" className="">

@@ -27,8 +27,8 @@ export const GlobalSearchHits = () => {
                             title={hit.title}
                             category={hit.categories[0]}
                             contentType={hit.content_type.data.attributes.name}
-                            link={hit.link}
                             image={hit.image}
+                            link={hit.link}
                         />
                     </div>
                 ))}

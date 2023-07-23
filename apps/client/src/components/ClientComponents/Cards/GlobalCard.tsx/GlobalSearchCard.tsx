@@ -6,7 +6,6 @@ export type GlobalSearchCardProps = {
     title: string;
     category: string;
     contentType: string;
-
     link: string;
     image: string;
 };

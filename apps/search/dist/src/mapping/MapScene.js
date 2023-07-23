@@ -20,7 +20,7 @@ const mapARScenes = async (scenes) => {
             image: scene.attributes.image.data.attributes.formats.medium.url,
             content_type: scene.attributes.content_type,
             instructions: scene.attributes.instructions,
-            appLink: scene.attributes.appLink,
+            link: scene.attributes.appLink,
         };
     });
     return searchARScenes;
