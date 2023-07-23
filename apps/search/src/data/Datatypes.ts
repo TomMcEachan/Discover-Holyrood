@@ -19,6 +19,7 @@ export type IARScene = {
   uniqueIdentifier: string;
   content_type: string;
   instructions: string;
+  appLink: string;
 };
 
 export type ICategory = {

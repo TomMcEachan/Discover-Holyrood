@@ -1,5 +1,5 @@
 // Components Import
-import { ArticleSearchComponent } from "@/components/Search/Content/ContentSearchComponent";
+import { ContentSearchComponent } from "@/components/Search/Content/ContentSearchComponent";
 import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
 
@@ -12,7 +12,7 @@ export default function Learn(): JSX.Element {
             />
             <div className="divider" />
             <div>
-                <ArticleSearchComponent indexName="articles" />
+                <ContentSearchComponent indexName="articles" />
             </div>
         </ContentWrapper>
     );
