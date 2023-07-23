@@ -51,9 +51,12 @@ export default function AR(): JSX.Element {
                                     sortBy={["name:asc"]}
                                 />
                             </div>
-                            <div className="divider px-6" />
+                            <div className="divider" />
+                            <div className="self-center">
+                                <GlobalPagination />
+                            </div>
                             <div className="">
-                                <div className="grid grid-cols-4">
+                                <div>
                                     <GlobalSearchHits />
                                 </div>
                             </div>

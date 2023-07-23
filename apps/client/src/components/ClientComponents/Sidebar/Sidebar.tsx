@@ -84,6 +84,26 @@ export const Sidebar = () => {
                         </Link>
                     </li>
                     <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
+                        <Link
+                            id="book-business-tickets-button"
+                            href="https://www.youtube.com/user/ScottishParl"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Watch Parliament on Youtube
+                        </Link>
+                    </li>
+                    <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
+                        <Link
+                            id="book-business-tickets-button"
+                            href="https://scottishparliament.podbean.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Listen to Parliament Podcasts
+                        </Link>
+                    </li>
+                    <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
                         <Link id="opening-times-button" href="/opening-times">
                             Check Opening Times
                         </Link>

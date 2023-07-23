@@ -49,7 +49,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spgreen  rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl  font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>
@@ -88,7 +88,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spmagenta-light rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl  font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>
@@ -127,7 +127,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spred rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>
@@ -166,7 +166,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spmustard rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl  font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>
@@ -205,7 +205,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-sppurple-light rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl  font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>
@@ -244,7 +244,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spblue-light rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl  font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>
@@ -291,7 +291,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spgreen  rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl  font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>
@@ -330,7 +330,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spmagenta-light rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl  font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>
@@ -369,7 +369,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spred rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl  font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>
@@ -408,7 +408,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spmustard rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl  font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>
@@ -447,7 +447,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-sppurple-light rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl  font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>
@@ -486,7 +486,7 @@ export const GlobalSearchCard = ({
                                 <span className="sr-only">Learn</span>
                             </div>
                             <div className="absolute top-[35%] z-20 bg-gradient-to-r from-spblue-light rounded-md w-full">
-                                <h3 className="text-3xl md:text-4xl font-bold text-white px-6 py-2">
+                                <h3 className="text-3xl  font-bold text-white px-6 py-2">
                                     {title}
                                 </h3>
                             </div>

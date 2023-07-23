@@ -95,7 +95,7 @@ export default async function ArticlePage({ params }: Props) {
                                 key={scenes.id}
                                 title={scenes.attributes.title}
                                 subtitle={scenes.attributes.subtitle}
-                                slug={`${scenes.attributes.link}`}
+                                slug={`${scenes.attributes.appLink}`}
                             />
                         );
                     })}

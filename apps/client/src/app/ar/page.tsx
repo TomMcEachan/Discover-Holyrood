@@ -8,7 +8,7 @@ export default function AR(): JSX.Element {
     return (
         <ContentWrapper>
             <PageTitle
-                title="AR Scenes"
+                title="AR Experiences"
                 subtitle="Explore how the Parliament works in Augmented Reality"
             />
             <div className="divider" />

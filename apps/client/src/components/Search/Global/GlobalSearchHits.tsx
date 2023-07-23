@@ -7,6 +7,8 @@ export const GlobalSearchHits = () => {
     const { hits, results } = useHits();
     const { status } = useInstantSearch();
 
+    console.log(hits);
+
     if (status === "loading" || status === "stalled") {
         return (
             <div className="flex flex-col items-center justify-center self-center">
@@ -18,20 +20,18 @@ export const GlobalSearchHits = () => {
     if (hits.length > 0) {
         return (
             <>
-                {hits.map((hit: any) => (
-                    <div
-                        className="col-span-4 md:col-span-1 lg:col-span-1 px-2 py-2"
-                        key={hit.id}
-                    >
+                <div className="grid grid-cols-4 gap-4">
+                    {hits.map((hit: any) => (
                         <GlobalSearchCard
                             title={hit.title}
                             category={hit.categories[0]}
                             contentType={hit.content_type.data.attributes.name}
                             image={hit.image}
                             link={hit.link}
+                            key={hit.id}
                         />
-                    </div>
-                ))}
+                    ))}
+                </div>
             </>
         );
     }
