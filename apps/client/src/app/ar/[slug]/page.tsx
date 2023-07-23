@@ -7,9 +7,9 @@ import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/Con
 import { SuggestedArticleCard } from "@/components/ClientComponents/Cards/SuggestedArticle/SuggestedArticleCard";
 import { BackButton } from "@/components/ServerComponents/Buttons/BackButton/BackButton";
 import {
-    getSpecificArticle,
-    getSuggestedArticles,
-    getAllArticles,
+    getSpecificARScenes,
+    getSuggestedARScenes,
+    getAllARScenes,
 } from "@/utils/fetching/DataFetching";
 
 interface Props {
@@ -20,12 +20,12 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-    const articles = await getAllArticles();
-    const paths = articles.map((article: any) => {
+    const scenes = await getAllARScenes();
+    const paths = scenes.map((scenes: any) => {
         return {
             params: {
-                slug: article.attributes.link,
-                id: article.id,
+                slug: scenes.attributes.LinkToARScene,
+                id: scenes.id,
             },
         };
     });
@@ -33,22 +33,22 @@ export async function generateStaticParams() {
 }
 
 export default async function ArticlePage({ params }: Props) {
-    const pageData = await getSpecificArticle(params.slug);
+    const pageData = await getSpecificARScenes(params.slug);
 
     //Get the article tags
-    const articleTags: any = pageData.attributes.tags.data.map((tag: any) => {
+    const sceneTags: any = pageData.attributes.tags.data.map((tag: any) => {
         return tag.attributes.name;
     });
 
     //Get the article category
-    const articleCategory: any =
+    const sceneCategory: any =
         pageData.attributes.categories.data[0].attributes.name;
 
     //Get the article markdown
-    const markdown = await pageData.attributes.content;
+    const markdown = await pageData.attributes.instructions;
 
     //Get the suggested articles
-    const suggestedArticles = await getSuggestedArticles(params.slug);
+    const suggestedScenes = await getSuggestedARScenes(params.slug);
 
     return (
         <ContentWrapper>
@@ -59,8 +59,8 @@ export default async function ArticlePage({ params }: Props) {
                     subtitle={pageData.attributes.subtitle}
                 />
                 <div className="pt-2">
-                    <CategoryBadge name={articleCategory} />
-                    {articleTags.map((tag: any) => {
+                    <CategoryBadge name={sceneCategory} />
+                    {sceneTags.map((tag: any) => {
                         return <CategoryBadge key={tag.id} name={tag} />;
                     })}
                 </div>
@@ -79,18 +79,18 @@ export default async function ArticlePage({ params }: Props) {
                 </Suspense>
             </article>
             <div className="divider" />
-            <div id="suggested-articles">
+            <div id="suggested-scenes">
                 <h2 className="text-2xl font-bold text-base-content">
-                    Suggested Articles
+                    Suggested AR Scenes
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-4">
-                    {suggestedArticles.slice(0, 3).map((article: any) => {
+                    {suggestedScenes.slice(0, 3).map((scenes: any) => {
                         return (
                             <SuggestedArticleCard
-                                key={article.id}
-                                title={article.attributes.title}
-                                subtitle={article.attributes.subtitle}
-                                slug={`${article.attributes.link}`}
+                                key={scenes.id}
+                                title={scenes.attributes.title}
+                                subtitle={scenes.attributes.subtitle}
+                                slug={`${scenes.attributes.link}`}
                             />
                         );
                     })}

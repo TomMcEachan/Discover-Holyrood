@@ -18,11 +18,12 @@ export const mapARScenes = async (scenes: any) => {
       id: scene.attributes.uuid,
       title: scene.attributes.title,
       categories: sceneCategories,
-      link: scene.attributes.LinkToARScene,
+      sceneLink: scene.attributes.LinkToARScene,
       tags: sceneTags,
       image: scene.attributes.image.data.attributes.formats.medium.url,
       content_type: scene.attributes.content_type,
       instructions: scene.attributes.instructions,
+      appLink: scene.attributes.appLink,
     };
   });
   return searchARScenes;

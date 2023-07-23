@@ -10,8 +10,6 @@ const fetchAllCategories = async (client) => {
     await Axios_1.default
         .get("/categories?populate=deep")
         .then(async (res) => {
-        console.log("Deleting previous records...");
-        client.index("categories").deleteAllDocuments();
         console.log("Fetching articles...");
         const responseData = await res.data;
         categories = await responseData.data;

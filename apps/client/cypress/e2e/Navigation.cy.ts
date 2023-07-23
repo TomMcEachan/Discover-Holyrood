@@ -4,7 +4,6 @@ import { url } from "./utils/test-utils";
 
 // Test AppBar Nav
 describe("Test Appbar Nav", () => {
-    cy.viewport("iphone-x");
     it("Can Navigate to Learn", () => {
         cy.visit(url);
         cy.contains("Learn").click();
@@ -26,7 +25,6 @@ describe("Test Appbar Nav", () => {
 
 // Test Top Nav
 describe("Test Top Nav", () => {
-    cy.viewport("iphone-x");
     it("Home Button Returns to Homepage", () => {
         cy.visit(`${url}/learn`);
         cy.contains("Discover Holyrood").click();
@@ -42,7 +40,6 @@ describe("Test Top Nav", () => {
 
 // Test Sidebar
 describe("Test Sidebar", () => {
-    cy.viewport("iphone-x");
     // Check Sidebar Can Close
     it("Can close Hamburger Menu with button", () => {
         cy.visit(url);

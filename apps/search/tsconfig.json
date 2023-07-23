@@ -1,10 +1,12 @@
 {
   "extends": "@tsconfig/node18/tsconfig.json",
-  "include": ["*", "src/indexes", "src/utils", "src/data", "src/data"],
+  "include": ["*", "src/indexes", "src/utils", "src/data"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "outDir": "dist",
     "lib": ["es2018", "dom"],
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false,
+    "noEmitOnError": false
   }
 }

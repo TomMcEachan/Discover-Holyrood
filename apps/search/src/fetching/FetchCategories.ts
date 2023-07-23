@@ -6,9 +6,6 @@ export const fetchAllCategories = async (client: any) => {
   await axiosInstance
     .get("/categories?populate=deep")
     .then(async (res) => {
-      console.log("Deleting previous records...");
-      client.index("categories").deleteAllDocuments();
-
       console.log("Fetching articles...");
       const responseData = await res.data;
       categories = await responseData.data;
