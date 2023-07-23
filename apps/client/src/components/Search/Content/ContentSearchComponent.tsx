@@ -19,7 +19,7 @@ type SearchComponentProps = {
 };
 
 // Search Component
-export const ArticleSearchComponent = ({
+export const ContentSearchComponent = ({
     indexName,
 }: SearchComponentProps): JSX.Element => {
     return (

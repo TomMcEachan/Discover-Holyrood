@@ -1,7 +1,7 @@
 import React from "react";
 import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import { ArticleSearchComponent } from "@/components/Search/Content/ContentSearchComponent";
+import { ContentSearchComponent } from "@/components/Search/Content/ContentSearchComponent";
 import { Suspense } from "react";
 
 export default function AR(): JSX.Element {
@@ -14,7 +14,7 @@ export default function AR(): JSX.Element {
             <div className="divider" />
             <div>
                 <Suspense fallback={<div>Loading...</div>}>
-                    <ArticleSearchComponent indexName="arscenes" />
+                    <ContentSearchComponent indexName="arscenes" />
                 </Suspense>
             </div>
         </ContentWrapper>

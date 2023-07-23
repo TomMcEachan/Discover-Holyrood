@@ -18,6 +18,8 @@ export type IARScene = {
   image: string;
   uniqueIdentifier: string;
   content_type: string;
+  instructions: string;
+  appLink: string;
 };
 
 export type ICategory = {

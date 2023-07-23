@@ -54,6 +54,15 @@
     "instructions": {
       "type": "richtext",
       "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "appLink": {
+      "type": "string",
+      "required": true
     }
   }
 }

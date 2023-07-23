@@ -1,13 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MdArticle } from "react-icons/md";
 import { TbAugmentedReality, TbSchool } from "react-icons/tb";
 
-type Props = {
+export type GlobalSearchCardProps = {
     title: string;
     category: string;
     contentType: string;
-
     link: string;
     image: string;
 };
@@ -20,14 +18,14 @@ export const GlobalSearchCard = ({
     contentType,
     link,
     image,
-}: Props) => {
+}: GlobalSearchCardProps) => {
     // AR Scenes
     if (contentType === "AR") {
         switch (category) {
             case "MSPs":
                 return (
                     <Link
-                        href={`https://${link}`}
+                        href={`/ar/${link}`}
                         className="h-600 col-span-2 rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
                         id="search-result"
                     >
@@ -66,7 +64,7 @@ export const GlobalSearchCard = ({
             case "Chamber":
                 return (
                     <Link
-                        href={`https://${link}`}
+                        href={`/ar/${link}`}
                         className="h-600 col-span-2 rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
                         id="search-result"
                     >
@@ -105,7 +103,7 @@ export const GlobalSearchCard = ({
             case "Building":
                 return (
                     <Link
-                        href={`https://${link}`}
+                        href={`/ar/${link}`}
                         className="h-600 col-span-2 rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
                         id="search-result"
                     >
@@ -144,7 +142,7 @@ export const GlobalSearchCard = ({
             case "History":
                 return (
                     <Link
-                        href={`https://${link}`}
+                        href={`/ar/${link}`}
                         className="h-600 col-span-2 rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
                         id="search-result"
                     >
@@ -183,7 +181,7 @@ export const GlobalSearchCard = ({
             case "Laws":
                 return (
                     <Link
-                        href={`https://${link}`}
+                        href={`/ar/${link}`}
                         className="h-600 col-span-2 rounded-t-lg pt-2 shadow-sm XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
                         id="search-result"
                     >
@@ -222,7 +220,7 @@ export const GlobalSearchCard = ({
             case "Powers":
                 return (
                     <Link
-                        href={`https://${link}`}
+                        href={`/ar/${link}`}
                         className="col-span-2 h-fit rounded-t-lg pt-2 shadow-lg XSMobile:col-span-4 sm:col-span-2 LGLaptop:col-span-1"
                         id="search-result"
                     >

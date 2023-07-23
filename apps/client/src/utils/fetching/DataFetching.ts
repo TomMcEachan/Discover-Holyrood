@@ -3,6 +3,7 @@ const headerOptions = {
     accept: "application/json",
 };
 
+/* Generic Fetching */
 export async function getDataFromUrl(url: string) {
     const res = await fetch(url, {
         method: "GET",
@@ -16,7 +17,7 @@ export async function getDataFromUrl(url: string) {
     return data;
 }
 
-// Gets a specific article based on the slug passed in
+/* Articles Fetching */
 export const getSpecificArticle = async (slug: string) => {
     const data = await getDataFromUrl(
         `https://discover-holyrood-cms.azurewebsites.net/api/articles?filters[link][$eq]=${slug}&populate=deep`,
@@ -26,7 +27,6 @@ export const getSpecificArticle = async (slug: string) => {
     return article;
 };
 
-// Gets all articles except the one with the slug passed in
 export const getSuggestedArticles = async (slug: string) => {
     const data = await getDataFromUrl(
         `https://discover-holyrood-cms.azurewebsites.net/api/articles?populate=deep&filters[link][$ne]=${slug}`,
@@ -43,4 +43,32 @@ export const getAllArticles = async () => {
 
     const articles = await data.data;
     return articles;
+};
+
+/* AR Scene Fetching */
+export const getAllARScenes = async () => {
+    const data = await getDataFromUrl(
+        "https://discover-holyrood-cms.azurewebsites.net/api/ars?populate=deep",
+    );
+
+    const scenes = await data.data;
+    return scenes;
+};
+
+export const getSpecificARScenes = async (slug: string) => {
+    const data = await getDataFromUrl(
+        `https://discover-holyrood-cms.azurewebsites.net/api/ars?filters[appLink][$eq]=${slug}&populate=deep`,
+    );
+
+    const scene = await data.data[0];
+    return scene;
+};
+
+export const getSuggestedARScenes = async (slug: string) => {
+    const data = await getDataFromUrl(
+        `https://discover-holyrood-cms.azurewebsites.net/api/ars?populate=deep&filters[appLink][$ne]=${slug}`,
+    );
+
+    const scenes = await data.data;
+    return scenes;
 };

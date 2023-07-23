@@ -1,12 +1,16 @@
 import Link from "next/link";
 
-type Props = {
+export type SuggestedArticleProps = {
     title: string;
     subtitle: string;
     slug: string;
 };
 
-export const SuggestedArticleCard = ({ title, subtitle, slug }: Props) => {
+export const SuggestedArticleCard = ({
+    title,
+    subtitle,
+    slug,
+}: SuggestedArticleProps) => {
     return (
         <Link href={slug}>
             <div className="bg-primary rounded-box p-4 min-h-full">

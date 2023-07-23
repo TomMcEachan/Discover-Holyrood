@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-07-21T09:39:00.321Z"
+    "x-generation-date": "2023-07-23T15:01:04.541Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -97,7 +97,9 @@
               "LinkToARScene",
               "image",
               "uuid",
-              "instructions"
+              "instructions",
+              "subtitle",
+              "appLink"
             ],
             "type": "object",
             "properties": {
@@ -162,6 +164,12 @@
               },
               "instructions": {
                 "type": "string"
+              },
+              "subtitle": {
+                "type": "string"
+              },
+              "appLink": {
+                "type": "string"
               }
             }
           }
@@ -219,7 +227,9 @@
           "LinkToARScene",
           "image",
           "uuid",
-          "instructions"
+          "instructions",
+          "subtitle",
+          "appLink"
         ],
         "properties": {
           "title": {
@@ -1077,6 +1087,12 @@
             "type": "string"
           },
           "instructions": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "appLink": {
             "type": "string"
           },
           "createdAt": {
