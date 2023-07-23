@@ -81,9 +81,9 @@ export const GlobalSearchModal = (props: SearchBoxProps) => {
                                             sortBy={["name:asc"]}
                                         />
                                     </div>
-                                    <div className="divider px-6" />
+                                    <div className="divider" />
                                     <div className="self-center lg:self-start mx-[5%]">
-                                        <div className="grid grid-cols-3">
+                                        <div className="">
                                             <GlobalSearchHits />
                                         </div>
                                     </div>

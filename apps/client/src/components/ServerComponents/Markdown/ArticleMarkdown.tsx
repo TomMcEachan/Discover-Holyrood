@@ -1,11 +1,17 @@
+import { VideoPlayer } from "@/components/ClientComponents/VideoPlayer/VideoPlayer";
+import { LaunchARButton } from "../Buttons/LaunchARButton/LaunchARButton";
+
 export const components = {
     h1: (props: any) => (
-        <h1 className="text-3xl font-bold pb-2 text-base-content" {...props}>
+        <h1 className="text-4xl font-bold pb-2 text-base-content" {...props}>
             {props.children}
         </h1>
     ),
     h2: (props: any) => (
-        <h2 className="text-2xl font-bold pb-2 text-base-content" {...props}>
+        <h2
+            className="text-4xl font-bold pb-2 text-base-content pt-2"
+            {...props}
+        >
             {props.children}
         </h2>
     ),
@@ -63,5 +69,15 @@ export const components = {
         <li className="font-normal text-lg text-black" {...props}>
             {props.children}
         </li>
+    ),
+    VideoPlayer: (props: any) => (
+        <div className="min-w-full my-4">
+            <VideoPlayer url={props.src} controls={true} {...props} />
+        </div>
+    ),
+    LaunchARButton: (props: any) => (
+        <div className="relative w-full">
+            <LaunchARButton url={props.src} {...props} />
+        </div>
     ),
 };
