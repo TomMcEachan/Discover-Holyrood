@@ -88,6 +88,7 @@ describe("mapARScenes", () => {
           content_type: "AR Content",
           LinkToARScene: "https://example.com/ar-scene1",
           instructions: "Instructions for AR Scene 1",
+          appLink: "https://example.com/ar-scene1",
           image: {
             data: {
               attributes: {
@@ -141,7 +142,8 @@ describe("mapARScenes", () => {
         id: "scene-1",
         title: "AR Scene 1",
         content_type: "AR Content",
-        link: "https://example.com/ar-scene1",
+        appLink: "https://example.com/ar-scene1",
+        sceneLink: "https://example.com/ar-scene1",
         instructions: "Instructions for AR Scene 1",
         categories: ["Category 1", "Category 2"],
         tags: ["Tag 1", "Tag 2"],
