@@ -3,16 +3,21 @@ import dynamic from "next/dynamic";
 
 const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
-export const VideoPlayer = () => {
+export type PlayerProps = {
+    url: string;
+};
+
+export const VideoPlayer = ({ url }: PlayerProps) => {
     return (
-        <div className="">
+        <div className="min-w-full min-h-full grid grid-cols-3">
             <ReactPlayer
-                url="https://res.cloudinary.com/tommceachan/video/upload/v1684495870/pexels_jamie_woods_12715469_1920x1080_25fps_bb264398aa.mp4"
+                url={url}
                 controls
                 pip
                 stopOnUnmount={false}
-                width="100%"
-                height="100%"
+                height={"100%"}
+                width={"100%"}
+                className="border-4 border-sppurple-light lg:col-span-1 col-span-3"
             />
         </div>
     );
