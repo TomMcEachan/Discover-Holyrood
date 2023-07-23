@@ -59,7 +59,7 @@ function ContentHits({ indexType }: ContentHitsProps): JSX.Element {
                         <Card
                             title={hit.title}
                             image={`${hit.image}`}
-                            link={`ar/${hit.link}`}
+                            link={`ar/${hit.appLink}`}
                             category={hit.categories[0]}
                             key={hit.id}
                         />

@@ -57,7 +57,7 @@ export const getAllARScenes = async () => {
 
 export const getSpecificARScenes = async (slug: string) => {
     const data = await getDataFromUrl(
-        `https://discover-holyrood-cms.azurewebsites.net/api/ars?filters[link][$eq]=${slug}&populate=deep`,
+        `https://discover-holyrood-cms.azurewebsites.net/api/ars?filters[appLink][$eq]=${slug}&populate=deep`,
     );
 
     const scene = await data.data[0];
@@ -66,7 +66,7 @@ export const getSpecificARScenes = async (slug: string) => {
 
 export const getSuggestedARScenes = async (slug: string) => {
     const data = await getDataFromUrl(
-        `https://discover-holyrood-cms.azurewebsites.net/api/ars?populate=deep&filters[link][$ne]=${slug}`,
+        `https://discover-holyrood-cms.azurewebsites.net/api/ars?populate=deep&filters[appLink][$ne]=${slug}`,
     );
 
     const scenes = await data.data;
