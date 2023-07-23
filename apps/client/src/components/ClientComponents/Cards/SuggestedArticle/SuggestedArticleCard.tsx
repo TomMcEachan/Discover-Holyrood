@@ -13,7 +13,7 @@ export const SuggestedArticleCard = ({
 }: SuggestedArticleProps) => {
     return (
         <Link href={slug}>
-            <div className="bg-primary rounded-box p-4 min-h-full">
+            <div className="bg-primary rounded-md p-4 min-h-full">
                 <h3 className="text-lg md:text-xl font-bold text-base-100">
                     {title}
                 </h3>
