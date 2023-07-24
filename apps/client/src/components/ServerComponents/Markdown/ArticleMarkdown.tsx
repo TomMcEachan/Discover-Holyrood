@@ -76,7 +76,7 @@ export const components = {
         </div>
     ),
     LaunchARButton: (props: any) => (
-        <div className="relative w-full">
+        <div className="">
             <LaunchARButton url={props.src} {...props} />
         </div>
     ),

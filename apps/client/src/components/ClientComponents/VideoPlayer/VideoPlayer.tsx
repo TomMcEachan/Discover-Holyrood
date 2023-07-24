@@ -5,20 +5,31 @@ const ReactPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
 
 export type PlayerProps = {
     url: string;
+    imageUrl?: string;
 };
 
-export const VideoPlayer = ({ url }: PlayerProps) => {
+export const VideoPlayer = ({ url, imageUrl }: PlayerProps) => {
     return (
-        <div className="min-w-full min-h-full grid grid-cols-3">
-            <ReactPlayer
-                url={url}
-                controls
-                pip
-                stopOnUnmount={false}
-                height={"100%"}
-                width={"100%"}
-                className="border-4 border-sppurple-light lg:col-span-1 col-span-3"
-            />
+        <div className="h-96 flex w-full">
+            <div className="">
+                <ReactPlayer
+                    url={url}
+                    controls
+                    pip
+                    stopOnUnmount={false}
+                    width={"100%"}
+                    height={"100%"}
+                    config={{
+                        file: {
+                            attributes: {
+                                crossOrigin: "true",
+                                poster: imageUrl,
+                            },
+                        },
+                    }}
+                    className="w-[560px] h-[315px]"
+                />
+            </div>
         </div>
     );
 };
