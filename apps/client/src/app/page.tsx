@@ -1,8 +1,15 @@
 // Components Import
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
 import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
+import { getAllData } from "@/utils/fetching/DataFetching";
+import { VideoPlayer } from "@/components/ClientComponents/VideoPlayer/VideoPlayer";
+import { GlobalSearchCard } from "@/components/ClientComponents/Cards/GlobalCard.tsx/GlobalSearchCard";
 
-export default function Home(): JSX.Element {
+export default async function Home() {
+    const pageData = await getAllData();
+    const articles = pageData.articles;
+    const scenes = pageData.scenes;
+
     return (
         <ContentWrapper>
             <PageTitle
@@ -10,6 +17,68 @@ export default function Home(): JSX.Element {
                 subtitle="Discover your Scottish Parliament"
             />
             <div className="divider" />
+            <div className="" id="video_section">
+                <div>
+                    <VideoPlayer
+                        url="https://res.cloudinary.com/tommceachan/video/upload/v1690210142/Welcome_9a60d6e642.mp4"
+                        imageUrl="https://res.cloudinary.com/tommceachan/image/upload/v1690218402/medium_Video_Thumbnail_d0edef0fe4.png"
+                    />
+                </div>
+            </div>
+            <div className="divider" />
+            <div className="">
+                <h2 className="text-2xl md:text-4xl font-bold pb-2 text-base-content">
+                    Featured Learning
+                </h2>
+                <div className="grid gap-4 grid-cols-4">
+                    {articles.slice(0, 4).map((article: any) => (
+                        <GlobalSearchCard
+                            key={article.id}
+                            title={article.attributes.title}
+                            category={
+                                article.attributes.categories.data[0].attributes
+                                    .name
+                            }
+                            image={
+                                article.attributes.image.data.attributes.formats
+                                    .medium.url
+                            }
+                            link={article.attributes.link}
+                            contentType={
+                                article.attributes.content_type.data.attributes
+                                    .name
+                            }
+                        />
+                    ))}
+                </div>
+            </div>
+            <div className="divider" />
+            <div className="">
+                <h2 className="text-2xl md:text-4xl font-bold pb-2 text-base-content">
+                    Featured AR Scenes
+                </h2>
+                <div className="grid gap-4 grid-cols-4">
+                    {scenes.slice(0, 4).map((scene: any) => (
+                        <GlobalSearchCard
+                            key={scene.id}
+                            title={scene.attributes.title}
+                            category={
+                                scene.attributes.categories.data[0].attributes
+                                    .name
+                            }
+                            image={
+                                scene.attributes.image.data.attributes.formats
+                                    .medium.url
+                            }
+                            link={scene.attributes.appLink}
+                            contentType={
+                                scene.attributes.content_type.data.attributes
+                                    .name
+                            }
+                        />
+                    ))}
+                </div>
+            </div>
         </ContentWrapper>
     );
 }

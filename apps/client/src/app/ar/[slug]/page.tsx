@@ -13,12 +13,12 @@ import {
     getAllARScenes,
 } from "@/utils/fetching/DataFetching";
 
-interface Props {
+export type ARPageProps = {
     params: {
         slug: string;
         id: string;
     };
-}
+};
 
 export async function generateStaticParams() {
     const scenes = await getAllARScenes();
@@ -33,7 +33,7 @@ export async function generateStaticParams() {
     return paths;
 }
 
-export default async function ArticlePage({ params }: Props) {
+export default async function ArticlePage({ params }: ARPageProps) {
     const pageData = await getSpecificARScenes(params.slug);
 
     //Get the article tags
