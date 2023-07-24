@@ -72,3 +72,28 @@ export const getSuggestedARScenes = async (slug: string) => {
     const scenes = await data.data;
     return scenes;
 };
+
+// Fetching All
+
+export const getAllData = async () => {
+    const articles = await getAllArticles();
+    const scenes = await getAllARScenes();
+
+    return { articles, scenes };
+};
+
+// Fetching Specific
+export const getSpecificData = async (slug: string) => {
+    const article = await getSpecificArticle(slug);
+    const scene = await getSpecificARScenes(slug);
+
+    return { article, scene };
+};
+
+// Fetching Suggested
+export const getSuggestedData = async (slug: string) => {
+    const articles = await getSuggestedArticles(slug);
+    const scenes = await getSuggestedARScenes(slug);
+
+    return { articles, scenes };
+};
