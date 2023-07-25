@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { TbAugmentedReality, TbHome2, TbSchool } from "react-icons/tb";
+import {
+    TbAugmentedReality,
+    TbHome2,
+    TbSchool,
+    TbBadgeVr,
+} from "react-icons/tb";
 
 export const AppBar = () => {
     return (
@@ -9,6 +14,12 @@ export const AppBar = () => {
                     <button className="flex flex-col font-bold text-primary">
                         <TbAugmentedReality size={25} className="self-center" />
                         <span>AR</span>
+                    </button>
+                </Link>
+                <Link href="/vr">
+                    <button className="flex flex-col font-bold text-primary">
+                        <TbBadgeVr size={25} className="self-center" />
+                        <span>VR Tour</span>
                     </button>
                 </Link>
                 <Link href="/">

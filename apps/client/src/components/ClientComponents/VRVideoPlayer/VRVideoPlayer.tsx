@@ -9,14 +9,14 @@ type VRVideoPlayerProps = {
 
 export const VRVideoPlayer = ({ videoUrl, imageUrl }: VRVideoPlayerProps) => {
     return (
-        <div className="w-full h-96 lg:col-span-2 col-span-3">
+        <div className="min-w-full lg:col-span-2 md:col-span-3 col-span-3">
             <ReactPlayer
                 url={videoUrl}
                 controls
                 pip
                 stopOnUnmount={false}
                 width={"100%"}
-                height={"100%"}
+                height={"560px"}
                 config={{
                     file: {
                         attributes: {
@@ -25,7 +25,6 @@ export const VRVideoPlayer = ({ videoUrl, imageUrl }: VRVideoPlayerProps) => {
                         },
                     },
                 }}
-                className="w-[560px] h-[315px]"
             />
         </div>
     );

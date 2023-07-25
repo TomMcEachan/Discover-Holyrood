@@ -10,10 +10,12 @@ export type PlayerProps = {
 
 export const VideoPlayer = ({ url, imageUrl }: PlayerProps) => {
     return (
-        <div className="h-96 flex w-full">
+        <div className="w-full col-span-3 lg:col-span-2">
             <div className="">
                 <ReactPlayer
                     url={url}
+                    className="top-0 left-0"
+                    fallback={<p>Loading...</p>}
                     controls
                     pip
                     stopOnUnmount={false}
@@ -27,7 +29,6 @@ export const VideoPlayer = ({ url, imageUrl }: PlayerProps) => {
                             },
                         },
                     }}
-                    className="w-[560px] h-[315px]"
                 />
             </div>
         </div>
