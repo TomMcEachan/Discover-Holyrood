@@ -12,6 +12,7 @@ import {
     getSuggestedARScenes,
     getAllARScenes,
 } from "@/utils/fetching/DataFetching";
+import Link from "next/link";
 
 export type ARPageProps = {
     params: {
@@ -51,6 +52,8 @@ export default async function ArticlePage({ params }: ARPageProps) {
     //Get the suggested articles
     const suggestedScenes = await getSuggestedARScenes(params.slug);
 
+    const categoryLowercase = sceneCategory.toLowerCase();
+
     return (
         <ContentWrapper>
             <BackButton backLocation="Learn" />
@@ -60,9 +63,13 @@ export default async function ArticlePage({ params }: ARPageProps) {
                     subtitle={pageData.attributes.subtitle}
                 />
                 <div className="pt-2">
-                    <CategoryBadge name={sceneCategory} />
+                    <Link href={`/search/${categoryLowercase}`}>
+                        <CategoryBadge name={sceneCategory} />
+                    </Link>
                     {sceneTags.map((tag: any) => {
-                        return <CategoryBadge key={tag.id} name={tag} />;
+                        return (
+                            <CategoryBadge key={tag.id} name={tag} disabled />
+                        );
                     })}
                 </div>
                 <div className="divider" />

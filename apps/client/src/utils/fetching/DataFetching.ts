@@ -45,6 +45,15 @@ export const getAllArticles = async () => {
     return articles;
 };
 
+export const getArticleByCategory = async (categoryID: string) => {
+    const data = await getDataFromUrl(
+        `https://discover-holyrood-cms.azurewebsites.net/api/articles?populate=deep&filters[categories][id][$eq]=${categoryID}`,
+    );
+
+    const articles = await data.data;
+    return articles;
+};
+
 /* AR Scene Fetching */
 export const getAllARScenes = async () => {
     const data = await getDataFromUrl(
@@ -67,6 +76,15 @@ export const getSpecificARScenes = async (slug: string) => {
 export const getSuggestedARScenes = async (slug: string) => {
     const data = await getDataFromUrl(
         `https://discover-holyrood-cms.azurewebsites.net/api/ars?populate=deep&filters[appLink][$ne]=${slug}`,
+    );
+
+    const scenes = await data.data;
+    return scenes;
+};
+
+export const getARSceneByCategory = async (categoryID: string) => {
+    const data = await getDataFromUrl(
+        `https://discover-holyrood-cms.azurewebsites.net/api/ars?populate=deep&filters[categories][id][$eq]=${categoryID}`,
     );
 
     const scenes = await data.data;
@@ -96,4 +114,23 @@ export const getSuggestedData = async (slug: string) => {
     const scenes = await getSuggestedARScenes(slug);
 
     return { articles, scenes };
+};
+
+// Fetching All Categories
+export const getAllCategories = async () => {
+    const data = await getDataFromUrl(
+        "https://discover-holyrood-cms.azurewebsites.net/api/categories",
+    );
+
+    const categories = await data.data;
+    return categories;
+};
+
+export const getSpecificCategory = async (slug: string) => {
+    const data = await getDataFromUrl(
+        `https://discover-holyrood-cms.azurewebsites.net/api/categories?filters[name][$eq]=${slug}`,
+    );
+
+    const category = await data;
+    return category;
 };

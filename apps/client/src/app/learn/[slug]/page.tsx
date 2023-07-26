@@ -11,6 +11,7 @@ import {
     getSuggestedArticles,
     getAllArticles,
 } from "@/utils/fetching/DataFetching";
+import Link from "next/link";
 
 interface Props {
     params: {
@@ -50,6 +51,8 @@ export default async function ArticlePage({ params }: Props) {
     //Get the suggested articles
     const suggestedArticles = await getSuggestedArticles(params.slug);
 
+    const categoryLowercase = articleCategory.toLowerCase();
+
     return (
         <ContentWrapper>
             <BackButton backLocation="Learn" />
@@ -59,10 +62,21 @@ export default async function ArticlePage({ params }: Props) {
                     subtitle={pageData.attributes.subtitle}
                 />
                 <div className="pt-2">
-                    <CategoryBadge name={articleCategory} />
-                    {articleTags.map((tag: any) => {
-                        return <CategoryBadge key={tag.id} name={tag} />;
-                    })}
+                    <div className="">
+                        <Link href={`/search/${categoryLowercase}`}>
+                            <CategoryBadge name={articleCategory} />
+                        </Link>
+
+                        {articleTags.map((tag: any) => {
+                            return (
+                                <CategoryBadge
+                                    key={tag.id}
+                                    name={tag}
+                                    disabled
+                                />
+                            );
+                        })}
+                    </div>
                 </div>
                 <div className="divider" />
             </div>

@@ -10,9 +10,9 @@ export default function Learn(): JSX.Element {
                 subtitle="Go on a tour in 360° Virtual Reality"
             />
             <div className="divider" />
-            <div className="grid grid-cols-3 gap-4 h-[560px]">
+            <div className="grid grid-cols-3 gap-4">
                 <VRVideoPlayer videoUrl="https://www.youtube.com/playlist?list=PL4l0q4AbG0mmlQPsNj4FcIChUAJpLlfsK" />
-                <div className="bg-primary w-full lg:col-span-1 col-span-3 flex-row ">
+                <div className="bg-primary w-full lg:col-span-1 col-span-3 flex-row">
                     <div className="">
                         <h3 className="font-bold text-3xl text-base-100 mx-4 mt-4">
                             How to use the VR Tour

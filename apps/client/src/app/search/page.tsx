@@ -24,38 +24,44 @@ export default function AR(): JSX.Element {
                 subtitle="Search the Discover Holyrood App"
             />
             <div className="divider" />
-            <div className="">
+            <div>
                 <InstantSearchProvider>
                     <InstantSearch indexName="all" searchClient={searchClient}>
                         <Configure hitsPerPage={8} />
                         <div className="flex flex-col h-full w-full">
-                            <div className="lg:self-start pb-4"></div>
                             <div className="flex flex-col w-full">
                                 <GlobalSearchBar />
                             </div>
-                            <div className="">
-                                <p className="text-xs pb-0.5 text-primary pt-2">
-                                    Filter by categories
-                                </p>
-                                <GlobalSearchRefinements
-                                    attribute="categories"
-                                    operator="and"
-                                    sortBy={["name:asc"]}
-                                />
-                                <p className="text-xs pb-0.5 text-primary pt-2">
-                                    Filter by tags
-                                </p>
-                                <GlobalSearchRefinements
-                                    attribute="tags"
-                                    operator="and"
-                                    sortBy={["name:asc"]}
-                                />
+                            <div
+                                tabIndex={0}
+                                className="collapse collapse-plus bg-base-100 rounded-md border-2 mt-4 border-sppurple-light"
+                            >
+                                <input type="checkbox" />
+                                <div className="collapse-title text-md font-bold mb-0 pb-0">
+                                    Filter your search
+                                </div>
+                                <div className="collapse-content">
+                                    <p className="text-xs pb-0.5 text-primary">
+                                        Filter by categories
+                                    </p>
+                                    <GlobalSearchRefinements
+                                        attribute="categories"
+                                        sortBy={["name:asc"]}
+                                    />
+                                    <p className="text-xs pb-0.5 text-primary pt-2">
+                                        Filter by tags
+                                    </p>
+                                    <GlobalSearchRefinements
+                                        attribute="tags"
+                                        sortBy={["name:asc"]}
+                                    />
+                                </div>
                             </div>
                             <div className="divider" />
                             <div className="self-center">
                                 <GlobalPagination />
                             </div>
-                            <div className="">
+                            <div>
                                 <div>
                                     <GlobalSearchHits />
                                 </div>
