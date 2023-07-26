@@ -1,7 +1,7 @@
 "use client";
 import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import React from "react";
+import { useState } from "react";
 
 // React InstantSearch Components
 import { InstantSearch, Configure } from "react-instantsearch-hooks-web";
@@ -17,6 +17,18 @@ import { GlobalSearchHits } from "@/components/Search/Global/GlobalSearchHits";
 import { GlobalPagination } from "@/components/Search/Global/GlobalPagination";
 
 export default function AR(): JSX.Element {
+    const [isOpen, setIsOpen] = useState(false);
+
+    function toggleCollapse() {
+        if (isOpen) {
+            setIsOpen(false);
+            console.log("closed");
+        } else {
+            setIsOpen(true);
+            console.log("open");
+        }
+    }
+
     return (
         <ContentWrapper>
             <PageTitle
@@ -34,7 +46,13 @@ export default function AR(): JSX.Element {
                             </div>
                             <div
                                 tabIndex={0}
-                                className="collapse collapse-plus bg-base-100 rounded-md border-2 mt-4 border-sppurple-light"
+                                className={`${
+                                    isOpen
+                                        ? "collapse collapse-arrow bg-base-100 rounded-md border-2 mt-4 border-sppurple-light"
+                                        : " collapse-close collapse collapse-arrow bg-base-100 rounded-md border-2 mt-4 border-sppurple-light"
+                                }`}
+                                id="collapse-box"
+                                onClick={() => toggleCollapse()}
                             >
                                 <input
                                     type="checkbox"
