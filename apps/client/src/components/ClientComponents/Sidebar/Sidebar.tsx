@@ -104,7 +104,12 @@ export const Sidebar = () => {
                         </Link>
                     </li>
                     <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
-                        <Link id="opening-times-button" href="/opening-times">
+                        <Link
+                            id="main-website-button"
+                            href="https://www.parliament.scot/visit/plan-your-visit"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Check Opening Times
                         </Link>
                     </li>
