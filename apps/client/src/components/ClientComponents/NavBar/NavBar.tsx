@@ -1,20 +1,22 @@
 "use client";
 import Link from "next/link";
 import { TbMenu2 } from "react-icons/tb";
-import { GlobalStateContext } from "@/utils/providers/GlobalState";
+import { GlobalStateContext, changeTheme } from "@/utils/providers/GlobalState";
 import { useContext } from "react";
-import { Logo } from "@/components/ServerComponents/Logo";
+import { Logo } from "@/components/ServerComponents/Logo/Logo";
 import { MdOutlineSearch } from "react-icons/md";
+import { useSelector } from "@xstate/react";
 
 export const Navbar = () => {
     const global = useContext(GlobalStateContext);
+    const isThemeChange = useSelector(global.colourModeMachine, changeTheme);
 
     return (
         <>
             <nav className="navbar fixed top-0 z-40 mb-0 border-b-2 border-primary bg-base-100 pb-0 text-primary">
                 <div className="navbar-start">
                     <Link href="/" className="mx-2 text-xl font-bold">
-                        <Logo />
+                        {isThemeChange ? <Logo /> : <Logo darkMode={true} />}
                         <span className="text-primary sr-only">
                             Discover Holyrood Logo
                         </span>
@@ -22,8 +24,8 @@ export const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <Link href="/search">
-                        <button className="mr-5" id="search-bar-button">
-                            <MdOutlineSearch size={35} />
+                        <button className="mr-5 flex" id="search-bar-button">
+                            <MdOutlineSearch size={40} />
                         </button>
                     </Link>
 

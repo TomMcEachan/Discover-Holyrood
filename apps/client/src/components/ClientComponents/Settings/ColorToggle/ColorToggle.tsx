@@ -16,22 +16,22 @@ export const ColorToggle = () => {
                 <div className="ml-4 flex">
                     {isThemeChange ? (
                         <>
-                            <IoMoon
-                                size={20}
-                                className="mr-2 self-center text-blue-100 transition"
-                            />
-                            <Switch.Label className="pr-2 font-bold text-base-100">
-                                Dark Mode{" "}
-                            </Switch.Label>
-                        </>
-                    ) : (
-                        <>
                             <IoSunnySharp
                                 size={20}
                                 className="mr-2 self-center text-yellow-500 transition"
                             />
                             <Switch.Label className="pr-2 font-bold text-base-100">
                                 Light Mode{" "}
+                            </Switch.Label>
+                        </>
+                    ) : (
+                        <>
+                            <IoMoon
+                                size={20}
+                                className="mr-2 self-center text-blue-100 transition"
+                            />
+                            <Switch.Label className="pr-2 font-bold text-base-100">
+                                Dark Mode{" "}
                             </Switch.Label>
                         </>
                     )}

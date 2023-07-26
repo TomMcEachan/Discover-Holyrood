@@ -10,7 +10,7 @@ export const GlobalSearchRefinements = (props: RefinementListProps) => {
 
     return (
         <div>
-            <div className="flex flex-wrap" id="global-facet-container">
+            <div className="flex flex-wrap gap-1" id="global-facet-container">
                 {items.map((item: any) =>
                     item.isRefined ? (
                         <div key={item.label}>
