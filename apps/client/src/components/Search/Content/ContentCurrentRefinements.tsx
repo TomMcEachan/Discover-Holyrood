@@ -17,7 +17,10 @@ export const ContentCurrentRefinements = (props: CurrentRefinementsProps) => {
                     >
                         Currently Applied Filters:
                     </p>
-                    <div className="flex flex-wrap" id="current-refinements">
+                    <div
+                        className="flex flex-wrap gap-1"
+                        id="current-refinements"
+                    >
                         {item.refinements.map((refinement: any) => (
                             <CategoryBadge
                                 key={refinement.value}

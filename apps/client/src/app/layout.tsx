@@ -14,8 +14,11 @@ import { GlobalStateProvider } from "@/utils/providers/GlobalState";
 // Analytics
 import { Analytics } from "@vercel/analytics/react";
 
+//Import Metadata Type
+import { Metadata } from "next";
+
 // Metadata
-export const metadata = {
+export const metadata: Metadata = {
     title: {
         template: "Discover Holyrood | %s",
         default: "Discover Holyrood",
@@ -29,6 +32,16 @@ export const metadata = {
         "Government",
         "Politics",
     ],
+    applicationName: "Discover Holyrood",
+    appleWebApp: {
+        capable: true,
+        title: "Discover Holyrood",
+        statusBarStyle: "black-translucent",
+    },
+    themeColor: "#ffffff",
+    viewport:
+        "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
+    manifest: "/manifest.json",
 };
 
 export default function RootLayout({
