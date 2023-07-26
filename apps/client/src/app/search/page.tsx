@@ -36,7 +36,11 @@ export default function AR(): JSX.Element {
                                 tabIndex={0}
                                 className="collapse collapse-plus bg-base-100 rounded-md border-2 mt-4 border-sppurple-light"
                             >
-                                <input type="checkbox" />
+                                <input
+                                    type="checkbox"
+                                    name="filter-collapse-checkbox"
+                                    id="filter-collapse-checkbox"
+                                />
                                 <div className="collapse-title text-md font-bold mb-0 pb-0">
                                     Filter your search
                                 </div>

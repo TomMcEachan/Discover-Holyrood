@@ -17,9 +17,7 @@ export const Navbar = () => {
                 <div className="navbar-start">
                     <Link href="/" className="mx-2 text-xl font-bold">
                         {isThemeChange ? <Logo /> : <Logo darkMode={true} />}
-                        <span className="text-primary sr-only">
-                            Discover Holyrood Logo
-                        </span>
+                        <span className="sr-only">Discover Holyrood Logo</span>
                     </Link>
                 </div>
                 <div className="navbar-end">
