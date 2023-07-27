@@ -1,7 +1,7 @@
 {
   "name": "@discoverholyrood/cms",
   "private": true,
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "The CMS for the Scottish Parliament Visitor Application",
   "scripts": {
     "dev": "strapi develop",
@@ -10,13 +10,12 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-documentation": "^4.11.5",
-    "@strapi/plugin-i18n": "4.11.5",
-    "@strapi/plugin-users-permissions": "4.11.5",
-    "@strapi/provider-upload-cloudinary": "^4.11.5",
-    "@strapi/strapi": "4.11.5",
+    "@strapi/plugin-documentation": "^4.11.7",
+    "@strapi/plugin-i18n": "^4.11.7",
+    "@strapi/plugin-users-permissions": "^4.11.7",
+    "@strapi/provider-upload-cloudinary": "^4.11.7",
+    "@strapi/strapi": "^4.11.7",
     "pg": "^8.10.0",
-    "strapi-plugin-meilisearch": "^0.9.1",
     "strapi-plugin-populate-deep": "^2.0.0"
   },
   "author": {

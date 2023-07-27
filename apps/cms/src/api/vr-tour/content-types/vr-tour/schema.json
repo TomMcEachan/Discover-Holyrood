@@ -4,7 +4,8 @@
   "info": {
     "singularName": "vr-tour",
     "pluralName": "vr-tours",
-    "displayName": "VR Tour"
+    "displayName": "VR Tour",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -17,7 +18,13 @@
     "Subtitle": {
       "type": "string"
     },
-    "Content": {
+    "androidContent": {
+      "type": "richtext"
+    },
+    "iosContent": {
+      "type": "richtext"
+    },
+    "desktopContent": {
       "type": "richtext"
     }
   }
