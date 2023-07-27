@@ -1,6 +1,6 @@
 import React from "react";
 
-type LogoProps = {
+export type LogoProps = {
     darkMode?: boolean;
 };
 
