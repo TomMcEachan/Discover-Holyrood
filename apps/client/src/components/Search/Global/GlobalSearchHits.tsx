@@ -7,8 +7,6 @@ export const GlobalSearchHits = () => {
     const { hits, results } = useHits();
     const { status } = useInstantSearch();
 
-    console.log(hits);
-
     if (status === "loading" || status === "stalled") {
         return (
             <div className="flex flex-col items-center justify-center self-center">
