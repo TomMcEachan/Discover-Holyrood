@@ -129,7 +129,7 @@ export const Logo = ({ darkMode }: LogoProps) => {
     } else if (darkMode) {
         return (
             <div
-                className="w-44 sm:w-52 md:w-64 h-24"
+                className="w-44 sm:w-52 md:w-64 h-16 pb-2"
                 id="discover-holyrood-logo"
             >
                 <svg

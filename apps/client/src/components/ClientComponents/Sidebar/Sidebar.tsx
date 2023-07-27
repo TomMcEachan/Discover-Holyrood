@@ -1,5 +1,6 @@
 "use client";
 import { IoClose } from "react-icons/io5";
+import { FaExternalLinkAlt, FaLink } from "react-icons/fa";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
 import { ColorToggle } from "@/components/ClientComponents/Settings/ColorToggle/ColorToggle";
@@ -60,7 +61,16 @@ export const Sidebar = () => {
                 <ul className="menu mt-14 font-bold text-base-100">
                     <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
                         <Link id="settings-button" href="/settings">
+                            <span className="sr-only">An external link</span>
+                            <FaLink size={20} className="self-center" />
                             Change App Settings
+                        </Link>
+                    </li>
+                    <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
+                        <Link id="vr-tour-button" href="/vr">
+                            <span className="sr-only">An external link</span>
+                            <FaLink size={20} className="self-center" />
+                            Watch VR Tour
                         </Link>
                     </li>
                     <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
@@ -70,6 +80,11 @@ export const Sidebar = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
+                            <span className="sr-only">An external link</span>
+                            <FaExternalLinkAlt
+                                size={20}
+                                className="self-center "
+                            />
                             Book Tour Tickets
                         </Link>
                     </li>
@@ -80,6 +95,11 @@ export const Sidebar = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
+                            <span className="sr-only">An external link</span>
+                            <FaExternalLinkAlt
+                                size={20}
+                                className="self-center "
+                            />
                             Book Business Tickets
                         </Link>
                     </li>
@@ -90,6 +110,11 @@ export const Sidebar = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
+                            <span className="sr-only">An external link</span>
+                            <FaExternalLinkAlt
+                                size={20}
+                                className="self-center "
+                            />
                             Watch Parliament on Youtube
                         </Link>
                     </li>
@@ -100,6 +125,11 @@ export const Sidebar = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
+                            <span className="sr-only">An external link</span>
+                            <FaExternalLinkAlt
+                                size={20}
+                                className="self-center "
+                            />
                             Listen to Parliament Podcasts
                         </Link>
                     </li>
@@ -110,12 +140,11 @@ export const Sidebar = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
+                            <FaExternalLinkAlt
+                                size={20}
+                                className="self-center "
+                            />
                             Check Opening Times
-                        </Link>
-                    </li>
-                    <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
-                        <Link id="vr-tour-button" href="/vr">
-                            Watch VR Tour
                         </Link>
                     </li>
                     <li className="hover:bg-accent hover:bg-opacity-50">
@@ -125,6 +154,11 @@ export const Sidebar = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
+                            <span className="sr-only">An external link</span>
+                            <FaExternalLinkAlt
+                                size={20}
+                                className="self-center "
+                            />
                             Visit Main Website
                         </Link>
                     </li>
