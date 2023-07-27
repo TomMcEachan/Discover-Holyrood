@@ -17,12 +17,12 @@ export const GlobalPagination = (props: UsePaginationProps) => {
     } = usePagination(props);
 
     if (!canRefine) {
-        return null;
+        <p>{nbHits} Results</p>;
     }
 
     return (
         <div className="btn-group mb-2 flex w-full box flex-col">
-            <p className="font-bold pb-2 self-center">{nbHits} Results</p>
+            <p className="pb-2 self-center">{nbHits} Results</p>
             <ul>
                 {!isFirstPage && (
                     <button
@@ -57,6 +57,9 @@ export const GlobalPagination = (props: UsePaginationProps) => {
                     </button>
                 )}
             </ul>
+            <p className="font-bold self-center pt-2">{`Page ${
+                currentRefinement + 1
+            } of ${nbPages}`}</p>
         </div>
     );
 };

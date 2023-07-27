@@ -22,10 +22,8 @@ export default function AR(): JSX.Element {
     function toggleCollapse() {
         if (isOpen) {
             setIsOpen(false);
-            console.log("closed");
         } else {
             setIsOpen(true);
-            console.log("open");
         }
     }
 
