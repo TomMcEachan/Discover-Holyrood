@@ -3,13 +3,13 @@ import React from "react";
 import {
     TbPlus,
     TbAugmentedReality,
-    TbHome2,
     TbSchool,
     TbBadgeVr,
     TbMinus,
 } from "react-icons/tb";
 import { useState } from "react";
 import Link from "next/link";
+import va from "react-icons/tb";
 
 type Props = {};
 
@@ -25,17 +25,14 @@ export const FloatingButtons = (props: Props) => {
     };
 
     return (
-        <div
-            className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50"
-            tabIndex={0}
-        >
+        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
             <div className="relative">
                 {/* Small Fab Buttons */}
                 {showFAB ? (
                     <div>
                         <Link
                             href="/ar"
-                            className="fixed bottom-16 left-2 pb-0.5"
+                            className="fixed bottom-16 left-1/2 transform -translate-x-1/2 pb-0.5"
                         >
                             <button
                                 className="rounded-full bg-accent shadow-lg animate-jump-in animate-once animate-ease-in-out animate-normal animate-fill-both"
@@ -43,7 +40,7 @@ export const FloatingButtons = (props: Props) => {
                             >
                                 <TbAugmentedReality
                                     className="text-2xl text-white m-1.5 animate-spin animate-once animate-ease-in-out animate-normal animate-fill-both"
-                                    size={30}
+                                    size={40}
                                 />
                             </button>
                         </Link>
@@ -57,7 +54,7 @@ export const FloatingButtons = (props: Props) => {
                             >
                                 <TbSchool
                                     className="text-2xl text-white m-1.5 animate-spin animate-once animate-ease-in-out animate-normal animate-fill-"
-                                    size={30}
+                                    size={40}
                                 />
                             </button>
                         </Link>
@@ -71,7 +68,7 @@ export const FloatingButtons = (props: Props) => {
                             >
                                 <TbBadgeVr
                                     className="text-2xl text-white m-1.5"
-                                    size={30}
+                                    size={40}
                                 />
                             </button>
                         </Link>
@@ -94,11 +91,11 @@ export const FloatingButtons = (props: Props) => {
                         >
                             <TbPlus
                                 className="text-2xl text-white m-1.5 swap-off"
-                                size={45}
+                                size={50}
                             />
                             <TbMinus
                                 className="text-2xl text-white m-1.5 swap-on"
-                                size={45}
+                                size={50}
                             />
                         </label>
                     </button>
