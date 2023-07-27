@@ -1,7 +1,7 @@
 "use client";
 import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
 import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 // React InstantSearch Components
 import { InstantSearch, Configure } from "react-instantsearch-hooks-web";
@@ -19,13 +19,35 @@ import { GlobalPagination } from "@/components/Search/Global/GlobalPagination";
 export default function AR(): JSX.Element {
     const [isOpen, setIsOpen] = useState(false);
 
-    function toggleCollapse() {
-        if (isOpen) {
-            setIsOpen(false);
-        } else {
+    function toggleOpen() {
+        if (!isOpen) {
             setIsOpen(true);
         }
     }
+
+    function toggleClose() {
+        if (isOpen) {
+            setIsOpen(false);
+        }
+    }
+
+    const menuRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (e: MouseEvent) => {
+            if (
+                !(menuRef.current?.contains(e.target as Element) ?? false) &&
+                isOpen
+            ) {
+                toggleClose();
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    });
 
     return (
         <ContentWrapper>
@@ -50,7 +72,7 @@ export default function AR(): JSX.Element {
                                         : " collapse-close collapse collapse-arrow bg-base-100 rounded-md border-2 mt-4 border-sppurple-light"
                                 }`}
                                 id="collapse-box"
-                                onClick={() => toggleCollapse()}
+                                onClick={toggleOpen}
                             >
                                 <input
                                     type="checkbox"
@@ -60,7 +82,7 @@ export default function AR(): JSX.Element {
                                 <div className="collapse-title text-md font-bold mb-0 pb-0">
                                     Filter your search
                                 </div>
-                                <div className="collapse-content">
+                                <div className="collapse-content" ref={menuRef}>
                                     <p className="text-xs pb-0.5 text-primary">
                                         Filter by categories
                                     </p>
