@@ -59,21 +59,36 @@ export const Sidebar = () => {
                     />
                 </button>
                 <ul className="menu mt-14 font-bold text-base-100">
-                    <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
+                    <li
+                        className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50"
+                        onClick={() => {
+                            global.hamburgerMachine.send("SWITCH");
+                        }}
+                    >
                         <Link id="settings-button" href="/settings">
                             <span className="sr-only">An external link</span>
                             <FaLink size={20} className="self-center" />
                             Change App Settings
                         </Link>
                     </li>
-                    <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
+                    <li
+                        className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50"
+                        onClick={() => {
+                            global.hamburgerMachine.send("SWITCH");
+                        }}
+                    >
                         <Link id="vr-tour-button" href="/vr">
                             <span className="sr-only">An external link</span>
                             <FaLink size={20} className="self-center" />
                             Watch VR Tour
                         </Link>
                     </li>
-                    <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
+                    <li
+                        className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50"
+                        onClick={() => {
+                            global.hamburgerMachine.send("SWITCH");
+                        }}
+                    >
                         <Link
                             id="book-tour-tickets-button"
                             href="https://www.parliament.scot/visit/tours"
@@ -88,7 +103,12 @@ export const Sidebar = () => {
                             Book Tour Tickets
                         </Link>
                     </li>
-                    <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
+                    <li
+                        className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50"
+                        onClick={() => {
+                            global.hamburgerMachine.send("SWITCH");
+                        }}
+                    >
                         <Link
                             id="book-business-tickets-button"
                             href="https://www.parliament.scot/visit/tickets-for-debates-and-meetings"
@@ -103,7 +123,12 @@ export const Sidebar = () => {
                             Book Business Tickets
                         </Link>
                     </li>
-                    <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
+                    <li
+                        className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50"
+                        onClick={() => {
+                            global.hamburgerMachine.send("SWITCH");
+                        }}
+                    >
                         <Link
                             id="book-business-tickets-button"
                             href="https://www.youtube.com/user/ScottishParl"
@@ -118,7 +143,12 @@ export const Sidebar = () => {
                             Watch Parliament on Youtube
                         </Link>
                     </li>
-                    <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
+                    <li
+                        className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50"
+                        onClick={() => {
+                            global.hamburgerMachine.send("SWITCH");
+                        }}
+                    >
                         <Link
                             id="book-business-tickets-button"
                             href="https://scottishparliament.podbean.com"
@@ -133,7 +163,12 @@ export const Sidebar = () => {
                             Listen to Parliament Podcasts
                         </Link>
                     </li>
-                    <li className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50">
+                    <li
+                        className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50"
+                        onClick={() => {
+                            global.hamburgerMachine.send("SWITCH");
+                        }}
+                    >
                         <Link
                             id="main-website-button"
                             href="https://www.parliament.scot/visit/plan-your-visit"
@@ -147,7 +182,12 @@ export const Sidebar = () => {
                             Check Opening Times
                         </Link>
                     </li>
-                    <li className="hover:bg-accent hover:bg-opacity-50">
+                    <li
+                        className="border-b-2 border-base-100 border-opacity-20 hover:bg-accent hover:bg-opacity-50"
+                        onClick={() => {
+                            global.hamburgerMachine.send("SWITCH");
+                        }}
+                    >
                         <Link
                             id="main-website-button"
                             href="https://www.parliament.scot"

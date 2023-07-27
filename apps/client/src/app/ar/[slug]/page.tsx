@@ -76,9 +76,12 @@ export default async function ArticlePage({ params }: ARPageProps) {
                 <LaunchARButton
                     sceneLocation={pageData.attributes.LinkToARScene}
                 />
-                <div className="divider" />
+                <div className="divider mb-0" />
             </div>
             <article id="content" className="">
+                <h3 className="text-3xl font-bold text-base-content mt-0 pt-0 mb-1">
+                    Scene Instructions
+                </h3>
                 <Suspense fallback={<div>Loading...</div>}>
                     <>
                         <MDXRemote

@@ -12,8 +12,8 @@ const backToPreviousPage = () => {
 
 export const BackButton = ({ backLocation }: Props) => {
     return (
-        <div className="pt-2 text-primary">
-            <button className="font-bold" onClick={backToPreviousPage}>
+        <div className="pt-2 text-primary flex">
+            <button className="font-bold flex" onClick={backToPreviousPage}>
                 <BsFillArrowLeftCircleFill
                     className="inline-block mr-2"
                     size={25}

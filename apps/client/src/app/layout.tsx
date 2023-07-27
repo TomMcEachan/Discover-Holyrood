@@ -7,6 +7,7 @@ import { AppBar } from "@/components/ServerComponents/AppBar/AppBar";
 import { Sidebar } from "@/components/ClientComponents/Sidebar/Sidebar";
 import { Navbar } from "@/components/ClientComponents/NavBar/NavBar";
 import { GlobalSearchModal } from "@/components/Search/Global/GlobalSearchModal";
+import { FloatingButtons } from "@/components/ServerComponents/Buttons/FloatingButtons/FloatingButtons";
 
 // Import Global State
 import { GlobalStateProvider } from "@/utils/providers/GlobalState";
@@ -62,7 +63,8 @@ export default function RootLayout({
                         >
                             {children}
                         </div>
-                        <AppBar />
+                        <FloatingButtons />
+                        {/* <AppBar />  */}
                         <Sidebar />
                     </ThemeProvider>
                 </GlobalStateProvider>

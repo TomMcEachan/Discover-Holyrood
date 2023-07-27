@@ -16,7 +16,7 @@ export const components = {
         </h2>
     ),
     h3: (props: any) => (
-        <h3 className="text-xl font-bold text-base-content pb-2" {...props}>
+        <h3 className="text-2xl font-bold text-base-content pb-2" {...props}>
             {props.children}
         </h3>
     ),
@@ -66,7 +66,7 @@ export const components = {
         </ol>
     ),
     li: (props: any) => (
-        <li className="font-normal text-lg text-black" {...props}>
+        <li className="font-normal text-lg text-base-content mb-3" {...props}>
             {props.children}
         </li>
     ),
