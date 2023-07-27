@@ -9,7 +9,6 @@ import {
 } from "react-icons/tb";
 import { useState } from "react";
 import Link from "next/link";
-import va from "react-icons/tb";
 
 type Props = {};
 
@@ -42,6 +41,9 @@ export const FloatingButtons = (props: Props) => {
                                     className="text-2xl text-white m-1.5 animate-spin animate-once animate-ease-in-out animate-normal animate-fill-both"
                                     size={40}
                                 />
+                                <span className="sr-only">
+                                    Go to Augmented Reality Page
+                                </span>
                             </button>
                         </Link>
                         <Link
@@ -56,6 +58,9 @@ export const FloatingButtons = (props: Props) => {
                                     className="text-2xl text-white m-1.5 animate-spin animate-once animate-ease-in-out animate-normal animate-fill-"
                                     size={40}
                                 />
+                                <span className="sr-only">
+                                    Go to Learning Page
+                                </span>
                             </button>
                         </Link>
                         <Link
@@ -70,6 +75,9 @@ export const FloatingButtons = (props: Props) => {
                                     className="text-2xl text-white m-1.5"
                                     size={40}
                                 />
+                                <span className="sr-only">
+                                    Go to VR Tour Page
+                                </span>
                             </button>
                         </Link>
                     </div>
@@ -78,11 +86,12 @@ export const FloatingButtons = (props: Props) => {
                 )}
                 {/* Main Fab Button */}
                 <div>
-                    <button
+                    <div
                         className="rounded-full bg-accent shadow-xl"
                         onClick={handleFabClick}
                     >
-                        <label
+                        <span className="sr-only">Open up navigation menu</span>
+                        <div
                             className={`${
                                 showFAB
                                     ? "swap swap-rotate swap-active"
@@ -97,8 +106,8 @@ export const FloatingButtons = (props: Props) => {
                                 className="text-2xl text-white m-1.5 swap-on"
                                 size={50}
                             />
-                        </label>
-                    </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
