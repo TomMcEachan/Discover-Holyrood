@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     },
     themeColor: "#ffffff",
     viewport:
-        "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
+        "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover, maximum-scale=1",
     manifest: "/manifest.json",
 };
 
@@ -58,7 +58,7 @@ export default function RootLayout({
                         <GlobalSearchModal />
                         <div
                             id="content-section"
-                            className="min-w-screen top-10 mx-4 mt-20 min-h-full pt-10"
+                            className="min-w-screen top-10 mx-4 mt-10 min-h-full pt-10"
                         >
                             {children}
                         </div>
