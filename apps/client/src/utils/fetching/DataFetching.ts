@@ -134,3 +134,12 @@ export const getSpecificCategory = async (slug: string) => {
     const category = await data;
     return category;
 };
+
+// Single Types
+export const getVRTourInstructions = async () => {
+    const data = await getDataFromUrl(
+        "https://discover-holyrood-cms.azurewebsites.net/api/vr-tour",
+    );
+
+    return data.data;
+};
