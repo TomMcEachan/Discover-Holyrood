@@ -4,9 +4,9 @@ import {
     getArticleByCategory,
     getARSceneByCategory,
 } from "@/utils/fetching/DataFetching";
-import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
-import { GlobalSearchCard } from "@/components/ClientComponents/Cards/GlobalCard.tsx/GlobalSearchCard";
+import { ContentWrapper } from "@/components/Wrappers/ContentWrapper/ContentWrapper";
+import { PageTitle } from "@/components/PageTitle/PageTitle";
+import { GlobalSearchCard } from "@/components/Cards/GlobalCard/GlobalSearchCard";
 import { shuffleArray } from "@/utils/arrays/shuffle";
 
 // Page Props

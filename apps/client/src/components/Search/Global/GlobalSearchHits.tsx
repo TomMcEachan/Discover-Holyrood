@@ -1,6 +1,6 @@
 import { useHits, useInstantSearch } from "react-instantsearch-hooks-web";
 import { Riple } from "react-loading-indicators";
-import { GlobalSearchCard } from "@/components/ClientComponents/Cards/GlobalCard.tsx/GlobalSearchCard";
+import { GlobalSearchCard } from "@/components/Cards/GlobalCard/GlobalSearchCard";
 import { CgSmileNone } from "react-icons/cg";
 
 export const GlobalSearchHits = () => {

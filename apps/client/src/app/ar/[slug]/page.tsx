@@ -1,12 +1,12 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge/CategoryBadge";
-import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
+import { CategoryBadge } from "@/components/Buttons/CategoryBadge/CategoryBadge";
+import { PageTitle } from "@/components/PageTitle/PageTitle";
 import { Suspense } from "react";
-import { LaunchARButton } from "@/components/ServerComponents/Buttons/LaunchARButton/LaunchARButton";
-import { components } from "@/components/ServerComponents/Markdown/ArticleMarkdown";
-import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import { SuggestedArticleCard } from "@/components/ClientComponents/Cards/SuggestedArticle/SuggestedArticleCard";
-import { BackButton } from "@/components/ServerComponents/Buttons/BackButton/BackButton";
+import { LaunchARButton } from "@/components/Buttons/LaunchARButton/LaunchARButton";
+import { components } from "@/components/Markdown/ArticleMarkdown";
+import { ContentWrapper } from "@/components/Wrappers/ContentWrapper/ContentWrapper";
+import { SuggestedArticleCard } from "@/components/Cards/SuggestedArticle/SuggestedArticleCard";
+import { BackButton } from "@/components/Buttons/BackButton/BackButton";
 import {
     getSpecificARScenes,
     getSuggestedARScenes,
