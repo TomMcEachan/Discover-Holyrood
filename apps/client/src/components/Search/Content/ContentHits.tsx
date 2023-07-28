@@ -1,4 +1,4 @@
-import { Card } from "../../ClientComponents/Cards/Card/Card";
+import { Card } from "@/components/Cards/Card/Card";
 import { CgSmileNone } from "react-icons/cg";
 import {
     useInfiniteHits,

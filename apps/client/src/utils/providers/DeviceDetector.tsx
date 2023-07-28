@@ -1,7 +1,6 @@
 "use client";
 
-import useMobileDetect from "@/utils/device/deviceDetection";
-import { is } from "cypress/types/bluebird";
+import useDeviceDetector from "@/utils/hooks/useDeviceDetector";
 
 export type DeviceType = {
     isMobile?: boolean;
@@ -20,7 +19,7 @@ const DeviceDetector = ({
     isSSR,
     children,
 }: DeviceType) => {
-    const currentDevice = useMobileDetect();
+    const currentDevice = useDeviceDetector();
 
     if (currentDevice.isIos()) {
         return isIos && children;

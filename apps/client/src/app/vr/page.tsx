@@ -1,11 +1,10 @@
-import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
-import { VRVideoPlayer } from "@/components/ClientComponents/VRVideoPlayer/VRVideoPlayer";
+import { ContentWrapper } from "@/components/Wrappers/ContentWrapper/ContentWrapper";
+import { PageTitle } from "@/components/PageTitle/PageTitle";
+import { VRVideoPlayer } from "@/components//VRVideoPlayer/VRVideoPlayer";
 import { getVRTourInstructions } from "@/utils/fetching/DataFetching";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { BackButton } from "@/components/ServerComponents/Buttons/BackButton/BackButton";
 import { Suspense } from "react";
-import { components } from "@/components/ServerComponents/Markdown/VRInstructionsMarkdown";
+import { components } from "@/components/Markdown/VRInstructionsMarkdown";
 import DeviceDetector from "@/utils/providers/DeviceDetector";
 
 export default async function VR(): Promise<JSX.Element> {

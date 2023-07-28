@@ -2,7 +2,7 @@ import {
     useCurrentRefinements,
     type CurrentRefinementsProps,
 } from "react-instantsearch-hooks-web";
-import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge/CategoryBadge";
+import { CategoryBadge } from "@/components/Buttons/CategoryBadge/CategoryBadge";
 
 export const ContentCurrentRefinements = (props: CurrentRefinementsProps) => {
     const { items, canRefine, refine } = useCurrentRefinements(props);

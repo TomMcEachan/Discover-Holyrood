@@ -3,7 +3,7 @@ import {
     useRefinementList,
     type RefinementListProps,
 } from "react-instantsearch-hooks-web";
-import { CategoryBadge } from "@/components/ServerComponents/Buttons/CategoryBadge/CategoryBadge";
+import { CategoryBadge } from "@/components/Buttons/CategoryBadge/CategoryBadge";
 
 export const GlobalSearchRefinements = (props: RefinementListProps) => {
     const { items, refine } = useRefinementList(props);

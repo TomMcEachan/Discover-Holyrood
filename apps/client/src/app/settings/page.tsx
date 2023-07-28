@@ -1,7 +1,7 @@
 "use client";
-import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
-import { SettingsToggle } from "@/components/ClientComponents/Settings/SettingsToggles/SettingsToggles";
+import { ContentWrapper } from "@/components/Wrappers/ContentWrapper/ContentWrapper";
+import { PageTitle } from "@/components//PageTitle/PageTitle";
+import { SettingsToggle } from "@/components/Buttons/SettingsToggles/SettingsToggles";
 import { GlobalStateContext, changeTheme } from "@/utils/providers/GlobalState";
 import { useContext } from "react";
 import { useSelector } from "@xstate/react";

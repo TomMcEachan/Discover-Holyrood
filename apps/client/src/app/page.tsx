@@ -1,10 +1,10 @@
 // Components Import
-import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
-import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
+import { ContentWrapper } from "@/components/Wrappers/ContentWrapper/ContentWrapper";
+import { PageTitle } from "@/components/PageTitle/PageTitle";
 import { getAllData } from "@/utils/fetching/DataFetching";
-import { VideoPlayer } from "@/components/ClientComponents/VideoPlayer/VideoPlayer";
-import { GlobalSearchCard } from "@/components/ClientComponents/Cards/GlobalCard.tsx/GlobalSearchCard";
-import { VideoTextBlock } from "@/components/ClientComponents/VideTextBlock/VideoTextBlock";
+import { VideoPlayer } from "@/components/VideoPlayer/VideoPlayer";
+import { GlobalSearchCard } from "@/components/Cards/GlobalCard/GlobalSearchCard";
+import { VideoTextBlock } from "@/components/VideTextBlock/VideoTextBlock";
 import { Suspense } from "react";
 
 export default async function Home() {
