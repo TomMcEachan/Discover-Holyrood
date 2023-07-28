@@ -1,6 +1,6 @@
 import React from "react";
-import { PageTitle } from "@/components/ServerComponents/PageTitle/PageTitle";
-import { ContentWrapper } from "@/components/ServerComponents/ContentWrapper/ContentWrapper";
+import { PageTitle } from "@/components/PageTitle/PageTitle";
+import { ContentWrapper } from "@/components/Wrappers/ContentWrapper/ContentWrapper";
 import { ContentSearchComponent } from "@/components/Search/Content/ContentSearchComponent";
 import { Suspense } from "react";
 

@@ -3,11 +3,11 @@ import "./globals.css";
 import { ThemeProvider } from "@/utils/providers/Theme";
 
 // Import Components
-import { AppBar } from "@/components/ServerComponents/AppBar/AppBar";
-import { Sidebar } from "@/components/ClientComponents/Sidebar/Sidebar";
-import { Navbar } from "@/components/ClientComponents/NavBar/NavBar";
+import { AppBar } from "@/components/AppBar/AppBar";
+import { Sidebar } from "@/components/Sidebar/Sidebar";
+import { Navbar } from "@/components/NavBar/NavBar";
 import { GlobalSearchModal } from "@/components/Search/Global/GlobalSearchModal";
-import { FloatingButtons } from "@/components/ServerComponents/Buttons/FloatingButtons/FloatingButtons";
+import { FloatingButtons } from "@/components/Buttons/FloatingButtons/FloatingButtons";
 
 // Import Global State
 import { GlobalStateProvider } from "@/utils/providers/GlobalState";

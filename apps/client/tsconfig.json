@@ -16,7 +16,6 @@
         "experimentalDecorators": true,
         "jsx": "preserve",
         "incremental": true,
-
         "plugins": [
             {
                 "name": "next"
@@ -24,7 +23,8 @@
         ],
         "paths": {
             "@/*": ["./src/*"]
-        }
+        },
+        "baseUrl": "."
     },
     "include": [
         "next-env.d.ts",
@@ -39,7 +39,9 @@
         "cypress/support/component.ts",
         "cypress/support/commands.ts",
         "cypress/support/e23.ts",
-        "src/components/ClientComponents/Cards/Card/Card.cy.jsx"
+        "src/components/ClientComponents/Cards/Card/Card.cy.jsx",
+        "src/components/Cards/GlobalCard",
+        "src"
     ],
     "exclude": ["node_modules", "**/*.spec.tsx"]
 }
