@@ -2,7 +2,7 @@
 import { Theme } from "react-daisyui";
 import { useState, useEffect, createContext } from "react";
 
-export type Theme = "parliamentStylesLight" | "parliamentStylesDark";
+export type Theme = "parliamentStylesLight" | "parliamentStylesDark" | "null";
 
 interface ThemeContextValue {
     theme: Theme;
@@ -14,13 +14,16 @@ export const ThemeContext = createContext<ThemeContextValue | undefined>(
 );
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-    const [theme, setTheme] = useState<Theme>("parliamentStylesLight");
+    const [theme, setTheme] = useState<Theme>("null");
 
     useEffect(() => {
         if (typeof window !== "undefined" && window.localStorage) {
             const storedTheme = localStorage.getItem("theme") as Theme;
-            if (storedTheme) {
+            if (storedTheme && storedTheme !== "null") {
                 setTheme(storedTheme);
+            } else if (storedTheme === "null" || !storedTheme) {
+                localStorage.setItem("theme", "parliamentStylesLight");
+                setTheme("parliamentStylesLight");
             }
         }
     }, []);
