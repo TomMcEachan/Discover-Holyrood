@@ -3,10 +3,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/utils/providers/Theme";
 
 // Import Components
-import { AppBar } from "@/components/AppBar/AppBar";
 import { Sidebar } from "@/components/Sidebar/Sidebar";
 import { Navbar } from "@/components/NavBar/NavBar";
-import { GlobalSearchModal } from "@/components/Search/Global/GlobalSearchModal";
 import { FloatingButtons } from "@/components/Buttons/FloatingButtons/FloatingButtons";
 
 // Import Global State
@@ -60,15 +58,13 @@ export default function RootLayout({
                 <GlobalStateProvider>
                     <ThemeProvider>
                         <Navbar />
-                        <GlobalSearchModal />
+                        <FloatingButtons />
                         <div
                             id="content-section"
                             className="min-w-screen top-10 mx-4 mt-10 min-h-full pt-10"
                         >
                             {children}
                         </div>
-                        <FloatingButtons />
-                        {/* <AppBar />  */}
                         <Sidebar />
                     </ThemeProvider>
                 </GlobalStateProvider>
