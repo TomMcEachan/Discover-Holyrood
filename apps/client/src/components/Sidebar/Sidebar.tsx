@@ -3,10 +3,12 @@ import { IoClose } from "react-icons/io5";
 import { FaExternalLinkAlt, FaLink } from "react-icons/fa";
 import { useRef, useEffect } from "react";
 import Link from "next/link";
-import { ColorToggle } from "@/components/Buttons/ColorToggle/ColorToggle";
+import { SettingsToggle } from "@/components/Buttons/SettingsToggles/SettingsToggles";
 import { useContext } from "react";
 import { GlobalStateContext } from "@/utils/providers/GlobalState";
 import { useSelector } from "@xstate/react";
+import useThemeToggle from "@/utils/hooks/useThemeToggle";
+import { toggleTheme, Theme } from "@/utils/providers/Theme";
 
 const menuOpen = (state: any) => {
     return state.matches("Open");
@@ -17,6 +19,14 @@ export const Sidebar = () => {
     const menuIsOpen = useSelector(global.hamburgerMachine, menuOpen);
 
     const menuRef = useRef<HTMLInputElement>(null);
+
+    const { theme, setTheme } = useThemeToggle();
+
+    const setNewTheme = () => {
+        const newTheme: Theme = toggleTheme()?.toString() as Theme;
+
+        setTheme(newTheme);
+    };
 
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
@@ -203,7 +213,14 @@ export const Sidebar = () => {
                         </Link>
                     </li>
                 </ul>
-                <ColorToggle />
+                <div className="mx-4 my-2">
+                    <SettingsToggle
+                        label="Dark Mode"
+                        onChange={setNewTheme}
+                        checked={false}
+                        sidebar={true}
+                    />
+                </div>
             </nav>
         </div>
     ) : (
