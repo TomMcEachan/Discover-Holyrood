@@ -7,9 +7,15 @@ type Props = {
     label: string;
     checked: boolean;
     onChange: () => void;
+    sidebar?: boolean;
 };
 
-export const SettingsToggle = ({ label, checked, onChange }: Props) => {
+export const SettingsToggle = ({
+    label,
+    checked,
+    onChange,
+    sidebar,
+}: Props) => {
     const [enabled, setEnabled] = useState(checked);
 
     function change() {
@@ -27,9 +33,15 @@ export const SettingsToggle = ({ label, checked, onChange }: Props) => {
                                 size={20}
                                 className="mr-2 self-center text-yellow-500 transition"
                             />
-                            <Switch.Label className="font-bold text-primary pr-4 inline">
-                                Dark Mode :
-                            </Switch.Label>
+                            {sidebar ? (
+                                <Switch.Label className="font-bold text-base-100 pr-4 inline">
+                                    Light Mode :
+                                </Switch.Label>
+                            ) : (
+                                <Switch.Label className="font-bold text-primary pr-4 inline">
+                                    Light Mode :
+                                </Switch.Label>
+                            )}
                         </>
                     ) : (
                         <>
@@ -37,9 +49,16 @@ export const SettingsToggle = ({ label, checked, onChange }: Props) => {
                                 size={20}
                                 className="mr-2 self-center text-blue-100 transition"
                             />
-                            <Switch.Label className="font-bold text-primary pr-4 inline">
-                                Dark Mode :
-                            </Switch.Label>
+
+                            {sidebar ? (
+                                <Switch.Label className="font-bold text-base-100 pr-4 inline">
+                                    Dark Mode :
+                                </Switch.Label>
+                            ) : (
+                                <Switch.Label className="font-bold text-primary pr-4 inline">
+                                    Dark Mode :
+                                </Switch.Label>
+                            )}
                         </>
                     )}
                     <Switch

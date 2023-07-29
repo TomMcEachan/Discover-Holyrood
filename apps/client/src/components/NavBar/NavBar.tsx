@@ -5,18 +5,18 @@ import { GlobalStateContext, changeTheme } from "@/utils/providers/GlobalState";
 import { useContext } from "react";
 import { Logo } from "@/components/Logo/Logo";
 import { MdOutlineSearch } from "react-icons/md";
-import { useSelector } from "@xstate/react";
+import useThemeToggle from "@/utils/hooks/useThemeToggle";
 
 export const Navbar = () => {
     const global = useContext(GlobalStateContext);
-    const isThemeChange = useSelector(global.colourModeMachine, changeTheme);
+    const { theme, setTheme } = useThemeToggle();
 
     return (
         <>
             <nav className="navbar fixed top-0 z-40 mb-0 border-b-2 border-primary bg-base-100 pb-0 text-primary">
                 <div className="navbar-start">
                     <Link href="/" className="mx-2 text-xl font-bold">
-                        {isThemeChange ? <Logo /> : <Logo darkMode={true} />}
+                        {theme ? <Logo /> : <Logo darkMode={true} />}
                         <span className="sr-only">Discover Holyrood Logo</span>
                     </Link>
                 </div>

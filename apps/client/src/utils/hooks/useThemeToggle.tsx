@@ -1,16 +1,15 @@
+"use client";
+
 import { useContext } from "react";
-import { GlobalStateContext, changeTheme } from "@/utils/providers/GlobalState";
-import { useSelector } from "@xstate/react";
+import { ThemeContext } from "@/utils/providers/Theme";
 
-const useThemeToggle = () => {
-    const global = useContext(GlobalStateContext);
-    const isThemeChange = useSelector(global.colourModeMachine, changeTheme);
+export const useThemeToggle = () => {
+    const context = useContext(ThemeContext);
 
-    const toggleTheme = () => {
-        global.colourModeMachine.send("TOGGLE");
-    };
-
-    return { isThemeChange, toggleTheme };
+    if (!context) {
+        throw new Error("useThemeToggle must be used within a ThemeProvider");
+    }
+    return context;
 };
 
 export default useThemeToggle;

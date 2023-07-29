@@ -5,7 +5,6 @@ import { getAllData } from "@/utils/fetching/DataFetching";
 import { VideoPlayer } from "@/components/VideoPlayer/VideoPlayer";
 import { GlobalSearchCard } from "@/components/Cards/GlobalCard/GlobalSearchCard";
 import { VideoTextBlock } from "@/components/VideTextBlock/VideoTextBlock";
-import { Suspense } from "react";
 
 export default async function Home() {
     const pageData = await getAllData();

@@ -1,24 +1,47 @@
 "use client";
 import { Theme } from "react-daisyui";
-import { GlobalStateContext } from "@/utils/providers/GlobalState";
-import { useContext } from "react";
-import { useSelector } from "@xstate/react";
+import { useState, useEffect, createContext } from "react";
 
-const changeTheme = (state: any) => {
-    return state.matches("Light");
-};
+export type Theme = "parliamentStylesLight" | "parliamentStylesDark";
+
+interface ThemeContextValue {
+    theme: Theme;
+    setTheme: (theme: Theme) => void;
+}
+
+export const ThemeContext = createContext<ThemeContextValue | undefined>(
+    undefined,
+);
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-    const global = useContext(GlobalStateContext);
-    const isThemeChange = useSelector(global.colourModeMachine, changeTheme);
+    const [theme, setTheme] = useState<Theme>("parliamentStylesLight");
 
-    return isThemeChange ? (
-        <>
-            <Theme dataTheme="parliamentStylesLight">{children}</Theme>
-        </>
-    ) : (
-        <>
-            <Theme dataTheme="parliamentStylesDark">{children}</Theme>
-        </>
+    useEffect(() => {
+        if (typeof window !== "undefined" && window.localStorage) {
+            const storedTheme = localStorage.getItem("theme") as Theme;
+            if (storedTheme) {
+                setTheme(storedTheme);
+            }
+        }
+    }, []);
+
+    return (
+        <ThemeContext.Provider value={{ theme, setTheme }}>
+            <Theme dataTheme={theme}>{children}</Theme>
+        </ThemeContext.Provider>
     );
+};
+
+export const toggleTheme = () => {
+    if (typeof window !== "undefined") {
+        const theme = localStorage.getItem("theme") as Theme;
+        const newTheme =
+            theme === "parliamentStylesLight"
+                ? "parliamentStylesDark"
+                : "parliamentStylesLight";
+
+        localStorage.setItem("theme", newTheme);
+
+        return newTheme;
+    }
 };
