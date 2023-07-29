@@ -1,7 +1,7 @@
 {
     "theme_color": "#9013fe",
     "background_color": "#9013fe",
-    "display": "browser",
+    "display": "fullscreen",
     "scope": "/",
     "start_url": "/",
     "name": "Discover Holyrood",

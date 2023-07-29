@@ -35,11 +35,11 @@ export const SettingsToggle = ({
                             />
                             {sidebar ? (
                                 <Switch.Label className="font-bold text-base-100 pr-4 inline">
-                                    Light Mode :
+                                    Light Mode
                                 </Switch.Label>
                             ) : (
                                 <Switch.Label className="font-bold text-primary pr-4 inline">
-                                    Light Mode :
+                                    Light Mode
                                 </Switch.Label>
                             )}
                         </>
@@ -52,11 +52,11 @@ export const SettingsToggle = ({
 
                             {sidebar ? (
                                 <Switch.Label className="font-bold text-base-100 pr-4 inline">
-                                    Dark Mode :
+                                    Dark Mode
                                 </Switch.Label>
                             ) : (
                                 <Switch.Label className="font-bold text-primary pr-4 inline">
-                                    Dark Mode :
+                                    Dark Mode
                                 </Switch.Label>
                             )}
                         </>
