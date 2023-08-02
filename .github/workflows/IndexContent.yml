@@ -1,5 +1,7 @@
 name: Index content to search
 on:
+  schedule:
+    - cron: "1 0 * * *"
   workflow_dispatch:
     inputs:
       logLevel:
