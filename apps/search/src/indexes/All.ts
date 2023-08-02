@@ -17,7 +17,7 @@ export const addAll = async (client: any) => {
     // Map scenes to search index format
     const searchARScenes: IARScene[] = await mapARScenes(scenes);
 
-    // Combine articles and sceenes into one array
+    // Combine articles and scenes into one array
     const combinedArray = [...searchArticles, ...searchARScenes];
 
     // Add combined array to search index
