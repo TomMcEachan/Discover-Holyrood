@@ -26,7 +26,7 @@ export const FloatingButtons = (props: Props) => {
     return (
         <div
             className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50"
-            tabIndex={1}
+            tabIndex={0}
         >
             <div className="relative">
                 {/* Small Fab Buttons */}
