@@ -1,0 +1,12 @@
+{
+    "defaults": {
+        "reporters": ["pa11y-reporter-html", "cli"]
+    },
+    "urls": [
+        "https://www.discoverholyrood.co.uk/",
+        "https://www.discoverholyrood.co.uk/ar",
+        "https://www.discoverholyrood.co.uk/learn",
+        "https://www.discoverholyrood.co.uk/search",
+        "https://www.discoverholyrood.co.uk/vr"
+    ]
+}
