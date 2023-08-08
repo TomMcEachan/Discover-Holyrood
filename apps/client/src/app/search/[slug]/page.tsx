@@ -75,7 +75,7 @@ export default async function SearchCategoriesPage({
 
     return (
         <ContentWrapper>
-            <div>
+            <div className="mt-4">
                 <span className="bg-secondary rounded-md text-white p-1.5 font-bold text-md">
                     Filtered Search
                 </span>

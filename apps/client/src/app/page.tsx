@@ -24,7 +24,7 @@ export default async function Home() {
                     imageUrl="https://res.cloudinary.com/tommceachan/image/upload/v1690218402/medium_Video_Thumbnail_d0edef0fe4.png"
                 />
 
-                <VideoTextBlock title="Welcome to Discover Holyrood,">
+                <VideoTextBlock title="Welcome to Discover Holyrood">
                     <div className="mx-4 my-4 sm:text-sm lg:text-lg xl:text-2xl 2xl:text-2xl">
                         <p className="pb-4">
                             Discover Holyrood is a new way to explore the
