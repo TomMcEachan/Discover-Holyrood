@@ -1,5 +1,6 @@
 import { VideoPlayer } from "@/components/VideoPlayer/VideoPlayer";
 import { LaunchARButton } from "../Buttons/LaunchARButton/LaunchARButton";
+import ImageComponent from "../Image/Image";
 
 export const components = {
     h1: (props: any) => (
@@ -80,4 +81,9 @@ export const components = {
             <LaunchARButton url={props.src} {...props} />
         </div>
     ),
+    ImageComponent: (props: any) => {
+        <div>
+            <ImageComponent imageURL={props.src} imageAlt={props.alt} />
+        </div>;
+    },
 };
