@@ -81,9 +81,13 @@ export const components = {
             <LaunchARButton url={props.src} {...props} />
         </div>
     ),
-    ImageComponent: (props: any) => {
+    ImageComponent: (props: any) => (
         <div>
-            <ImageComponent imageURL={props.src} imageAlt={props.alt} />
-        </div>;
-    },
+            <ImageComponent
+                imageURL={props.src}
+                imageAlt={props.alt}
+                {...props}
+            />
+        </div>
+    ),
 };
