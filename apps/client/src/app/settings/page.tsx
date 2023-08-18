@@ -27,7 +27,6 @@ export default function Settings(): JSX.Element {
                 onChange={setNewTheme}
                 checked={true}
             />
-            <h3 className="text-2xl font-bold pb-1">Cookies</h3>
         </ContentWrapper>
     );
 }

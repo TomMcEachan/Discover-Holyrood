@@ -15,6 +15,7 @@
     "@strapi/plugin-users-permissions": "^4.12.1",
     "@strapi/provider-upload-cloudinary": "^4.12.1",
     "@strapi/strapi": "^4.12.1",
+    "next-sitemap": "^4.1.8",
     "pg": "^8.10.0",
     "strapi-content-type-explorer": "^0.1.1",
     "strapi-plugin-populate-deep": "^2.0.0"

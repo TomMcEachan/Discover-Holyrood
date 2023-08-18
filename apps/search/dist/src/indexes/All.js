@@ -14,7 +14,7 @@ const addAll = async (client) => {
         const searchArticles = await (0, MapArticles_1.mapArticles)(articles);
         // Map scenes to search index format
         const searchARScenes = await (0, MapScene_1.mapARScenes)(scenes);
-        // Combine articles and sceenes into one array
+        // Combine articles and scenes into one array
         const combinedArray = [...searchArticles, ...searchARScenes];
         // Add combined array to search index
         await client.index("all").addDocuments(combinedArray);
