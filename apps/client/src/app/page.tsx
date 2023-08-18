@@ -25,7 +25,10 @@ export default async function Home() {
                 />
 
                 <VideoTextBlock title="Welcome to Discover Holyrood">
-                    <div className="mx-4 my-4 sm:text-sm lg:text-lg xl:text-2xl 2xl:text-2xl">
+                    <div
+                        className="mx-4 my-4 sm:text-sm lg:text-lg xl:text-2xl 2xl:text-2xl"
+                        id="video-text-block"
+                    >
                         <p className="pb-4">
                             Discover Holyrood is a new way to explore the
                             Scottish Parliament.
@@ -41,7 +44,7 @@ export default async function Home() {
                 </VideoTextBlock>
             </div>
             <div className="divider" />
-            <div className="">
+            <div className="" id="featured-learning">
                 <h2 className="text-2xl md:text-4xl font-bold pb-2 text-base-content">
                     Featured Learning
                 </h2>
@@ -68,7 +71,7 @@ export default async function Home() {
                 </div>
             </div>
             <div className="divider" />
-            <div className="">
+            <div className="" id="featured-ar">
                 <h2 className="text-2xl md:text-4xl font-bold pb-2 text-base-content">
                     Featured AR Scenes
                 </h2>

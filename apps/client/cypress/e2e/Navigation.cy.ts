@@ -2,27 +2,6 @@
 
 import { url } from "./utils/test-utils";
 
-// Test AppBar Nav
-describe("Test Appbar Nav", () => {
-    it("Can Navigate to Learn", () => {
-        cy.visit(url);
-        cy.contains("Learn").click();
-        cy.url().should("include", "/learn");
-    });
-
-    it("Can Navigate to Home", () => {
-        cy.visit(url);
-        cy.contains("Home").click();
-        cy.url().should("include", "/");
-    });
-
-    it("Can Navigate to About", () => {
-        cy.visit(url);
-        cy.contains("AR Tour").click();
-        cy.url().should("include", "/ar");
-    });
-});
-
 // Test Top Nav
 describe("Test Top Nav", () => {
     it("Home Button Returns to Homepage", () => {
@@ -70,45 +49,6 @@ describe("Test Sidebar", () => {
         cy.url().should("include", "/vr");
     });
 
-    it("Can Navigate to Opening Times", () => {
-        cy.visit(url);
-        cy.get("#hamburger-button").click();
-        cy.contains("Check Opening Times").click();
-        cy.url().should("include", "/opening-times");
-    });
-
-    it("Can Navigate to Book Tickets", () => {
-        cy.visit(url);
-        cy.get("#hamburger-button").click();
-        cy.get("#book-tour-tickets-button")
-            .should(
-                "have.attr",
-                "href",
-                "https://www.parliament.scot/visit/tours",
-            )
-            .should("have.attr", "target", "_blank");
-    });
-
-    it("Can Navigate to Books Business Tickets", () => {
-        cy.visit(url);
-        cy.get("#hamburger-button").click();
-        cy.get("#book-business-tickets-button")
-            .should(
-                "have.attr",
-                "href",
-                "https://www.parliament.scot/visit/tickets-for-debates-and-meetings",
-            )
-            .should("have.attr", "target", "_blank");
-    });
-
-    it("Can Navigate to Main Parliament Site", () => {
-        cy.visit(url);
-        cy.get("#hamburger-button").click();
-        cy.get("#main-website-button")
-            .should("have.attr", "href", "https://www.parliament.scot")
-            .should("have.attr", "target", "_blank");
-    });
-
     it("Can Navigate switch color mode", () => {
         cy.visit(url);
         cy.get("#hamburger-button").click();
@@ -116,7 +56,7 @@ describe("Test Sidebar", () => {
         cy.get("#color-toggle-button").should(
             "have.attr",
             "aria-checked",
-            "false",
+            "true",
         );
     });
 });

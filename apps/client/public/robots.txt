@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.discoverholyrood.co.uk
+
+# Sitemaps
+Sitemap: https://www.discoverholyrood.co.uk/sitemap.xml

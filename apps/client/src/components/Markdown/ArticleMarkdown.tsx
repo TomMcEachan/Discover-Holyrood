@@ -82,7 +82,7 @@ export const components = {
         </div>
     ),
     ImageComponent: (props: any) => (
-        <div>
+        <div className="my-4">
             <ImageComponent
                 imageURL={props.src}
                 imageAlt={props.alt}
