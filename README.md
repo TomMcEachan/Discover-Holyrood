@@ -4,4 +4,6 @@ The code for my BSc Honours Software Development (GA) project - Discover Holyroo
 
 More information about this project can be found in the [Interim Report](https://github.com/TomMcEachan/Discover-Holyrood/blob/main/Interim%20Report%20_%2040456376%20_%20Tom%20McEachan.pdf) and [Dissertation Report](https://github.com/TomMcEachan/Discover-Holyrood/blob/main/40456376_Dissertation%20Report%20Document.pdf).
 
-[Watch a Video of the app in action](https://www.youtube.com/watch?v=Ne2O_fWtL8E)
+## See the project in action
+https://github.com/TomMcEachan/Discover-Holyrood/assets/38360055/1818c42b-89a9-453b-a2cc-4ce257a0543e
+
