@@ -13,3 +13,6 @@ More information about this project can be found in the [Interim Report](https:/
 ## See the project in action
 https://github.com/TomMcEachan/Discover-Holyrood/assets/38360055/1818c42b-89a9-453b-a2cc-4ce257a0543e
 
+## Academic Poster
+
+![Poster](https://github.com/TomMcEachan/Discover-Holyrood/assets/38360055/7b3a157b-fa40-47d8-adb1-455fc664edc4)
